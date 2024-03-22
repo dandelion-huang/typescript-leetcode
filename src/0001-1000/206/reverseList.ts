@@ -1,5 +1,8 @@
 import { ListNode } from 'utils/SinglyLinkedListNode'
 
+// Time: O(n)
+// Space: O(1)
+
 function reverseList(head: ListNode | null): ListNode | null {
     // 1. define a prev to store the previous node
     let prev = null

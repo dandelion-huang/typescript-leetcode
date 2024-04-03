@@ -1,5 +1,8 @@
 import { TreeNode } from 'utils/BinaryTreeNode'
 
+// Time: O(n)
+// Space: O(n)
+
 function inorderTraversal(root: TreeNode | null): number[] {
     const ans: number[] = []
 

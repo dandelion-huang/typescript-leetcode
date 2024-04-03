@@ -4,7 +4,7 @@ Solving Leetcode problems with TypeScript.
 
 ## Problem List
 
--   [94. Binary Tree Inorder Traversal](./src/0001-1000/94/inorderTraversal.ts)
+-   [94. Binary Tree Inorder Traversal `Easy`](./src/0001-1000/94/inorderTraversal.ts)
 -   [206. Reverse Linked List `Easy`](./src/0001-1000/206/reverseList.ts)
 -   [234. Palindrome Linked List `Easy`](./src/0001-1000/234/isPalindrome.ts)
 -   [687. Longest Univalue Path `Medium`](./src/0001-1000/687/longestUnivaluePath.ts)

@@ -6,6 +6,7 @@ Solving Leetcode problems with TypeScript.
 
 -   [94. Binary Tree Inorder Traversal `Easy`](./src/0001-1000/94/inorderTraversal.ts)
 -   [144. Binary Tree Preorder Traversal `Easy`](./src/0001-1000/144/preorderTraversal.ts)
+-   [145. Binary Tree Postorder Traversal `Easy`](./src/0001-1000/145/postorderTraversal.ts)
 -   [206. Reverse Linked List `Easy`](./src/0001-1000/206/reverseList.ts)
 -   [234. Palindrome Linked List `Easy`](./src/0001-1000/234/isPalindrome.ts)
 -   [687. Longest Univalue Path `Medium`](./src/0001-1000/687/longestUnivaluePath.ts)

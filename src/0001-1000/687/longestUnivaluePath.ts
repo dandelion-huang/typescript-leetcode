@@ -1,5 +1,7 @@
 import { TreeNode } from 'utils/BinaryTreeNode'
 
+// Notice that the path is the relationship between two nodes
+
 // Time: O(n)
 // Space: O(logn), logn is the height of the tree
 

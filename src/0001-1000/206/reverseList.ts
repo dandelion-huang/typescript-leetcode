@@ -5,7 +5,7 @@ import { ListNode } from 'utils/SinglyLinkedListNode'
 
 function reverseList(head: ListNode | null): ListNode | null {
     // edge cases
-    if (head === null || head.next === null) {
+    if (!head?.next) {
         return head
     }
 

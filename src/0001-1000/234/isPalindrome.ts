@@ -6,7 +6,7 @@ import { reverseList } from '0001-1000/206/reverseList'
 
 function isPalindrome(head: ListNode | null): boolean {
     // edge cases
-    if (head === null || head.next === null) {
+    if (!head?.next) {
         return true
     }
 
@@ -14,7 +14,7 @@ function isPalindrome(head: ListNode | null): boolean {
     let [slow, fast]: Array<ListNode | null> = [head, head]
 
     // 2. traverse the list to find the middle node
-    while (fast !== null && fast.next !== null) {
+    while (fast?.next) {
         slow = slow.next!
         fast = fast.next.next
     }

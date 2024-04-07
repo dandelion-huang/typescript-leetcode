@@ -1,5 +1,6 @@
 import { TreeNode } from 'utils/BinaryTreeNode'
 
+// <Queue>
 // Time: O(n)
 // Space: O(n)
 
@@ -16,7 +17,7 @@ function levelOrder(root: TreeNode | null): number[][] {
         // 2. level-order traversal
         let queue: TreeNode[] = [node]
 
-        while (queue.length > 0) {
+        while (queue.length) {
             ans.push(queue.map((curLevelNode) => curLevelNode.val))
             queue = queue
                 .map(

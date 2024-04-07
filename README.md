@@ -17,6 +17,7 @@ Solving Leetcode problems with TypeScript.
 -   [429. N-ary Tree Level Order Traversal `Medium`](./src/0001-1000/429/levelOrder.ts)
 -   [589. N-ary Tree Preorder Traversal `Easy`](./src/0001-1000/589/preorder.ts)
 -   [590. N-ary Tree Postorder Traversal `Easy`](./src/0001-1000/590/postorder.ts)
+-   [678. Valid Parenthesis String `Medium`](./src/0001-1000/678/checkValidString.ts)
 -   [687. Longest Univalue Path `Medium`](./src/0001-1000/687/longestUnivaluePath.ts)
 -   [713. Subarray Product Less Than K `Medium`](./src/0001-1000/713/numSubarrayProductLessThanK.ts)
 -   [725. Split Linked List in Parts `Medium`](./src/0001-1000/725/splitListToParts.ts)

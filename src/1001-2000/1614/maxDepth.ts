@@ -1,3 +1,4 @@
+// <Iteration>
 // Time: O(n)
 // Space: O(1)
 
@@ -9,12 +10,11 @@ function maxDepth(s: string): number {
     for (const char of s) {
         if (char === '(') {
             ++depth
+            // 2. update the answer which is the max depth
+            ans = Math.max(ans, depth)
         } else if (char === ')') {
             --depth
         }
-
-        // 2. update the answer which is the max depth
-        ans = Math.max(ans, depth)
     }
 
     return ans

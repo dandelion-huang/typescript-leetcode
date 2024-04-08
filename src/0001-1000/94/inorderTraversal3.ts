@@ -7,7 +7,7 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 function inorderTraversal(root: TreeNode | null): number[] {
     const ans: number[] = []
 
-    // Morris Traversal
+    // Morris Traversal (Inorder)
     // 1. if node.left === null
     //    push node in the ans array
     //    and then traverse node.right
@@ -20,7 +20,7 @@ function inorderTraversal(root: TreeNode | null): number[] {
     //      push node in the ans array, predecessor.right = null
     //      and then traverse node.right
 
-    let predecessor = null
+    let predecessor: TreeNode | null = null
 
     // iteration
     while (root) {

@@ -1,6 +1,7 @@
 import { ListNode } from 'utils/SinglyLinkedListNode'
 import { reverseList } from '0001-1000/206/reverseList'
 
+// <Fast-slow Pointers>
 // Time: O(n)
 // Space: O(1)
 
@@ -28,6 +29,7 @@ function isPalindrome(head: ListNode | null): boolean {
         if (head!.val !== revHead.val) {
             return false
         }
+
         head = head!.next
         revHead = revHead.next
     }

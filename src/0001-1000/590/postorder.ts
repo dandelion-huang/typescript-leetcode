@@ -1,5 +1,6 @@
 import { Node } from 'utils/N-aryTreeNode'
 
+// <Recursion>
 // Time: O(n)
 // Space: O(n)
 
@@ -12,11 +13,11 @@ function postorder(root: Node | null): number[] {
             return
         }
 
+        // 2. postorder traversal
         for (const child of node.children) {
             dfs(child)
         }
 
-        // 2. postorder traversal
         ans.push(node.val)
     }
 

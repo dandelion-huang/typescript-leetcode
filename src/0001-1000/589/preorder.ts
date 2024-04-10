@@ -1,5 +1,6 @@
 import { Node } from 'utils/N-aryTreeNode'
 
+// <Recursion>
 // Time: O(n)
 // Space: O(n)
 
@@ -14,6 +15,7 @@ function preorder(root: Node | null): number[] {
 
         // 2. preorder traversal
         ans.push(node.val)
+
         for (const child of node.children) {
             dfs(child)
         }

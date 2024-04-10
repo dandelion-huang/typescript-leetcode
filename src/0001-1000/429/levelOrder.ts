@@ -1,5 +1,6 @@
 import { Node } from 'utils/N-aryTreeNode'
 
+// <Queue>
 // Time: O(n)
 // Space: O(n)
 
@@ -16,7 +17,7 @@ function levelOrder(root: Node | null): number[][] {
         // 2. level-order traversal
         const queue: Node[] = [node]
 
-        while (queue.length > 0) {
+        while (queue.length) {
             const curLevel: number[] = []
             const size = queue.length
 

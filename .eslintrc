@@ -12,8 +12,10 @@
     "rules": {
         "@typescript-eslint/lines-between-class-members": "off",
         "import/prefer-default-export": "off",
+        "no-continue": "off",
         "no-param-reassign": "off",
         "no-plusplus": "off",
-        "no-restricted-syntax": "off"
+        "no-restricted-syntax": "off",
+        "prefer-destructuring": "off"
     }
 }

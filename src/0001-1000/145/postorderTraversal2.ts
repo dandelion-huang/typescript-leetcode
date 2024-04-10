@@ -18,17 +18,17 @@ function postorderTraversal(root: TreeNode | null): number[] {
             root = root.left
         }
 
-        root = stack.pop()!
+        root = stack[stack.length - 1]
 
         // 2. postorder traversal
         if (root.right === null || root.right === prev) {
+            // if the right subtree is null
+            // or the right subtree is the same as the previous node
+            stack.pop()
             ans.push(root.val)
             prev = root
             root = null
         } else {
-            // if the right subtree is not null
-            // push the root back to the stack and then traverse the right subtree
-            stack.push(root)
             root = root.right
         }
     }

@@ -1,3 +1,4 @@
+// <Prefix Sum>
 // Time: O(n)
 // Space: O(n)
 

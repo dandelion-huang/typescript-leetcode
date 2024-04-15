@@ -2,8 +2,9 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 
 // Notice that the path is the relationship between two nodes
 
+// <DFS>
 // Time: O(n)
-// Space: O(logn), logn is the height of the tree
+// Space: O(n)
 
 function longestUnivaluePath(root: TreeNode | null): number {
     let ans = 0

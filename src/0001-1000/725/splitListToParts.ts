@@ -1,7 +1,7 @@
 import { ListNode } from 'utils/SinglyLinkedListNode'
 
 // Time: O(n)
-// Space: O(n)
+// Space: O(1), notice that return value is not included in space complexity
 
 function splitListToParts(head: ListNode | null, k: number): Array<ListNode | null> {
     // 1. traverse the list to get the size n

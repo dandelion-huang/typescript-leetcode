@@ -5,6 +5,7 @@
     "type": "module",
     "scripts": {
         "format:all": "prettier --write --cache .",
+        "eslint:all": "eslint --fix .",
         "prepare": "husky install"
     },
     "lint-staged": {
@@ -20,6 +21,7 @@
         "eslint-config-airbnb-typescript": "^18.0.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.1.3",
+        "eslint-plugin-simple-import-sort": "^12.1.0",
         "husky": "^8.0.0",
         "lint-staged": "^15.2.2",
         "prettier": "^3.2.5",

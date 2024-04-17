@@ -9,15 +9,15 @@ function postorderTraversal(root: TreeNode | null): number[] {
 
     // Morris Traversal (Postorder)
     // (just the inverse of the preorder Morris Traversal)
-    // 1. if node.right === null
+    // 1. if !node.right
     //    unshift node in the ans array
     //    and then traverse node.left
-    // 2. if node.right !== null
+    // 2. if node.right
     //    find the leftmost node (marked as predecessor) on the right subtree
-    // 2.a. if predecessor.left === null
+    // 2.a. if !predecessor.left
     //      unshift node in the ans array, predecessor.left = node
     //      and then traverse node.right
-    // 2.b. if predecessor.left !== null (now predecessor.left = node by 2.a)
+    // 2.b. if predecessor.left (now predecessor.left = node by 2.a)
     //      predecessor.left = null
     //      and then traverse node.left
 

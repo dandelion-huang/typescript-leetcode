@@ -25,7 +25,7 @@ function isPalindrome(head: ListNode | null): boolean {
     //    so the last node of the fist half of the list will be the middle node
     let revHead = reverseList(slow)
 
-    while (revHead !== null) {
+    while (revHead) {
         if (head!.val !== revHead.val) {
             return false
         }

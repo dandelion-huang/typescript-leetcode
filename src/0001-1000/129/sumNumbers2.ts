@@ -6,7 +6,7 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 
 function sumNumbers(root: TreeNode | null): number {
     // edge cases
-    if (root === null) {
+    if (!root) {
         return 0
     }
 
@@ -21,16 +21,16 @@ function sumNumbers(root: TreeNode | null): number {
         const left = node.left
         const right = node.right
 
-        if (left === null && right === null) {
+        if (!left && !right) {
             sum += num
         }
 
-        if (left !== null) {
+        if (left) {
             nodeQueue.push(left)
             numQueue.push(num * 10 + left.val)
         }
 
-        if (right !== null) {
+        if (right) {
             nodeQueue.push(right)
             numQueue.push(num * 10 + right.val)
         }

@@ -11,7 +11,7 @@ function longestUnivaluePath(root: TreeNode | null): number {
 
     // 1. dfs
     function dfs(node: TreeNode | null, prevVal?: number): number {
-        if (node === null) {
+        if (!node) {
             return 0
         }
 

@@ -11,7 +11,7 @@ function deepestLeavesSum(root: TreeNode | null): number {
     // 1. dfs
     function dfs(node: TreeNode | null, depth: number = 0): void {
         // edge cases
-        if (node === null) {
+        if (!node) {
             return
         }
 

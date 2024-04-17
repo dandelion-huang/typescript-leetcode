@@ -8,7 +8,7 @@ function splitListToParts(head: ListNode | null, k: number): Array<ListNode | nu
     let n = 0
     let cur = head
 
-    while (cur !== null) {
+    while (cur) {
         ++n
         cur = cur.next
     }
@@ -26,11 +26,11 @@ function splitListToParts(head: ListNode | null, k: number): Array<ListNode | nu
     for (let i = 0; i < k; ++i) {
         const curHead = cur
         for (let j = 1; j < w + (i < r ? 1 : 0); ++j) {
-            if (cur !== null) {
+            if (cur) {
                 cur = cur.next
             }
         }
-        if (cur !== null) {
+        if (cur) {
             const temp = cur.next
             cur.next = null
             cur = temp

@@ -36,7 +36,7 @@ function bfs(node: TreeNode, val: number, depth: number): void {
 function addOneRow(root: TreeNode | null, val: number, depth: number): TreeNode | null {
     // edge cases
     // just assume that everything might be wrong
-    if (root === null) {
+    if (!root) {
         // root should not be null according to the constraints
         return new TreeNode(val, null, null)
     }

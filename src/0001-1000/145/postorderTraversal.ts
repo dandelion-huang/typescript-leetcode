@@ -9,7 +9,7 @@ function postorderTraversal(root: TreeNode | null): number[] {
 
     // 1. dfs
     function dfs(node: TreeNode | null): void {
-        if (node === null) {
+        if (!node) {
             return
         }
 

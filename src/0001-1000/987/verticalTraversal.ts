@@ -10,7 +10,7 @@ type NodeTuple = [number, number, number]
 // 1. dfs
 function dfs(node: TreeNode | null, col: number, row: number, nodes: NodeTuple[]): void {
     // edge cases
-    if (node === null) {
+    if (!node) {
         return
     }
 

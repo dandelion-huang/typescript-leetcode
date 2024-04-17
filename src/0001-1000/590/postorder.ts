@@ -9,7 +9,7 @@ function postorder(root: Node | null): number[] {
 
     // 1. dfs
     function dfs(node: Node | null): void {
-        if (node === null) {
+        if (!node) {
             return
         }
 

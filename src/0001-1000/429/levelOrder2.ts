@@ -10,7 +10,7 @@ function levelOrder(root: Node | null): number[][] {
     // 1. bfs
     function bfs(node: Node | null): void {
         // edge cases
-        if (node === null) {
+        if (!node) {
             return
         }
 

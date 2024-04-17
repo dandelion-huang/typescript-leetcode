@@ -7,14 +7,14 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 function sumNumbers(root: TreeNode | null): number {
     // 1. dfs
     function dfs(node: TreeNode | null, prevSum: number = 0): number {
-        if (node === null) {
+        if (!node) {
             return 0
         }
 
         // 2. pre-order traversal
         const sum = prevSum * 10 + node.val
 
-        if (node.left === null && node.right === null) {
+        if (!node.left && !node.right) {
             return sum
         }
 

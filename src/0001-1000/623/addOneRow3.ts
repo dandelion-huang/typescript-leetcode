@@ -7,7 +7,7 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 // 1. dfs
 function dfs(node: TreeNode | null, val: number, depth: number): TreeNode | null {
     // edge cases
-    if (node === null) {
+    if (!node) {
         return node
     }
 

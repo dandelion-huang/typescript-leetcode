@@ -6,7 +6,7 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 
 function deepestLeavesSum(root: TreeNode | null): number {
     // edge cases
-    if (root === null) {
+    if (!root) {
         return 0
     }
 

@@ -8,15 +8,15 @@ function inorderTraversal(root: TreeNode | null): number[] {
     const ans: number[] = []
 
     // Morris Traversal (Inorder)
-    // 1. if node.left === null
+    // 1. if !node.left
     //    push node in the ans array
     //    and then traverse node.right
-    // 2. if node.left !== null
+    // 2. if node.left
     //    find the rightmost node (marked as predecessor) on the left subtree
-    // 2.a. if predecessor.right === null
+    // 2.a. if !predecessor.right
     //      predecessor.right = node
     //      and then traverse node.left
-    // 2.b. if predecessor.right !== null (now predecessor.right = node by 2.a)
+    // 2.b. if predecessor.right (now predecessor.right = node by 2.a)
     //      push node in the ans array, predecessor.right = null
     //      and then traverse node.right
 

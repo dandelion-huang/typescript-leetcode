@@ -21,7 +21,7 @@ function postorderTraversal(root: TreeNode | null): number[] {
         root = stack[stack.length - 1]
 
         // 2. postorder traversal
-        if (root.right === null || root.right === prev) {
+        if (!root.right || root.right === prev) {
             // if the right subtree is null
             // or the right subtree is the same as the previous node
             stack.pop()

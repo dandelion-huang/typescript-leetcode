@@ -14,7 +14,7 @@ function reverseList(head: ListNode | null): ListNode | null {
     let prev: ListNode | null = null
 
     // 2. iterate through the linked list
-    while (head !== null) {
+    while (head) {
         ;[head.next, prev, head] = [prev, head, head.next]
     }
 

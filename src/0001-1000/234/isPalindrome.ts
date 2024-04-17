@@ -1,5 +1,5 @@
-import { ListNode } from 'utils/SinglyLinkedListNode'
 import { reverseList } from '0001-1000/206/reverseList'
+import { ListNode } from 'utils/SinglyLinkedListNode'
 
 // <Fast-slow Pointers>
 // Time: O(n)

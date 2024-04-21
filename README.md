@@ -9,6 +9,7 @@ Solving Leetcode problems with TypeScript.
 ## Problem List
 
 -   [94. Binary Tree Inorder Traversal `Easy`](./src/0001-1000/94/inorderTraversal.ts)
+-   [100. Same Tree `Easy`](./src/0001-1000/100/isSameTree.ts)
 -   [101. Symmetric Tree `Easy`](./src/0001-1000/101/isSymmetric.ts)
 -   [102. Binary Tree Level Order Traversal `Easy`](./src/0001-1000/102/levelOrder.ts)
 -   [104. Maximum Depth of Binary Tree `Easy`](./src/0001-1000/104/maxDepth.ts)

@@ -31,6 +31,7 @@ Solving Leetcode problems with TypeScript.
 -   [687. Longest Univalue Path `Medium`](./src/0001-1000/687/longestUnivaluePath.ts)
 -   [713. Subarray Product Less Than K `Medium`](./src/0001-1000/713/numSubarrayProductLessThanK.ts)
 -   [725. Split Linked List in Parts `Medium`](./src/0001-1000/725/splitListToParts.ts)
+-   [814. Binary Tree Pruning `Medium`](./src/0001-1000/814/pruneTree.ts)
 -   [872. Leaf-Similar Trees `Easy`](./src/0001-1000/872/leafSimilar.ts)
 -   [965. Univalued Binary Tree `Easy`](./src/0001-1000/965/isUnivalTree.ts)
 -   [987. Vertical Order Traversal of a Binary Tree `Hard`](./src/0001-1000/987/verticalTraversal.ts)

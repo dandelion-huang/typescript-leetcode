@@ -17,6 +17,7 @@ Solving Leetcode problems with TypeScript.
 -   [110. Balanced Binary Tree `Easy`](./src/0001-1000/110/isBalanced.ts)
 -   [111. Minimum Depth of Binary Tree `Easy`](./src/0001-1000/111/minDepth.ts)
 -   [112. Path Sum `Easy`](./src/0001-1000/112/hasPathSum.ts)
+-   [113. Path Sum II `Medium`](./src/0001-1000/113/pathSum.ts)
 -   [129. Sum Root to Leaf Numbers `Medium`](./src/0001-1000/129/sumNumbers.ts)
 -   [144. Binary Tree Preorder Traversal `Easy`](./src/0001-1000/144/preorderTraversal.ts)
 -   [145. Binary Tree Postorder Traversal `Easy`](./src/0001-1000/145/postorderTraversal.ts)

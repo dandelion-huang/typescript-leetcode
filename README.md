@@ -23,6 +23,7 @@ Solving Leetcode problems with TypeScript.
 -   [145. Binary Tree Postorder Traversal `Easy`](./src/0001-1000/145/postorderTraversal.ts)
 -   [206. Reverse Linked List `Easy`](./src/0001-1000/206/reverseList.ts)
 -   [234. Palindrome Linked List `Easy`](./src/0001-1000/234/isPalindrome.ts)
+-   [257. Binary Tree Paths `Easy`](./src/0001-1000/257/binaryTreePaths.ts)
 -   [429. N-ary Tree Level Order Traversal `Medium`](./src/0001-1000/429/levelOrder.ts)
 -   [437. Path Sum III `Medium`](./src/0001-1000/437/pathSum.ts)
 -   [463. Island Perimeter `Easy`](./src/0001-1000/463/islandPerimeter.ts)

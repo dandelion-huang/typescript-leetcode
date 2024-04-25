@@ -10,29 +10,23 @@ function sumNumbers(root: TreeNode | null): number {
         return 0
     }
 
-    const nodeQueue: TreeNode[] = [root]
-    const numQueue: number[] = [root.val]
+    const queue: [TreeNode, number][] = [[root, root.val]]
     let sum = 0
 
     // bfs
-    while (nodeQueue.length) {
-        const node = nodeQueue.shift()!
-        const num = numQueue.shift()!
-        const left = node.left
-        const right = node.right
+    while (queue.length) {
+        const [node, num] = queue.shift()!
 
-        if (!left && !right) {
+        if (!node.left && !node.right) {
             sum += num
         }
 
-        if (left) {
-            nodeQueue.push(left)
-            numQueue.push(num * 10 + left.val)
+        if (node.left) {
+            queue.push([node.left, num * 10 + node.left.val])
         }
 
-        if (right) {
-            nodeQueue.push(right)
-            numQueue.push(num * 10 + right.val)
+        if (node.right) {
+            queue.push([node.right, num * 10 + node.right.val])
         }
     }
 

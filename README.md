@@ -8,6 +8,7 @@ Solving Leetcode problems with TypeScript.
 
 ## Problem List
 
+-   [70. Climbing Stairs `Easy`](./src/0001-1000/70/climbStairs.ts)
 -   [94. Binary Tree Inorder Traversal `Easy`](./src/0001-1000/94/inorderTraversal.ts)
 -   [100. Same Tree `Easy`](./src/0001-1000/100/isSameTree.ts)
 -   [101. Symmetric Tree `Easy`](./src/0001-1000/101/isSymmetric.ts)

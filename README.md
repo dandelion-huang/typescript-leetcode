@@ -27,6 +27,7 @@ Solving Leetcode problems with TypeScript.
 -   [235. Lowest Common Ancestor of a Binary Search Tree `Medium`](./src/0001-1000/235/lowestCommonAncestor.ts)
 -   [236. Lowest Common Ancestor of a Binary Tree `Medium`](./src/0001-1000/236/lowestCommonAncestor.ts)
 -   [257. Binary Tree Paths `Easy`](./src/0001-1000/257/binaryTreePaths.ts)
+-   [297. Serialize and Deserialize Binary Tree `Hard`](./src/0001-1000/297/serializeAndDeserialize.ts)
 -   [429. N-ary Tree Level Order Traversal `Medium`](./src/0001-1000/429/levelOrder.ts)
 -   [437. Path Sum III `Medium`](./src/0001-1000/437/pathSum.ts)
 -   [463. Island Perimeter `Easy`](./src/0001-1000/463/islandPerimeter.ts)

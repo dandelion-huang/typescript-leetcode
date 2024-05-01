@@ -3,6 +3,10 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 
 // Notice that the root is the root of the BST
 
+// <Recursion, DFS>
+// Time: O(n)
+// Space: O(n)
+
 /*
  * Encodes a tree to a single string. (IMPORTED)
  */

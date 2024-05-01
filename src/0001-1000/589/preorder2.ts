@@ -6,9 +6,7 @@ import { Node } from 'utils/N-aryTreeNode'
 
 function preorder(root: Node | null): number[] {
     const ans: number[] = []
-    // stack
     const stack: Node[] = []
-    // map
     const nextIndex = new Map<Node, number>()
     let index = 0
 

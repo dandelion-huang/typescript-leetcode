@@ -36,8 +36,7 @@ function dfs(
 }
 
 function pathSum(root: TreeNode | null, targetSum: number): number {
-    // Map<sum, count>
-    const prefix = new Map<number, number>()
+    const prefix = new Map<number, number>() // Map<sum, count>
 
     prefix.set(0, 1)
 

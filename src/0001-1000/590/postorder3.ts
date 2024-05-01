@@ -11,9 +11,7 @@ function postorder(root: Node | null): number[] {
         return ans
     }
 
-    // stack
     const stack: Node[] = [root]
-    // set
     const visited = new Set<Node>()
 
     // 1. iteration

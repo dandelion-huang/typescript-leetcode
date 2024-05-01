@@ -12,7 +12,6 @@ function preorder(root: Node | null): number[] {
         return ans
     }
 
-    // stack
     const stack = [root]
 
     // 1. iteration

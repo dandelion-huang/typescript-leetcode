@@ -6,7 +6,6 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 
 function postorderTraversal(root: TreeNode | null): number[] {
     const ans: number[] = []
-    // stack
     const stack: TreeNode[] = []
     // prev for examine the right subtree
     let prev: TreeNode | null = null

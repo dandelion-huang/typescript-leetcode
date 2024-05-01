@@ -6,7 +6,6 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 
 function inorderTraversal(root: TreeNode | null): number[] {
     const ans: number[] = []
-    // stack
     const stack: TreeNode[] = []
 
     // 1. iteration

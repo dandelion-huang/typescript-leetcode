@@ -29,6 +29,7 @@ Solving Leetcode problems with TypeScript.
 -   [257. Binary Tree Paths `Easy`](./src/0001-1000/257/binaryTreePaths.ts)
 -   [297. Serialize and Deserialize Binary Tree `Hard`](./src/0001-1000/297/serializeAndDeserialize.ts)
 -   [429. N-ary Tree Level Order Traversal `Medium`](./src/0001-1000/429/levelOrder.ts)
+-   [449. Serialize and Deserialize BST `Medium`](./src/0001-1000/449/serializeAndDeserialize.ts)
 -   [437. Path Sum III `Medium`](./src/0001-1000/437/pathSum.ts)
 -   [463. Island Perimeter `Easy`](./src/0001-1000/463/islandPerimeter.ts)
 -   [572. Subtree of Another Tree `Easy`](./src/0001-1000/572/isSubtree.ts)

@@ -24,7 +24,7 @@ function sumSubarrayMins(arr: number[]): number {
         // and the minimum is at the end of the subarray
         const k = !stack.length ? i + 1 : i - stack[stack.length - 1]
 
-        dp.push(k * arr[i] + (!stack.length ? 0 : dp[i - k]))
+        dp[i] = k * arr[i] + (!stack.length ? 0 : dp[i - k])
         ans = (ans + dp[i]) % MOD
         stack.push(i)
     }

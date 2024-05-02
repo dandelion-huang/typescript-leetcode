@@ -1,6 +1,6 @@
 // <HashTable, Monotonic Stack>
-// Time: O(n + m)
-// Space: O(n)
+// Time: O(m)
+// Space: O(m)
 
 function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
     const n = nums1.length

@@ -55,3 +55,4 @@ Solving Leetcode problems with TypeScript.
 -   [1614. Maximum Nesting Depth of the Parentheses](./src/1001-2000/1614/maxDepth.ts)
 -   [2055. Plates Between Candles `Medium`](./src/2001-3000/2055/platesBetweenCandles.ts)
 -   [2958. Length of Longest Subarray With at Most K Frequency `Medium`](./src/2001-3000/2958/maxSubarrayLength.ts)
+-   [3127. Make a Square with the Same Color `Easy`](./src/3001-4000/3127/canMakeSquare.ts)

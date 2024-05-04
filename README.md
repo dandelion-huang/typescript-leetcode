@@ -33,6 +33,7 @@ Solving Leetcode problems with TypeScript.
 -   [437. Path Sum III `Medium`](./src/0001-1000/437/pathSum.ts)
 -   [463. Island Perimeter `Easy`](./src/0001-1000/463/islandPerimeter.ts)
 -   [496. Next Greater Element I `Easy`](./src/0001-1000/496/nextGreaterElement.ts)
+-   [508. Most Frequent Subtree Sum `Medium`](./src/0001-1000/508/findFrequentTreeSum.ts)
 -   [572. Subtree of Another Tree `Easy`](./src/0001-1000/572/isSubtree.ts)
 -   [589. N-ary Tree Preorder Traversal `Easy`](./src/0001-1000/589/preorder.ts)
 -   [590. N-ary Tree Postorder Traversal `Easy`](./src/0001-1000/590/postorder.ts)

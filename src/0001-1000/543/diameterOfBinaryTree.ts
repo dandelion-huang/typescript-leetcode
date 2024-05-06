@@ -10,12 +10,12 @@ function dfs(root: TreeNode | null, maxDiameter: { value: number }): number {
         return 0
     }
 
-    const left = dfs(root.left, maxDiameter)
-    const right = dfs(root.right, maxDiameter)
+    const leftLength = dfs(root.left, maxDiameter)
+    const rightLength = dfs(root.right, maxDiameter)
 
-    maxDiameter.value = Math.max(maxDiameter.value, left + right)
+    maxDiameter.value = Math.max(maxDiameter.value, leftLength + rightLength)
 
-    return Math.max(left, right) + 1
+    return Math.max(leftLength, rightLength) + 1
 }
 
 function diameterOfBinaryTree(root: TreeNode | null): number {

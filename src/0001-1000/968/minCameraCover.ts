@@ -10,7 +10,7 @@ import { TreeNode } from 'utils/BinaryTreeNode'
 // a = lc + rc + 1
 // b = min(a, min(la + rb), min(lb + ra))
 
-// <Recursion, DFS>
+// <Recursion, DFS, Dynamic Programming>
 // Time: O(n)
 // Space: O(n)
 

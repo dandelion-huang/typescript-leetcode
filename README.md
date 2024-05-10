@@ -23,6 +23,7 @@ Solving Leetcode problems with TypeScript.
 -   [129. Sum Root to Leaf Numbers `Medium`](./src/0001-1000/129/sumNumbers.ts)
 -   [144. Binary Tree Preorder Traversal `Easy`](./src/0001-1000/144/preorderTraversal.ts)
 -   [145. Binary Tree Postorder Traversal `Easy`](./src/0001-1000/145/postorderTraversal.ts)
+-   [153. Find Minimum in Rotated Sorted Array `Medium`](./src/0001-1000/153/findMin.ts)
 -   [169. Majority Element `Easy`](./src/0001-1000/169/majorityElement.ts)
 -   [206. Reverse Linked List `Easy`](./src/0001-1000/206/reverseList.ts)
 -   [234. Palindrome Linked List `Easy`](./src/0001-1000/234/isPalindrome.ts)

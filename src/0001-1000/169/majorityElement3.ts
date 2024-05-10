@@ -2,7 +2,7 @@
 // If MajorLeft === MajorRight, then the majority element is MajorLeft
 // Otherwise, the majority element is MajorLeft or MajorRight
 
-// <Recursion, DivideAndConquer>
+// <Recursion, Binary Search, DivideAndConquer>
 // Time: O(nlogn)
 // Space: O(logn)
 

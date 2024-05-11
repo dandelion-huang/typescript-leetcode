@@ -2,6 +2,10 @@
 
 Solving Leetcode problems with TypeScript.
 
+## Resources
+
+-   [Comparison Sorting Algorithms Visualization - University of San Francisco](https://www.cs.usfca.edu/~galles/visualization/ComparisonSort.html)
+
 ## Problem Categories
 
 -   [Huahua's Leetcode Problem List](https://zxi.mytechroad.com/blog/leetcode-problem-categories/)
@@ -53,6 +57,7 @@ Solving Leetcode problems with TypeScript.
 -   [872. Leaf-Similar Trees `Easy`](./src/0001-1000/872/leafSimilar.ts)
 -   [901. Online Stock Span `Medium`](./src/0001-1000/901/StockSpanner.ts)
 -   [907. Sum of Subarray Minimums `Medium`](./src/0001-1000/907/sumSubarrayMins.ts)
+-   [912. Sort An Array `Medium`](./src/0001-1000/912/sortArray.ts)
 -   [965. Univalued Binary Tree `Easy`](./src/0001-1000/965/isUnivalTree.ts)
 -   [968. Binary Tree Cameras `Hard`](./src/0001-1000/968/minCameraCover.ts)
 -   [979. Distribute Coins in Binary Tree `Medium`](./src/0001-1000/979/distributeCoins.ts)

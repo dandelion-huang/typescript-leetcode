@@ -1,4 +1,4 @@
-import { Node } from 'utils/N-aryTreeNode'
+import { Node } from 'classes/N-aryTreeNode'
 
 // <Stack>
 // Time: O(n)

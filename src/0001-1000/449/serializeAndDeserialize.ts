@@ -1,5 +1,5 @@
 import { serialize } from '0001-1000/297/serializeAndDeserialize'
-import { TreeNode } from 'utils/BinaryTreeNode'
+import { TreeNode } from 'classes/BinaryTreeNode'
 
 // Notice that the root is the root of the BST
 

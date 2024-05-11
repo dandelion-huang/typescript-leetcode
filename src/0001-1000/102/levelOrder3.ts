@@ -1,4 +1,4 @@
-import { TreeNode } from 'utils/BinaryTreeNode'
+import { TreeNode } from 'classes/BinaryTreeNode'
 
 // <Queue>
 // Time: O(n)

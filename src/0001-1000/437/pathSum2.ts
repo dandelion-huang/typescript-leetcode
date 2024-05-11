@@ -1,4 +1,4 @@
-import { TreeNode } from 'utils/BinaryTreeNode'
+import { TreeNode } from 'classes/BinaryTreeNode'
 
 // <Prefix Sum, DFS, Backtracking>
 // Time: O(n)

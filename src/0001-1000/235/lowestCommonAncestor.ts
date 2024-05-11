@@ -1,4 +1,4 @@
-import { TreeNode } from 'utils/BinaryTreeNode'
+import { TreeNode } from 'classes/BinaryTreeNode'
 
 // Notice that the root is the root of the BST
 // So we can optimize the solution on the basis of leetcode 236

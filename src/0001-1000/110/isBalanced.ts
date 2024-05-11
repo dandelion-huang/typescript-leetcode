@@ -1,5 +1,5 @@
 import { maxDepth } from '0001-1000/104/maxDepth'
-import { TreeNode } from 'utils/BinaryTreeNode'
+import { TreeNode } from 'classes/BinaryTreeNode'
 
 // A height-balanced binary tree is definedas a binary tree in which
 // the height of the left and the right subtree of any node differ by not more than 1.

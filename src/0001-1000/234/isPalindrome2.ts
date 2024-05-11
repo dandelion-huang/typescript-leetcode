@@ -1,4 +1,4 @@
-import { ListNode } from 'utils/SinglyLinkedListNode'
+import { ListNode } from 'classes/SinglyLinkedListNode'
 
 // <Two Pointers>
 // Time: O(n)

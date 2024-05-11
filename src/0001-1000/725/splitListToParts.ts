@@ -1,4 +1,4 @@
-import { ListNode } from 'utils/SinglyLinkedListNode'
+import { ListNode } from 'classes/SinglyLinkedListNode'
 
 // Time: O(n)
 // Space: O(1), notice that return value is not included in space complexity

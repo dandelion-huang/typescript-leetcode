@@ -1,4 +1,4 @@
-import { TreeNode } from 'utils/BinaryTreeNode'
+import { TreeNode } from 'classes/BinaryTreeNode'
 
 // Consider three conditions:
 // a. the number of necessary cameras when there is a camera on the root

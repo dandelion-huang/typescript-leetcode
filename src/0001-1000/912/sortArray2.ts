@@ -23,7 +23,7 @@ function merge(nums: number[], temp: number[], left: number, mid: number, right:
         temp[p++] = nums[j++]
     }
 
-    for (let k = 0; k < right - left + 1; ++k) {
+    for (let k = 0; k < p; ++k) {
         nums[left + k] = temp[k]
     }
 }

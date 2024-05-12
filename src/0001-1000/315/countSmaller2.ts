@@ -22,9 +22,6 @@ function merge(
     for (let p = left; p <= right; ++p) {
         if (i === mid + 1) {
             indexes[p] = temp[j++]
-        } else if (j === right + 1) {
-            indexes[p] = temp[i]
-            counts[temp[i++]] += count
         } else if (nums[temp[i]] > nums[temp[j]]) {
             indexes[p] = temp[j++]
             ++count

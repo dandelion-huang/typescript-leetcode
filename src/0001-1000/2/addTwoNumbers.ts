@@ -1,6 +1,8 @@
 import { ListNode } from 'classes/SinglyLinkedListNode'
 
-// <Recursion, Math>
+// <Iteration, Math>
+// Time: O(max(n, m))
+// Space: O(1)
 
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     let [head, tail]: [ListNode | null, ListNode | null] = [null, null]

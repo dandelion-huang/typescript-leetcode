@@ -1,0 +1,27 @@
+import { ListNode } from 'classes/SinglyLinkedListNode'
+
+// <Iteration, Fast-slow Pointers>
+// Time: O(n)
+// Space: O(n)
+
+function hasCycle(head: ListNode | null): boolean {
+    // edge cases
+    if (!head?.next) {
+        return false
+    }
+
+    let [slow, fast]: [ListNode | null, ListNode | null] = [head, head.next]
+
+    while (slow !== fast) {
+        if (!fast?.next) {
+            return false
+        }
+
+        slow = slow!.next
+        fast = fast.next.next
+    }
+
+    return true
+}
+
+export { hasCycle }

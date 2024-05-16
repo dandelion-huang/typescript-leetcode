@@ -11,7 +11,7 @@ function swapPairs(head: ListNode | null): ListNode | null {
 
     let prev = dummyHead
 
-    while (prev.next && prev.next.next) {
+    while (prev.next?.next) {
         const node1: ListNode | null = prev.next
         const node2: ListNode | null = prev.next.next
 

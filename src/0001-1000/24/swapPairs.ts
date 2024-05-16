@@ -5,7 +5,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Space: O(n)
 
 function swapPairs(head: ListNode | null): ListNode | null {
-    if (!head || !head.next) {
+    if (!head?.next) {
         return head
     }
 

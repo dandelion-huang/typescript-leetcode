@@ -27,6 +27,7 @@ Solving Leetcode problems with TypeScript.
 -   [113. Path Sum II `Medium`](./src/0001-1000/113/pathSum.ts)
 -   [124. Binary Tree Maximum Path Sum `Hard`](./src/0001-1000/124/maxPathSum.ts)
 -   [129. Sum Root to Leaf Numbers `Medium`](./src/0001-1000/129/sumNumbers.ts)
+-   [141. Linked List Cycle `Easy`](./src/0001-1000/141/hasCycle.ts)
 -   [144. Binary Tree Preorder Traversal `Easy`](./src/0001-1000/144/preorderTraversal.ts)
 -   [145. Binary Tree Postorder Traversal `Easy`](./src/0001-1000/145/postorderTraversal.ts)
 -   [153. Find Minimum in Rotated Sorted Array `Medium`](./src/0001-1000/153/findMin.ts)

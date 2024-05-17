@@ -12,13 +12,17 @@ function merge(nums: number[], temp: number[], left: number, mid: number, right:
 
     for (let p = left; p <= right; ++p) {
         if (i === mid + 1) {
-            nums[p] = temp[j++]
+            nums[p] = temp[j]
+            ++j
         } else if (j === right + 1) {
-            nums[p] = temp[i++]
+            nums[p] = temp[i]
+            ++i
         } else if (temp[i] > temp[j]) {
-            nums[p] = temp[j++]
+            nums[p] = temp[j]
+            ++j
         } else {
-            nums[p] = temp[i++]
+            nums[p] = temp[i]
+            ++i
         }
     }
 }

@@ -21,13 +21,16 @@ function merge(
 
     for (let p = left; p <= right; ++p) {
         if (i === mid + 1) {
-            indexes[p] = temp[j++]
+            indexes[p] = temp[j]
+            ++j
         } else if (nums[temp[i]] > nums[temp[j]]) {
-            indexes[p] = temp[j++]
+            indexes[p] = temp[j]
+            ++j
             ++count
         } else {
             indexes[p] = temp[i]
-            counts[temp[i++]] += count
+            counts[temp[i]] += count
+            ++i
         }
     }
 }

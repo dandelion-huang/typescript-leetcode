@@ -9,18 +9,26 @@ function merge(nums: number[], temp: number[], left: number, mid: number, right:
 
     while (i <= mid && j <= right) {
         if (nums[i] <= nums[j]) {
-            temp[p++] = nums[i++]
+            temp[p] = nums[i]
+            ++p
+            ++i
         } else {
-            temp[p++] = nums[j++]
+            temp[p] = nums[j]
+            ++p
+            ++j
         }
     }
 
     while (i <= mid) {
-        temp[p++] = nums[i++]
+        temp[p] = nums[i]
+        ++p
+        ++i
     }
 
     while (j <= right) {
-        temp[p++] = nums[j++]
+        temp[p] = nums[j]
+        ++p
+        ++j
     }
 
     for (let k = 0; k < p; ++k) {

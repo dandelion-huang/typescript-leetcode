@@ -18,21 +18,29 @@ function merge(
 
     while (i <= mid && j <= right) {
         if (nums[indexes[i]] <= nums[indexes[j]]) {
-            temp[p++] = indexes[i]
-            counts[indexes[i++]] += count
+            temp[p] = indexes[i]
+            counts[indexes[i]] += count
+            ++p
+            ++i
         } else {
-            temp[p++] = indexes[j++]
+            temp[p] = indexes[j]
+            ++p
+            ++j
             count++
         }
     }
 
     while (i <= mid) {
-        temp[p++] = indexes[i]
-        counts[indexes[i++]] += count
+        temp[p] = indexes[i]
+        counts[indexes[i]] += count
+        ++p
+        ++i
     }
 
     while (j <= right) {
-        temp[p++] = indexes[j++]
+        temp[p] = indexes[j]
+        ++p
+        ++j
     }
 
     for (let k = 0; k < p; k++) {

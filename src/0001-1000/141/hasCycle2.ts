@@ -2,7 +2,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 
 // <Iteration, Fast-slow Pointers>
 // Time: O(n)
-// Space: O(n)
+// Space: O(1)
 
 function hasCycle(head: ListNode | null): boolean {
     // edge cases

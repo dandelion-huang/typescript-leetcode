@@ -6,12 +6,8 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 
 function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
     // edge cases
-    if (!p && !q) {
-        return true
-    }
-
     if (!p || !q) {
-        return false
+        return p === q
     }
 
     // compare the val of the nodes

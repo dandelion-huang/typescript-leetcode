@@ -6,53 +6,34 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 
 function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
     // edge cases
-    if (!p && !q) {
-        return true
-    }
-
     if (!p || !q) {
-        return false
+        return p === q
     }
 
-    const queueP: TreeNode[] = [p]
-    const queueQ: TreeNode[] = [q]
+    const queue: Array<Array<TreeNode | null>> = [[p, q]]
 
     // 1. bfs
-    while (queueP.length && queueQ.length) {
-        const pNode = queueP.shift()!
-        const qNode = queueQ.shift()!
+    while (queue.length) {
+        const [nodeP, nodeQ] = queue.shift()!
 
         // compare the val of the nodes
-        if (pNode.val !== qNode.val) {
+        if (!nodeP && !nodeQ) {
+            continue
+        }
+
+        if (!nodeP || !nodeQ) {
             return false
         }
 
-        if ((pNode.left && !qNode.left) || (!pNode.left && qNode.left)) {
+        if (nodeP.val !== nodeQ.val) {
             return false
         }
 
-        if ((pNode.right && !qNode.right) || (!pNode.right && qNode.right)) {
-            return false
-        }
-
-        if (pNode.left) {
-            queueP.push(pNode.left)
-        }
-
-        if (pNode.right) {
-            queueP.push(pNode.right)
-        }
-
-        if (qNode.left) {
-            queueQ.push(qNode.left)
-        }
-
-        if (qNode.right) {
-            queueQ.push(qNode.right)
-        }
+        queue.push([nodeP.left, nodeQ.left])
+        queue.push([nodeP.right, nodeQ.right])
     }
 
-    return queueP.length === 0 && queueQ.length === 0
+    return true
 }
 
 export { isSameTree }

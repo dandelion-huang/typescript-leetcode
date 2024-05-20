@@ -12,7 +12,7 @@ function isSymmetric(root: TreeNode | null): boolean {
 
     // 1. bfs
     function check(left: TreeNode | null, right: TreeNode | null): boolean {
-        const queue: [TreeNode | null, TreeNode | null][] = [[left, right]]
+        const queue: Array<Array<TreeNode | null>> = [[left, right]]
 
         while (queue.length) {
             // compare if the left and right are of the same value

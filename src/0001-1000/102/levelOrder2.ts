@@ -15,7 +15,7 @@ function levelOrder(root: TreeNode | null): number[][] {
         }
 
         // 2. level-order traversal
-        let queue: (TreeNode | null)[] = [node]
+        let queue: Array<TreeNode | null> = [node]
 
         while (queue.length) {
             ans.push(queue.map((curLevelNode) => curLevelNode!.val))

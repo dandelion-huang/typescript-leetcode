@@ -10,7 +10,7 @@ function detectCycle(head: ListNode | null): ListNode | null {
         return null
     }
 
-    let [slow, fast]: [ListNode | null, ListNode | null] = [head, head]
+    let [slow, fast]: Array<ListNode | null> = [head, head]
 
     while (fast) {
         if (!fast.next) {

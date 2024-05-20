@@ -10,7 +10,7 @@ function maxDepth(root: TreeNode | null): number {
         return 0
     }
 
-    const queue: (TreeNode | null)[] = [root]
+    const queue: Array<TreeNode | null> = [root]
     let ans = 0
 
     // 1. bfs

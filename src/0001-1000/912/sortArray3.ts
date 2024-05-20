@@ -14,10 +14,16 @@ function merge(nums: number[], temp: number[], left: number, mid: number, right:
         if (i === mid + 1) {
             nums[p] = temp[j]
             ++j
-        } else if (j === right + 1) {
+            continue
+        }
+
+        if (j === right + 1) {
             nums[p] = temp[i]
             ++i
-        } else if (temp[i] > temp[j]) {
+            continue
+        }
+
+        if (temp[i] > temp[j]) {
             nums[p] = temp[j]
             ++j
         } else {

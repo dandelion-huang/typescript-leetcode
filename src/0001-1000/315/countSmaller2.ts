@@ -23,6 +23,10 @@ function merge(
         if (i === mid + 1) {
             indexes[p] = temp[j]
             ++j
+            // } else if (j === right + 1) {
+            //     indexes[p] = temp[i]
+            //     counts[temp[i]] += count
+            //     ++i
         } else if (nums[temp[i]] > nums[temp[j]]) {
             indexes[p] = temp[j]
             ++j

@@ -6,7 +6,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 
 function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     if (!l1 || !l2) {
-        return l1 || l2
+        return l1 ?? l2
     }
 
     const dummyHead = new ListNode(-1)
@@ -25,7 +25,7 @@ function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | nul
         tail = tail.next
     }
 
-    tail.next = ptr1 || ptr2
+    tail.next = ptr1 ?? ptr2
 
     return dummyHead.next
 }

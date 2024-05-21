@@ -1,6 +1,6 @@
+import { ListNode } from 'classes/SinglyLinkedListNode'
 import { addTwoNumbers as addTwoNumbersHelper } from '0001-1000/2/addTwoNumbers'
 import { reverseList } from '0001-1000/206/reverseList'
-import { ListNode } from 'classes/SinglyLinkedListNode'
 
 // <Recursion, Math>
 // Time: O(max(n, m))

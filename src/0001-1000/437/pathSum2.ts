@@ -9,7 +9,7 @@ function dfs(
     node: TreeNode | null,
     sum: number,
     targetSum: number,
-    prefixSum: Map<number, number>
+    prefixSum: Map<number, number>,
 ): number {
     // edge cases
     if (!node) {

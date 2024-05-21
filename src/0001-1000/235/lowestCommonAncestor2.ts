@@ -25,7 +25,7 @@ function getPath(node: TreeNode, target: TreeNode): TreeNode[] {
 function lowestCommonAncestor(
     root: TreeNode | null,
     p: TreeNode | null,
-    q: TreeNode | null
+    q: TreeNode | null,
 ): TreeNode | null {
     // edge cases
     if (!root) {

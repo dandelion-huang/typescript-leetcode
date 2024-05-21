@@ -10,7 +10,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 function lowestCommonAncestor(
     root: TreeNode | null,
     p: TreeNode | null,
-    q: TreeNode | null
+    q: TreeNode | null,
 ): TreeNode | null {
     // edge cases
     if (root === null || root === p || root === q) {

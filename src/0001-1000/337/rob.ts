@@ -15,7 +15,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 function dfs(
     node: TreeNode | null,
     robbed: Map<TreeNode | null, number>,
-    safe: Map<TreeNode | null, number>
+    safe: Map<TreeNode | null, number>,
 ): void {
     if (!node) {
         return
@@ -28,7 +28,7 @@ function dfs(
     safe.set(
         node,
         Math.max(robbed.get(node.left) ?? 0, safe.get(node.left) ?? 0) +
-            Math.max(robbed.get(node.right) ?? 0, safe.get(node.right) ?? 0)
+            Math.max(robbed.get(node.right) ?? 0, safe.get(node.right) ?? 0),
     )
 }
 

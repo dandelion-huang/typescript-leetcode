@@ -1,5 +1,5 @@
-import { serialize } from '0001-1000/297/serializeAndDeserialize'
 import { TreeNode } from 'classes/BinaryTreeNode'
+import { serialize } from '0001-1000/297/serializeAndDeserialize'
 
 // Notice that the root is the root of the BST
 
@@ -17,7 +17,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 function dfsDeserialize(
     dataList: string[],
     lower: number = -Infinity,
-    upper: number = Infinity
+    upper: number = Infinity,
 ): TreeNode | null {
     // edge cases
     if (dataList[0] === '#') {

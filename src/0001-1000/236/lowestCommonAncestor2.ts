@@ -7,7 +7,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 function lowestCommonAncestor(
     root: TreeNode | null,
     p: TreeNode | null,
-    q: TreeNode | null
+    q: TreeNode | null,
 ): TreeNode | null {
     // constraints: all Node.val are unique
     const parent = new Map<number, TreeNode>()

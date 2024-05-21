@@ -7,7 +7,7 @@
 function multiply(a: number[][], b: number[][]): number[][] {
     const res = [
         [0, 0],
-        [0, 0]
+        [0, 0],
     ]
 
     for (let i = 0; i < 2; ++i) {
@@ -22,7 +22,7 @@ function multiply(a: number[][], b: number[][]): number[][] {
 function power(a: number[][], n: number): number[][] {
     let res = [
         [1, 0],
-        [0, 1]
+        [0, 1],
     ]
 
     while (n > 0) {
@@ -42,7 +42,7 @@ function power(a: number[][], n: number): number[][] {
 function climbStairs(n: number): number {
     const m = [
         [1, 1],
-        [1, 0]
+        [1, 0],
     ]
 
     const ans = power(m, n)

@@ -1,5 +1,5 @@
-import { MinPriorityQueue } from '@datastructures-js/priority-queue' // Leetcode
 import { ListNode } from 'classes/SinglyLinkedListNode'
+import { MinPriorityQueue } from '@datastructures-js/priority-queue' // Leetcode
 
 // <Priority Queue>
 // Time: O(knlogk), k is the number of lists

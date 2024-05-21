@@ -10,7 +10,7 @@ function merge(
     counts: number[],
     left: number,
     mid: number,
-    right: number
+    right: number,
 ): void {
     let [i, j] = [left, mid + 1]
     let p = 0
@@ -54,7 +54,7 @@ function sort(
     temp: number[],
     counts: number[],
     left: number,
-    right: number
+    right: number,
 ): void {
     if (left >= right) {
         return

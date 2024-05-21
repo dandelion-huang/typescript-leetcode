@@ -10,7 +10,7 @@ class BinaryIndexedTree<T> {
     constructor(
         public size: number,
         readonly defaultValue: T,
-        readonly operation: (existing: T, applied: T) => T
+        readonly operation: (existing: T, applied: T) => T,
     ) {
         this.tree = new Array(size + 1).fill(defaultValue)
     }

@@ -1,5 +1,5 @@
-import { isSameTree } from '0001-1000/100/isSameTree'
 import { TreeNode } from 'classes/BinaryTreeNode'
+import { isSameTree } from '0001-1000/100/isSameTree'
 
 // <Recursion, DFS>
 // Time: O(nm)

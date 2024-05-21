@@ -8,7 +8,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 function dfs(
     node: TreeNode | null,
     countMap: Map<number, number>,
-    maxCount: { value: number }
+    maxCount: { value: number },
 ): number {
     // edge cases
     if (!node) {

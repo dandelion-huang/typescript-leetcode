@@ -66,6 +66,7 @@ Solving Leetcode problems with TypeScript.
 -   [713. Subarray Product Less Than K `Medium`](./src/0001-1000/713/numSubarrayProductLessThanK.ts)
 -   [725. Split Linked List in Parts `Medium`](./src/0001-1000/725/splitListToParts.ts)
 -   [814. Binary Tree Pruning `Medium`](./src/0001-1000/814/pruneTree.ts)
+-   [853. Car Fleet `Medium`](./src/0001-1000/853/carFleet.ts)
 -   [872. Leaf-Similar Trees `Easy`](./src/0001-1000/872/leafSimilar.ts)
 -   [901. Online Stock Span `Medium`](./src/0001-1000/901/StockSpanner.ts)
 -   [907. Sum of Subarray Minimums `Medium`](./src/0001-1000/907/sumSubarrayMins.ts)

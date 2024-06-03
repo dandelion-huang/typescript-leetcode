@@ -38,6 +38,7 @@ Solving Leetcode problems with TypeScript.
 -   [144. Binary Tree Preorder Traversal `Easy`](./src/0001-1000/144/preorderTraversal.ts)
 -   [145. Binary Tree Postorder Traversal `Easy`](./src/0001-1000/145/postorderTraversal.ts)
 -   [147. Insertion Sort List `Medium`](./src/0001-1000/147/insertionSortList.ts)
+-   [148. Sort List `Medium`](./src/0001-1000/148/sortList.ts)
 -   [153. Find Minimum in Rotated Sorted Array `Medium`](./src/0001-1000/153/findMin.ts)
 -   [154. Find Minimum in Rotated Sorted Array II `Hard`](./src/0001-1000/154/findMin.ts)
 -   [169. Majority Element `Easy`](./src/0001-1000/169/majorityElement.ts)

@@ -7,7 +7,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 function trimBST(root: TreeNode | null, low: number, high: number): TreeNode | null {
     // edge cases
     if (!root) {
-        return null
+        return root
     }
 
     if (root.val < low) {

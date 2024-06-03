@@ -7,7 +7,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 function removeLeafNodes(root: TreeNode | null, target: number): TreeNode | null {
     // edge cases
     if (!root) {
-        return null
+        return root
     }
 
     root.left = removeLeafNodes(root.left, target)

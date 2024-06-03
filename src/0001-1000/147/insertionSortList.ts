@@ -7,7 +7,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 function insertionSortList(head: ListNode | null): ListNode | null {
     // edge case
     if (!head) {
-        return null
+        return head
     }
 
     const dummyHead = new ListNode(-Infinity, head)

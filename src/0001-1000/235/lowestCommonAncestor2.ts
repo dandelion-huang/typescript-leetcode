@@ -29,7 +29,7 @@ function lowestCommonAncestor(
 ): TreeNode | null {
     // edge cases
     if (!root) {
-        return null
+        return root
     }
 
     const pathP = getPath(root, p!)

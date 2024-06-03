@@ -16,7 +16,7 @@ function trimBST(root: TreeNode | null, low: number, high: number): TreeNode | n
 
     // edge cases
     if (!root) {
-        return null
+        return root
     }
 
     let node: TreeNode = root

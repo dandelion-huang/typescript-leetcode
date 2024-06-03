@@ -7,7 +7,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 function pruneTree(root: TreeNode | null): TreeNode | null {
     // edge cases
     if (!root) {
-        return null
+        return root
     }
 
     root.left = pruneTree(root.left)

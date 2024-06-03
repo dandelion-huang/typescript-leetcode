@@ -10,9 +10,7 @@ function insertionSortList(head: ListNode | null): ListNode | null {
         return null
     }
 
-    const dummyHead = new ListNode(-Infinity)
-
-    dummyHead.next = head
+    const dummyHead = new ListNode(-Infinity, head)
 
     let lastSorted = head
     let cur = head.next

@@ -5,9 +5,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Space: O(1)
 
 function swapPairs(head: ListNode | null): ListNode | null {
-    const dummyHead = new ListNode(-1)
-
-    dummyHead.next = head
+    const dummyHead = new ListNode(-1, head)
 
     let prev = dummyHead
 

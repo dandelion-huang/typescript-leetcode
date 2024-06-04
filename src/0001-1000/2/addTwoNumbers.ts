@@ -5,7 +5,8 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Space: O(1)
 
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
-    let [head, tail]: Array<ListNode | null> = [null, null]
+    let head: ListNode | null = null
+    let tail: ListNode | null = null
     let carry = 0
 
     while (l1 || l2) {

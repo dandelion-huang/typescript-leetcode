@@ -10,7 +10,8 @@ function hasCycle(head: ListNode | null): boolean {
         return false
     }
 
-    let [slow, fast]: Array<ListNode | null> = [head, head.next]
+    let slow: ListNode | null = head
+    let fast: ListNode | null = head.next
 
     while (slow !== fast) {
         if (!fast?.next) {

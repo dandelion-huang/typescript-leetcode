@@ -13,7 +13,8 @@ function maxSubarrayLength(nums: number[], k: number): number {
     let ans = 0
 
     // 1. sliding window
-    let [start, end] = [0, 0]
+    let start = 0
+    let end = 0
 
     // 2. memoize the frequency of each number
     const freq = new Map<number, number>()

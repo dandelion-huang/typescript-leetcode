@@ -4,7 +4,8 @@
 
 // 1. merge sort
 function merge(nums: number[], temp: number[], left: number, mid: number, right: number): void {
-    let [i, j] = [left, mid + 1]
+    let i = left
+    let j = mid + 1
     let p = 0
 
     while (i <= mid && j <= right) {

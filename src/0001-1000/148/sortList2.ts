@@ -22,7 +22,8 @@ function sortList(head: ListNode | null): ListNode | null {
     const dummyHead = new ListNode(-Infinity, head)
 
     for (let subLength = 1; subLength < length; subLength <<= 1) {
-        let [prev, cur]: Array<ListNode | null> = [dummyHead, dummyHead.next]
+        let prev: ListNode | null = dummyHead
+        let cur: ListNode | null = dummyHead.next
 
         while (cur) {
             const head1 = cur

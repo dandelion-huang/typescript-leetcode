@@ -12,7 +12,8 @@ function merge(
     mid: number,
     right: number,
 ): void {
-    let [i, j] = [left, mid + 1]
+    let i = left
+    let j = mid + 1
     let p = 0
     let count = 0
 

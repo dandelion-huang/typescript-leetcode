@@ -16,7 +16,8 @@ function merge(
         temp[i] = indexes[i]
     }
 
-    let [i, j] = [left, mid + 1]
+    let i = left
+    let j = mid + 1
     let count = 0
 
     for (let p = left; p <= right; ++p) {

@@ -12,7 +12,8 @@ function mergeTwoLists(l1: ListNode | null, l2: ListNode | null): ListNode | nul
 
     const dummyHead = new ListNode(-1)
     let tail = dummyHead
-    let [ptr1, ptr2]: Array<ListNode | null> = [l1, l2]
+    let ptr1: ListNode | null = l1
+    let ptr2: ListNode | null = l2
 
     while (ptr1 && ptr2) {
         if (ptr1.val < ptr2.val) {

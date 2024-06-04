@@ -11,7 +11,8 @@ function checkValidString(s: string): boolean {
     // notice that the number of the unpaired can not be negative
     // so the max can not be negative and the min should be at least 0
 
-    let [maxCount, minCount] = [0, 0]
+    let maxCount = 0
+    let minCount = 0
 
     for (const char of s) {
         if (char === '(') {

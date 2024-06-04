@@ -8,7 +8,8 @@ function findMin(nums: number[]): number {
         return NaN
     }
 
-    let [left, right] = [0, nums.length - 1]
+    let left = 0
+    let right = nums.length - 1
     let mid = 0
 
     while (left <= right) {

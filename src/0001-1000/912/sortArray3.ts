@@ -8,7 +8,8 @@ function merge(nums: number[], temp: number[], left: number, mid: number, right:
         temp[i] = nums[i]
     }
 
-    let [i, j] = [left, mid + 1]
+    let i = left
+    let j = mid + 1
 
     for (let p = left; p <= right; ++p) {
         if (i === mid + 1) {

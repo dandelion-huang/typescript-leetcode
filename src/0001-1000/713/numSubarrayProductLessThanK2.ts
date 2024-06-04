@@ -14,7 +14,8 @@ function numSubarrayProductLessThanK(nums: number[], k: number): number {
     let prod = nums[0]
 
     // 1. sliding window
-    let [start, end] = [0, 1]
+    let start = 0
+    let end = 1
 
     // 2. traverse the array and update the answer
     while (end < n) {

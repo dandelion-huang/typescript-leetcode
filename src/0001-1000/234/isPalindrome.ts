@@ -12,7 +12,8 @@ function isPalindrome(head: ListNode | null): boolean {
     }
 
     // 1. fast-slow pointers
-    let [slow, fast]: Array<ListNode | null> = [head, head]
+    let slow: ListNode | null = head
+    let fast: ListNode | null = head
 
     // 2. traverse the list to find the middle node
     while (fast?.next) {

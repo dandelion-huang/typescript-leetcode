@@ -10,7 +10,7 @@ function deepestLeavesSum(root: TreeNode | null): number {
         return 0
     }
 
-    const queue: Array<TreeNode | null> = [root]
+    const queue: TreeNode[] = [root]
     let sum = 0
 
     // 1. bfs

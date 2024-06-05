@@ -3,7 +3,7 @@
 // Space: O(n)
 
 function sortCars(position: number[], speed: number[]) {
-    const cars: Array<[number, number]> = [] // car: <pos, speed>
+    const cars: [number, number][] = [] // car: <pos, speed>
 
     for (let i = 0; i < position.length; ++i) {
         cars.push([position[i], speed[i]])

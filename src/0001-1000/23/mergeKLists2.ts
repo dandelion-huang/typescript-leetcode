@@ -5,7 +5,7 @@ import { MinPriorityQueue } from '@datastructures-js/priority-queue' // Leetcode
 // Time: O(knlogk), k is the number of lists
 // Space: O(k)
 
-function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
+function mergeKLists(lists: (ListNode | null)[]): ListNode | null {
     const pq = new MinPriorityQueue({ priority: (node: ListNode) => node.val })
 
     for (const head of lists) {

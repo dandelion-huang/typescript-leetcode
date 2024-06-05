@@ -7,7 +7,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // 1. bfs
 function bfs(node: TreeNode, val: number, depth: number): void {
     // 2. level-order traversal
-    let queue: Array<TreeNode | null> = [node]
+    let queue: (TreeNode | null)[] = [node]
 
     // skip the root
     for (let i = 1; i < depth - 1; ++i) {

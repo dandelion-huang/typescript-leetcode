@@ -2,9 +2,9 @@
 // Time: O(n^2)
 // Space: O(k^2)
 
-function prefixSum(grid: string[][]) {
+function prefixSum(grid: [string, string][]) {
     const n = grid.length
-    const preSum = new Array(n + 1).fill(0).map(() => new Array(n + 1).fill(0))
+    const preSum: number[][] = new Array(n + 1).fill(0).map(() => new Array(n + 1).fill(0))
 
     for (let i = 0; i < n; ++i) {
         for (let j = 0; j < n; ++j) {
@@ -27,7 +27,7 @@ function hasImplicitSquare(preSum: number[][], x: number, y: number, k: number):
     return bCount <= 1 || bCount >= k ** 2 - 1
 }
 
-function canMakeSquare(grid: string[][]): boolean {
+function canMakeSquare(grid: [string, string][]): boolean {
     const n = grid.length
     const k = n - 1
     const preSum = prefixSum(grid)

@@ -3,7 +3,7 @@
 // Space: O(n)
 
 class StockSpanner {
-    stack: number[][]
+    stack: [number, number][]
     index: number
     constructor() {
         this.stack = [[-1, Infinity]] // [index, price]

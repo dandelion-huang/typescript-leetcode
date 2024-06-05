@@ -4,8 +4,8 @@
 // Time: O(logn)
 // Space: O(1)
 
-function multiply(a: number[][], b: number[][]): number[][] {
-    const res = [
+function multiply(a: [number, number][], b: [number, number][]): [number, number][] {
+    const res: [number, number][] = [
         [0, 0],
         [0, 0],
     ]
@@ -19,8 +19,8 @@ function multiply(a: number[][], b: number[][]): number[][] {
     return res
 }
 
-function power(a: number[][], n: number): number[][] {
-    let res = [
+function power(a: [number, number][], n: number): [number, number][] {
+    let res: [number, number][] = [
         [1, 0],
         [0, 1],
     ]
@@ -40,7 +40,7 @@ function power(a: number[][], n: number): number[][] {
 }
 
 function climbStairs(n: number): number {
-    const m = [
+    const m: [number, number][] = [
         [1, 1],
         [1, 0],
     ]

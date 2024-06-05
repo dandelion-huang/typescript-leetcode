@@ -3,7 +3,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(n)
 // Space: O(1), notice that return value is not included in space complexity
 
-function splitListToParts(head: ListNode | null, k: number): Array<ListNode | null> {
+function splitListToParts(head: ListNode | null, k: number): (ListNode | null)[] {
     // 1. traverse the list to get the size n
     let n = 0
     let cur = head
@@ -20,7 +20,7 @@ function splitListToParts(head: ListNode | null, k: number): Array<ListNode | nu
     const r = n % k
 
     // 4. initailize a new Array(k) as the answer container and solve the problem
-    const ans: Array<ListNode | null> = []
+    const ans: (ListNode | null)[] = []
     cur = head
 
     for (let i = 0; i < k; ++i) {

@@ -2,7 +2,7 @@
 // Time: O(n)
 // Space: O(n)
 
-function platesBetweenCandles(s: string, queries: number[][]): number[] {
+function platesBetweenCandles(s: string, queries: [number, number][]): number[] {
     const n = s.length
 
     let platesLeft = 0

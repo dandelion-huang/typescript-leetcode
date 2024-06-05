@@ -7,7 +7,7 @@ function nextLargerNodes(head: ListNode | null): number[] {
     }
 
     const ans: number[] = []
-    const stack: number[][] = []
+    const stack: [number, number][] = []
     let index = -1
     let cur: ListNode | null = head
 

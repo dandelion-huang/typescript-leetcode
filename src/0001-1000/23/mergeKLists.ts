@@ -6,7 +6,7 @@ import { mergeTwoLists } from '0001-1000/21/mergeTwoLists2'
 // Space: O(logk)
 
 // 1. divide and conquer
-function merge(lists: Array<ListNode | null>, left: number, right: number): ListNode | null {
+function merge(lists: (ListNode | null)[], left: number, right: number): ListNode | null {
     if (left > right) {
         return null
     }
@@ -20,7 +20,7 @@ function merge(lists: Array<ListNode | null>, left: number, right: number): List
     return mergeTwoLists(merge(lists, left, mid), merge(lists, mid + 1, right))
 }
 
-function mergeKLists(lists: Array<ListNode | null>): ListNode | null {
+function mergeKLists(lists: (ListNode | null)[]): ListNode | null {
     return merge(lists, 0, lists.length - 1)
 }
 

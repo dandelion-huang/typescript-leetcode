@@ -10,7 +10,7 @@ function isSameTree(p: TreeNode | null, q: TreeNode | null): boolean {
         return p === q
     }
 
-    const queue: Array<Array<TreeNode | null>> = [[p, q]]
+    const queue: [TreeNode | null, TreeNode | null][] = [[p, q]]
 
     // 1. bfs
     while (queue.length) {

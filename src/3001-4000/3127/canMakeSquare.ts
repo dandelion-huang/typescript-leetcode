@@ -3,7 +3,7 @@
 // Space: O(1)
 
 // (x, y) is the top-left corner of the square
-function hasImplicitSquare(grid: string[][], x: number, y: number): boolean {
+function hasImplicitSquare(grid: [string, string][], x: number, y: number): boolean {
     let bCount = 0
 
     if (grid[x][y] === 'B') ++bCount
@@ -14,7 +14,7 @@ function hasImplicitSquare(grid: string[][], x: number, y: number): boolean {
     return bCount !== 2
 }
 
-function canMakeSquare(grid: string[][]): boolean {
+function canMakeSquare(grid: [string, string][]): boolean {
     return (
         hasImplicitSquare(grid, 0, 0) ||
         hasImplicitSquare(grid, 1, 0) ||

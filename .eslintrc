@@ -19,6 +19,16 @@
         "project": "./tsconfig.json",
     },
     "rules": {
+        "@typescript-eslint/ban-types": [
+            "error",
+            {
+                "types": {
+                    "Array": {
+                        "message": "Please use '[]' for array types for simplicity.",
+                    },
+                },
+            },
+        ],
         "@typescript-eslint/indent": "off",
         "@typescript-eslint/lines-between-class-members": "off",
         "@typescript-eslint/no-extra-semi": "off",

@@ -1,7 +1,7 @@
 import { swap } from 'utils/swapArrayElements'
 
 // <Design, Map, Randomized>
-//       create / insert / remove / getRandom
+//       initialize / insert / remove / getRandom
 // Time: O(1) / O(1) / O(1) / O(1)
 // Space: O(1) / O(1) / O(1) / O(1)
 

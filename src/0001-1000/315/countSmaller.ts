@@ -27,7 +27,7 @@ function merge(
             temp[p] = indexes[j]
             ++p
             ++j
-            count++
+            ++count
         }
     }
 

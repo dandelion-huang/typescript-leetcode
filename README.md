@@ -59,6 +59,7 @@ Solving Leetcode problems with TypeScript.
 -   [463. Island Perimeter `Easy`](./src/0001-1000/463/islandPerimeter.ts)
 -   [496. Next Greater Element I `Easy`](./src/0001-1000/496/nextGreaterElement.ts)
 -   [508. Most Frequent Subtree Sum `Medium`](./src/0001-1000/508/findFrequentTreeSum.ts)
+-   [530. Minimum Absolute Difference in BST `Easy`](./src/0001-1000/530/getMinimumDifference.ts)
 -   [543. Diameter of Binary Tree `Easy`](./src/0001-1000/543/diameterOfBinaryTree.ts)
 -   [572. Subtree of Another Tree `Easy`](./src/0001-1000/572/isSubtree.ts)
 -   [589. N-ary Tree Preorder Traversal `Easy`](./src/0001-1000/589/preorder.ts)

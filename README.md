@@ -69,6 +69,7 @@ Solving Leetcode problems with TypeScript.
 -   [678. Valid Parenthesis String `Medium`](./src/0001-1000/678/checkValidString.ts)
 -   [687. Longest Univalue Path `Medium`](./src/0001-1000/687/longestUnivaluePath.ts)
 -   [700. Search in a Binary Search Tree `Easy`](./src/0001-1000/700/searchBST.ts)
+-   [701. Insert into a Binary Search Tree `Medium`](./src/0001-1000/701/insertIntoBST.ts)
 -   [707. Design Linked List `Medium`](./src/0001-1000/707/MyLinkedList.ts)
 -   [713. Subarray Product Less Than K `Medium`](./src/0001-1000/713/numSubarrayProductLessThanK.ts)
 -   [725. Split Linked List in Parts `Medium`](./src/0001-1000/725/splitListToParts.ts)

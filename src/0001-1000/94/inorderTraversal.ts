@@ -1,25 +1,25 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Recursion>
+// <Recursion, DFS>
 // Time: O(n)
 // Space: O(n)
+
+// 1. dfs
+function dfs(node: TreeNode | null, arr: number[]): void {
+    if (!node) {
+        return
+    }
+
+    // 2. inorder traversal
+    dfs(node.left, arr)
+    arr.push(node.val)
+    dfs(node.right, arr)
+}
 
 function inorderTraversal(root: TreeNode | null): number[] {
     const ans: number[] = []
 
-    // 1. dfs
-    function dfs(node: TreeNode | null): void {
-        if (!node) {
-            return
-        }
-
-        // 2. inorder traversal
-        dfs(node.left)
-        ans.push(node.val)
-        dfs(node.right)
-    }
-
-    dfs(root)
+    dfs(root, ans)
 
     return ans
 }

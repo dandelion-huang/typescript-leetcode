@@ -1,6 +1,6 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Stack>
+// <Iteration, BFS, Stack>
 // Time: O(n)
 // Space: O(n)
 

@@ -23,6 +23,7 @@ Solving Leetcode problems with TypeScript.
 -   [70. Climbing Stairs `Easy`](./src/0001-1000/70/climbStairs.ts)
 -   [94. Binary Tree Inorder Traversal `Easy`](./src/0001-1000/94/inorderTraversal.ts)
 -   [98. Validate Binary Search Tree `Medium`](./src/0001-1000/98/isValidBST.ts)
+-   [99. Recover Binary Search Tree `Medium`](./src/0001-1000/99/recoverTree.ts)
 -   [100. Same Tree `Easy`](./src/0001-1000/100/isSameTree.ts)
 -   [101. Symmetric Tree `Easy`](./src/0001-1000/101/isSymmetric.ts)
 -   [102. Binary Tree Level Order Traversal `Easy`](./src/0001-1000/102/levelOrder.ts)

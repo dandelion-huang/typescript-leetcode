@@ -4,6 +4,21 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n1 + n2)
 // Space: O(n1 + n2)
 
+// 1. dfs
+function dfs(node: TreeNode | null, leaves: TreeNode[]): void {
+    if (!node) {
+        return
+    }
+
+    // 2. pre-order traversal
+    if (node.left === null && node.right === null) {
+        leaves.push(node)
+    }
+
+    dfs(node.left, leaves)
+    dfs(node.right, leaves)
+}
+
 function getLeaves(root: TreeNode | null): TreeNode[] {
     // edge cases
     if (!root) {
@@ -12,22 +27,7 @@ function getLeaves(root: TreeNode | null): TreeNode[] {
 
     const leaves: TreeNode[] = []
 
-    // 1. dfs
-    function dfs(node: TreeNode | null): void {
-        if (!node) {
-            return
-        }
-
-        // 2. pre-order traversal
-        if (node.left === null && node.right === null) {
-            leaves.push(node)
-        }
-
-        dfs(node.left)
-        dfs(node.right)
-    }
-
-    dfs(root)
+    dfs(root, leaves)
 
     return leaves
 }

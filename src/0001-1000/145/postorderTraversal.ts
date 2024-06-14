@@ -4,22 +4,22 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+// 1. dfs
+function dfs(node: TreeNode | null, ans: number[]): void {
+    if (!node) {
+        return
+    }
+
+    // 2. postorder traversal
+    dfs(node.left, ans)
+    dfs(node.right, ans)
+    ans.push(node.val)
+}
+
 function postorderTraversal(root: TreeNode | null): number[] {
     const ans: number[] = []
 
-    // 1. dfs
-    function dfs(node: TreeNode | null): void {
-        if (!node) {
-            return
-        }
-
-        // 2. postorder traversal
-        dfs(node.left)
-        dfs(node.right)
-        ans.push(node.val)
-    }
-
-    dfs(root)
+    dfs(root, ans)
 
     return ans
 }

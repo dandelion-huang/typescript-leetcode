@@ -4,24 +4,24 @@ import { Node } from 'classes/N-aryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+// 1. dfs
+function dfs(node: Node | null, ans: number[]): void {
+    if (!node) {
+        return
+    }
+
+    // 2. postorder traversal
+    for (const child of node.children) {
+        dfs(child, ans)
+    }
+
+    ans.push(node.val)
+}
+
 function postorder(root: Node | null): number[] {
     const ans: number[] = []
 
-    // 1. dfs
-    function dfs(node: Node | null): void {
-        if (!node) {
-            return
-        }
-
-        // 2. postorder traversal
-        for (const child of node.children) {
-            dfs(child)
-        }
-
-        ans.push(node.val)
-    }
-
-    dfs(root)
+    dfs(root, ans)
 
     return ans
 }

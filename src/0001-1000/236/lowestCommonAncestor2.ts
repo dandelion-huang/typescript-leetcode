@@ -4,6 +4,24 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+// 1. dfs
+function dfs(node: TreeNode | null, parent: Map<number, TreeNode>): void {
+    // edge cases
+    if (!node) {
+        return
+    }
+
+    if (node.left) {
+        parent.set(node.left.val, node)
+        dfs(node.left, parent)
+    }
+
+    if (node.right) {
+        parent.set(node.right.val, node)
+        dfs(node.right, parent)
+    }
+}
+
 function lowestCommonAncestor(
     root: TreeNode | null,
     p: TreeNode | null,
@@ -13,25 +31,7 @@ function lowestCommonAncestor(
     const parent = new Map<number, TreeNode>()
     const visited = new Map<number, boolean>()
 
-    // 1. dfs
-    function dfs(node: TreeNode | null): void {
-        // edge cases
-        if (!node) {
-            return
-        }
-
-        if (node.left) {
-            parent.set(node.left.val, node)
-            dfs(node.left)
-        }
-
-        if (node.right) {
-            parent.set(node.right.val, node)
-            dfs(node.right)
-        }
-    }
-
-    dfs(root)
+    dfs(root, parent)
 
     // find the lowest common ancestor
     while (p) {

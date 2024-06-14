@@ -1,6 +1,6 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-function helper(
+function updateHelper(
     root: TreeNode | null,
     prev: TreeNode | null,
     p: TreeNode | null,
@@ -20,4 +20,4 @@ function helper(
     return [root, prev, p, q]
 }
 
-export { helper }
+export { updateHelper }

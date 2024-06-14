@@ -1,6 +1,6 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 import { swap } from 'utils/swapBinaryTreeNodes'
-import { helper } from './utils'
+import { updateHelper } from './utils'
 
 // <Iteration, DFS, Stack>
 // Time: O(n)
@@ -22,7 +22,7 @@ function recoverTree(root: TreeNode | null): void {
         }
 
         root = stack.pop()!
-        ;[root, prev, p, q] = helper(root, prev, p, q)
+        ;[root, prev, p, q] = updateHelper(root, prev, p, q)
     }
 
     swap(p!, q!) // constraints: p and q will exist in the BST

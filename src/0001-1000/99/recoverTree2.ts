@@ -1,6 +1,6 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 import { swap } from 'utils/swapBinaryTreeNodes'
-import { helper } from './utils'
+import { updateHelper } from './utils'
 
 // <Morris Traversal> (Reference: Leetcode 94)
 // Time: O(n)
@@ -28,11 +28,11 @@ function recoverTree(root: TreeNode | null): void {
                 predecessor.right = root
                 root = root.left
             } else {
-                ;[root, prev, p, q] = helper(root, prev, p, q)
+                ;[root, prev, p, q] = updateHelper(root, prev, p, q)
                 predecessor.right = null
             }
         } else {
-            ;[root, prev, p, q] = helper(root, prev, p, q)
+            ;[root, prev, p, q] = updateHelper(root, prev, p, q)
         }
     }
 

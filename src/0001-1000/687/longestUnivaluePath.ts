@@ -6,16 +6,18 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+type Helper = { longestPath: number }
+
 // 1. dfs
-function dfs(node: TreeNode | null, longestPath: { value: number }, prevVal?: number): number {
+function dfs(node: TreeNode | null, helper: Helper, prevVal?: number): number {
     if (!node) {
         return 0
     }
 
-    const leftLength = dfs(node.left, longestPath, node.val)
-    const rightLength = dfs(node.right, longestPath, node.val)
+    const leftLength = dfs(node.left, helper, node.val)
+    const rightLength = dfs(node.right, helper, node.val)
 
-    longestPath.value = Math.max(longestPath.value, leftLength + rightLength)
+    helper.longestPath = Math.max(helper.longestPath, leftLength + rightLength)
 
     if (node.val !== prevVal) {
         return 0
@@ -25,11 +27,11 @@ function dfs(node: TreeNode | null, longestPath: { value: number }, prevVal?: nu
 }
 
 function longestUnivaluePath(root: TreeNode | null): number {
-    const longestPath = { value: 0 }
+    const helper = { longestPath: 0 }
 
-    dfs(root, longestPath)
+    dfs(root, helper)
 
-    return longestPath.value
+    return helper.longestPath
 }
 
 export { longestUnivaluePath }

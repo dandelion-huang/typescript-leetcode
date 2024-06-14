@@ -4,6 +4,8 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+type Helper = { smallestStr: string }
+
 function numToChar(num: number): string {
     if (num < 0 || num > 25) {
         throw new Error('invalid number')
@@ -12,39 +14,39 @@ function numToChar(num: number): string {
     return String.fromCharCode(97 + num) // Unicode of 'a': 97
 }
 
-function smallestFromLeaf(root: TreeNode | null): string {
-    let smallestStr = ''
-
-    // 1. dfs
-    function dfs(node: TreeNode | null, curStr: string = ''): void {
-        // edge cases
-        if (!node) {
-            return
-        }
-
-        // 2. pre-order traversal
-        curStr = numToChar(node.val) + curStr
-
-        if (!node.left && !node.right) {
-            if (smallestStr === '' || smallestStr > curStr) {
-                smallestStr = curStr
-            }
-
-            return
-        }
-
-        if (node.left) {
-            dfs(node.left, curStr)
-        }
-
-        if (node.right) {
-            dfs(node.right, curStr)
-        }
+// 1. dfs
+function dfs(node: TreeNode | null, helper: Helper, curStr: string = ''): void {
+    // edge cases
+    if (!node) {
+        return
     }
 
-    dfs(root)
+    // 2. pre-order traversal
+    curStr = numToChar(node.val) + curStr
 
-    return smallestStr
+    if (!node.left && !node.right) {
+        if (helper.smallestStr === '' || helper.smallestStr > curStr) {
+            helper.smallestStr = curStr
+        }
+
+        return
+    }
+
+    if (node.left) {
+        dfs(node.left, helper, curStr)
+    }
+
+    if (node.right) {
+        dfs(node.right, helper, curStr)
+    }
+}
+
+function smallestFromLeaf(root: TreeNode | null): string {
+    const helper: Helper = { smallestStr: '' }
+
+    dfs(root, helper)
+
+    return helper.smallestStr
 }
 
 export { smallestFromLeaf }

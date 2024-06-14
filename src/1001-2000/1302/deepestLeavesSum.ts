@@ -4,32 +4,33 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-function deepestLeavesSum(root: TreeNode | null): number {
-    let sum = 0
-    let maxDepth = -1
+type Helper = { maxDepth: number; sum: number }
 
-    // 1. dfs
-    function dfs(node: TreeNode | null, depth: number = 0): void {
-        // edge cases
-        if (!node) {
-            return
-        }
-
-        // 2. pre-order traversal
-        if (depth > maxDepth) {
-            maxDepth = depth
-            sum = node.val
-        } else if (depth === maxDepth) {
-            sum += node.val
-        }
-
-        dfs(node.left, depth + 1)
-        dfs(node.right, depth + 1)
+// 1. dfs
+function dfs(node: TreeNode | null, helper: Helper, depth: number = 0): void {
+    // edge cases
+    if (!node) {
+        return
     }
 
-    dfs(root)
+    // 2. pre-order traversal
+    if (depth > helper.maxDepth) {
+        helper.maxDepth = depth
+        helper.sum = node.val
+    } else if (depth === helper.maxDepth) {
+        helper.sum += node.val
+    }
 
-    return sum
+    dfs(node.left, helper, depth + 1)
+    dfs(node.right, helper, depth + 1)
+}
+
+function deepestLeavesSum(root: TreeNode | null): number {
+    const helper: Helper = { maxDepth: -1, sum: 0 }
+
+    dfs(root, helper)
+
+    return helper.sum
 }
 
 export { deepestLeavesSum }

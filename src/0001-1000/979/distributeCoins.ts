@@ -4,24 +4,26 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+type Helper = { move: number }
+
 // 1. dfs
-function dfs(node: TreeNode | null, move: { value: number }): number {
+function dfs(node: TreeNode | null, helper: Helper): number {
     if (!node) {
         return 0
     }
 
-    node.val += dfs(node.left, move) + dfs(node.right, move)
-    move.value += Math.abs(node.val - 1)
+    node.val += dfs(node.left, helper) + dfs(node.right, helper)
+    helper.move += Math.abs(node.val - 1)
 
     return node.val - 1 // 1 for the coin for the noce
 }
 
 function distributeCoins(root: TreeNode | null): number {
-    const move = { value: 0 }
+    const helper = { move: 0 }
 
-    dfs(root, move)
+    dfs(root, helper)
 
-    return move.value
+    return helper.move
 }
 
 export { distributeCoins }

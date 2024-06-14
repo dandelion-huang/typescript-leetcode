@@ -4,26 +4,28 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+type Helper = { maxDiameter: number }
+
 // 1. dfs
-function dfs(node: TreeNode | null, maxDiameter: { value: number }): number {
+function dfs(node: TreeNode | null, helper: Helper): number {
     if (!node) {
         return 0
     }
 
-    const leftLength = dfs(node.left, maxDiameter)
-    const rightLength = dfs(node.right, maxDiameter)
+    const leftLength = dfs(node.left, helper)
+    const rightLength = dfs(node.right, helper)
 
-    maxDiameter.value = Math.max(maxDiameter.value, leftLength + rightLength)
+    helper.maxDiameter = Math.max(helper.maxDiameter, leftLength + rightLength)
 
     return Math.max(leftLength, rightLength) + 1
 }
 
 function diameterOfBinaryTree(root: TreeNode | null): number {
-    const maxDiameter = { value: 0 }
+    const helper = { maxDiameter: 0 }
 
-    dfs(root, maxDiameter)
+    dfs(root, helper)
 
-    return maxDiameter.value
+    return helper.maxDiameter
 }
 
 export { diameterOfBinaryTree }

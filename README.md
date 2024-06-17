@@ -61,6 +61,7 @@ Solving Leetcode problems with TypeScript.
 -   [445. Add Two Numbers II `Medium`](./src/0001-1000/445/addTwoNumbers.ts)
 -   [463. Island Perimeter `Easy`](./src/0001-1000/463/islandPerimeter.ts)
 -   [496. Next Greater Element I `Easy`](./src/0001-1000/496/nextGreaterElement.ts)
+-   [501. Find Mode in Binary Search Tree `Easy`](./src/0001-1000/501/findMode.ts)
 -   [508. Most Frequent Subtree Sum `Medium`](./src/0001-1000/508/findFrequentTreeSum.ts)
 -   [530. Minimum Absolute Difference in BST `Easy`](./src/0001-1000/530/getMinimumDifference.ts)
 -   [543. Diameter of Binary Tree `Easy`](./src/0001-1000/543/diameterOfBinaryTree.ts)

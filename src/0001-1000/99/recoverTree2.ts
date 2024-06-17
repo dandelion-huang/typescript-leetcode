@@ -15,7 +15,6 @@ function recoverTree(root: TreeNode | null): void {
     let p: TreeNode | null = null
     let q: TreeNode | null = null
 
-    // iteration
     while (root) {
         if (root.left) {
             predecessor = root.left
@@ -28,11 +27,13 @@ function recoverTree(root: TreeNode | null): void {
                 predecessor.right = root
                 root = root.left
             } else {
-                ;[root, prev, p, q] = updateHelper(root, prev, p, q)
+                ;[prev, p, q] = updateHelper(root, prev, p, q)
                 predecessor.right = null
+                root = root.right
             }
         } else {
-            ;[root, prev, p, q] = updateHelper(root, prev, p, q)
+            ;[prev, p, q] = updateHelper(root, prev, p, q)
+            root = root.right
         }
     }
 

@@ -5,7 +5,7 @@ function updateHelper(
     prev: TreeNode | null,
     p: TreeNode | null,
     q: TreeNode | null,
-): [TreeNode | null, TreeNode | null, TreeNode | null, TreeNode | null] {
+): [TreeNode | null, TreeNode | null, TreeNode | null] {
     if (prev && root!.val < prev.val) {
         q = root
 
@@ -15,9 +15,8 @@ function updateHelper(
     }
 
     prev = root
-    root = root!.right
 
-    return [root, prev, p, q]
+    return [prev, p, q]
 }
 
 export { updateHelper }

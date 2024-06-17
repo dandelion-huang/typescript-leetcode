@@ -22,7 +22,8 @@ function recoverTree(root: TreeNode | null): void {
         }
 
         root = stack.pop()!
-        ;[root, prev, p, q] = updateHelper(root, prev, p, q)
+        ;[prev, p, q] = updateHelper(root, prev, p, q)
+        root = root.right
     }
 
     swap(p!, q!) // constraints: p and q will exist in the BST

@@ -59,6 +59,7 @@ Solving Leetcode problems with TypeScript.
 -   [449. Serialize and Deserialize BST `Medium`](./src/0001-1000/449/serializeAndDeserialize.ts)
 -   [437. Path Sum III `Medium`](./src/0001-1000/437/pathSum.ts)
 -   [445. Add Two Numbers II `Medium`](./src/0001-1000/445/addTwoNumbers.ts)
+-   [450. Delete Node in a BST `Medium`](./src/0001-1000/450/deleteNode.ts)
 -   [463. Island Perimeter `Easy`](./src/0001-1000/463/islandPerimeter.ts)
 -   [496. Next Greater Element I `Easy`](./src/0001-1000/496/nextGreaterElement.ts)
 -   [501. Find Mode in Binary Search Tree `Easy`](./src/0001-1000/501/findMode.ts)

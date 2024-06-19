@@ -37,6 +37,7 @@ Solving Leetcode problems with TypeScript.
 -   [124. Binary Tree Maximum Path Sum `Hard`](./src/0001-1000/124/maxPathSum.ts)
 -   [129. Sum Root to Leaf Numbers `Medium`](./src/0001-1000/129/sumNumbers.ts)
 -   [133. Clone Graph `Medium`](./src/0001-1000/133/cloneGraph.ts)
+-   [138. Copy List with Random Pointer `Medium`](./src/0001-1000/138/copyRandomList.ts)
 -   [141. Linked List Cycle `Easy`](./src/0001-1000/141/hasCycle.ts)
 -   [142. Linked List Cycle II `Medium`](./src/0001-1000/142/detectCycle.ts)
 -   [144. Binary Tree Preorder Traversal `Easy`](./src/0001-1000/144/preorderTraversal.ts)

@@ -2,7 +2,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 
 // Notice that the path is the relationship between two nodes
 
-// <DFS>
+// <Recursion, DFS>
 // Time: O(n)
 // Space: O(n)
 

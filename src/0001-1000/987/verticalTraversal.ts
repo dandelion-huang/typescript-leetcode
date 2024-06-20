@@ -1,6 +1,6 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <DFS>
+// <Recursion, DFS>
 // Time: O(nlogn) (Sorting)
 // Space: O(n)
 

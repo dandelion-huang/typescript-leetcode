@@ -1,6 +1,6 @@
 import { Node } from 'classes/N-aryTreeNode'
 
-// <Recursion>
+// <Recursion, DFS>
 // Time: O(n)
 // Space: O(n)
 

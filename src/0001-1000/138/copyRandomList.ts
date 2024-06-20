@@ -1,6 +1,6 @@
 import { ListNode as _Node } from 'classes/SinglyLinkedListNodeWithRandomPointer'
 
-// <Recursion, HashMap>
+// <Recursion, HashTable>
 // Time: O(n)
 // Space: O(n)
 

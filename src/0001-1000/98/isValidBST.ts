@@ -4,7 +4,8 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-function validateHelper(root: TreeNode | null, min: number, max: number): boolean {
+// 1. dfs
+function dfs(root: TreeNode | null, min: number, max: number): boolean {
     if (!root) {
         return true
     }
@@ -13,7 +14,7 @@ function validateHelper(root: TreeNode | null, min: number, max: number): boolea
         return false
     }
 
-    return validateHelper(root.left, min, root.val) && validateHelper(root.right, root.val, max)
+    return dfs(root.left, min, root.val) && dfs(root.right, root.val, max)
 }
 
 function isValidBST(root: TreeNode | null): boolean {
@@ -22,7 +23,7 @@ function isValidBST(root: TreeNode | null): boolean {
         return false
     }
 
-    return validateHelper(root, -Infinity, Infinity)
+    return dfs(root, -Infinity, Infinity)
 }
 
 export { isValidBST }

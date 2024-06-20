@@ -4,35 +4,40 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
-    // edge cases
-    if (!root) {
-        return false
-    }
-
-    const queue: [TreeNode, number][] = [[root, root.val]]
+// 1. bfs
+function bfs(node: TreeNode, targetSum: number): boolean {
+    const queue: [TreeNode, number][] = [[node, node.val]]
 
     // 1. bfs
     while (queue.length) {
-        const [node, sum] = queue.shift()!
+        const [curNode, sum] = queue.shift()!
 
-        if (!node.left && !node.right) {
+        if (!curNode.left && !curNode.right) {
             if (sum === targetSum) {
                 return true
             }
             continue
         }
 
-        if (node.left) {
-            queue.push([node.left, sum + node.left.val])
+        if (curNode.left) {
+            queue.push([curNode.left, sum + curNode.left.val])
         }
 
-        if (node.right) {
-            queue.push([node.right, sum + node.right.val])
+        if (curNode.right) {
+            queue.push([curNode.right, sum + curNode.right.val])
         }
     }
 
     return false
+}
+
+function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
+    // edge cases
+    if (!root) {
+        return false
+    }
+
+    return bfs(root, targetSum)
 }
 
 export { hasPathSum }

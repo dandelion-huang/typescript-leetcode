@@ -1,40 +1,39 @@
 import { Node } from 'classes/N-aryTreeNode'
 
-// <Queue>
+// <Iteration, BFS, Queue>
 // Time: O(n)
 // Space: O(n)
 
-function levelOrder(root: Node | null): number[][] {
+// 1. bfs
+function bfs(node: Node): number[][] {
     const ans: number[][] = []
+    const queue: Node[] = [node]
 
-    // 1. bfs
-    function bfs(node: Node | null): void {
-        // edge cases
-        if (!node) {
-            return
+    // 2. level-order traversal
+    while (queue.length) {
+        const curLevel: number[] = []
+        const size = queue.length
+
+        for (let i = 0; i < size; ++i) {
+            const curNode = queue.shift()!
+
+            curLevel.push(curNode.val)
+            queue.push(...curNode.children)
         }
 
-        // 2. level-order traversal
-        const queue: Node[] = [node]
-
-        while (queue.length) {
-            const curLevel: number[] = []
-            const size = queue.length
-
-            for (let i = 0; i < size; ++i) {
-                const curNode = queue.shift()!
-
-                curLevel.push(curNode.val)
-                queue.push(...curNode.children)
-            }
-
-            ans.push(curLevel)
-        }
+        ans.push(curLevel)
     }
 
-    bfs(root)
-
     return ans
+}
+
+function levelOrder(root: Node | null): number[][] {
+    // edge cases
+    if (!root) {
+        return []
+    }
+
+    return bfs(root)
 }
 
 export { levelOrder }

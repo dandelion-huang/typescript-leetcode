@@ -1,17 +1,13 @@
 import { Node } from 'classes/GraphNode'
 
-// <Iteration, BFS, Queue>
+// <Iteration, BFS, Queue, HashTable>
 // Time: O(n)
 // Space: O(n)
 
-function cloneGraph(node: Node | null): Node | null {
-    // edge cases
-    if (!node) {
-        return node
-    }
-
-    const visited = new Map<Node, Node>() // Map<node, cloned>
+// 1. bfs
+function bfs(node: Node): Node {
     const queue: Node[] = [node]
+    const visited = new Map<Node, Node>() // Map<node, cloned>
 
     visited.set(node, new Node(node.val))
 
@@ -29,6 +25,15 @@ function cloneGraph(node: Node | null): Node | null {
     }
 
     return visited.get(node)!
+}
+
+function cloneGraph(node: Node | null): Node | null {
+    // edge cases
+    if (!node) {
+        return node
+    }
+
+    return bfs(node)
 }
 
 export { cloneGraph }

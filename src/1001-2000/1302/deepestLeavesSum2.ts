@@ -1,19 +1,14 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <BFS, Queue>
+// <Iteration, BFS, Queue>
 // Time: O(n)
 // Space: O(n)
 
-function deepestLeavesSum(root: TreeNode | null): number {
-    // edge cases
-    if (!root) {
-        return 0
-    }
-
-    const queue: TreeNode[] = [root]
+// 1. bfs
+function bfs(node: TreeNode): number {
+    const queue: TreeNode[] = [node]
     let sum = 0
 
-    // 1. bfs
     while (queue.length) {
         sum = 0
 
@@ -35,6 +30,15 @@ function deepestLeavesSum(root: TreeNode | null): number {
     }
 
     return sum
+}
+
+function deepestLeavesSum(root: TreeNode | null): number {
+    // edge cases
+    if (!root) {
+        return 0
+    }
+
+    return bfs(root)
 }
 
 export { deepestLeavesSum }

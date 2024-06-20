@@ -1,6 +1,6 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <BFS, Queue>
+// <Iteration, BFS, Queue>
 // Time: O(n)
 // Space: O(n)
 
@@ -12,37 +12,40 @@ function numToChar(num: number): string {
     return String.fromCharCode(97 + num) // Unicode of 'a': 97
 }
 
-function smallestFromLeaf(root: TreeNode | null): string {
+// 1. bfs
+function bfs(node: TreeNode): string {
+    const queue: [TreeNode, string][] = [[node, '']]
     let smallestStr = ''
 
-    // edge cases
-    if (!root) {
-        return smallestStr
-    }
-
-    const queue: [TreeNode, string][] = [[root, '']]
-
-    // 1. bfs
     while (queue.length) {
-        const [node, curStr] = queue.shift()!
-        const newCurStr = numToChar(node.val) + curStr
+        const [curNode, curStr] = queue.shift()!
+        const newCurStr = numToChar(curNode.val) + curStr
 
-        if (!node.left && !node.right) {
+        if (!curNode.left && !curNode.right) {
             if (smallestStr === '' || smallestStr > newCurStr) {
                 smallestStr = newCurStr
             }
         }
 
-        if (node.left) {
-            queue.push([node.left, newCurStr])
+        if (curNode.left) {
+            queue.push([curNode.left, newCurStr])
         }
 
-        if (node.right) {
-            queue.push([node.right, newCurStr])
+        if (curNode.right) {
+            queue.push([curNode.right, newCurStr])
         }
     }
 
     return smallestStr
+}
+
+function smallestFromLeaf(root: TreeNode | null): string {
+    // edge cases
+    if (!root) {
+        return ''
+    }
+
+    return bfs(root)
 }
 
 export { smallestFromLeaf }

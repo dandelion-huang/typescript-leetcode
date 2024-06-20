@@ -1,45 +1,44 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Queue>
+// <Iteration, BFS, Queue>
 // Time: O(n)
 // Space: O(n)
 
-function levelOrder(root: TreeNode | null): number[][] {
+// 1. bfs
+function bfs(node: TreeNode): number[][] {
     const ans: number[][] = []
+    const queue: TreeNode[] = [node]
+    let curLevelSize: number
 
-    // 1. bfs
-    function bfs(node: TreeNode | null): void {
-        // edge cases
-        if (!node) {
-            return
-        }
+    // 2. level-order traversal
+    while (queue.length) {
+        curLevelSize = queue.length
+        ans.push([])
 
-        // 2. level-order traversal
-        const queue: TreeNode[] = [node]
-        let curLevelSize: number
+        for (let i = 0; i < curLevelSize; ++i) {
+            const curNode = queue.shift()!
+            ans[ans.length - 1].push(curNode.val)
 
-        while (queue.length) {
-            curLevelSize = queue.length
-            ans.push([])
+            if (curNode.left) {
+                queue.push(curNode.left)
+            }
 
-            for (let i = 0; i < curLevelSize; ++i) {
-                const curNode = queue.shift()!
-                ans[ans.length - 1].push(curNode.val)
-
-                if (curNode.left) {
-                    queue.push(curNode.left)
-                }
-
-                if (curNode.right) {
-                    queue.push(curNode.right)
-                }
+            if (curNode.right) {
+                queue.push(curNode.right)
             }
         }
     }
 
-    bfs(root)
-
     return ans
+}
+
+function levelOrder(root: TreeNode | null): number[][] {
+    // edge cases
+    if (!root) {
+        return []
+    }
+
+    return bfs(root)
 }
 
 export { levelOrder }

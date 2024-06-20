@@ -4,13 +4,9 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(1)
 
-function insertIntoBST(root: TreeNode | null, val: number): TreeNode | null {
-    // edge cases
-    if (!root) {
-        return new TreeNode(val)
-    }
-
-    let cur = root
+// 1. bfs
+function bfs(node: TreeNode, val: number): TreeNode {
+    let cur = node
 
     while (cur) {
         // constraints: cur.val !== val
@@ -33,7 +29,16 @@ function insertIntoBST(root: TreeNode | null, val: number): TreeNode | null {
         }
     }
 
-    return root
+    return node
+}
+
+function insertIntoBST(root: TreeNode | null, val: number): TreeNode | null {
+    // edge cases
+    if (!root) {
+        return new TreeNode(val)
+    }
+
+    return bfs(root, val)
 }
 
 export { insertIntoBST }

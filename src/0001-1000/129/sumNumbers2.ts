@@ -1,8 +1,32 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <BFS, Queue>
+// <Iteration, BFS, Queue>
 // Time: O(n)
 // Space: O(n)
+
+// 1. bfs
+function bfs(node: TreeNode): number {
+    const queue: [TreeNode, number][] = [[node, node.val]]
+    let sum = 0
+
+    while (queue.length) {
+        const [curNode, num] = queue.shift()!
+
+        if (!curNode.left && !curNode.right) {
+            sum += num
+        }
+
+        if (curNode.left) {
+            queue.push([curNode.left, num * 10 + curNode.left.val])
+        }
+
+        if (curNode.right) {
+            queue.push([curNode.right, num * 10 + curNode.right.val])
+        }
+    }
+
+    return sum
+}
 
 function sumNumbers(root: TreeNode | null): number {
     // edge cases
@@ -10,27 +34,7 @@ function sumNumbers(root: TreeNode | null): number {
         return 0
     }
 
-    const queue: [TreeNode, number][] = [[root, root.val]]
-    let sum = 0
-
-    // bfs
-    while (queue.length) {
-        const [node, num] = queue.shift()!
-
-        if (!node.left && !node.right) {
-            sum += num
-        }
-
-        if (node.left) {
-            queue.push([node.left, num * 10 + node.left.val])
-        }
-
-        if (node.right) {
-            queue.push([node.right, num * 10 + node.right.val])
-        }
-    }
-
-    return sum
+    return bfs(root)
 }
 
 export { sumNumbers }

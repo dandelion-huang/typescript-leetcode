@@ -4,33 +4,36 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+// 1. bfs
+function bfs(node: TreeNode): number {
+    const queue: [TreeNode, number][] = [[node, 1]]
+
+    while (queue.length) {
+        const [curNode, curDepth] = queue.shift()!
+
+        if (!curNode.left && !curNode.right) {
+            return curDepth
+        }
+
+        if (curNode.left) {
+            queue.push([curNode.left, curDepth + 1])
+        }
+
+        if (curNode.right) {
+            queue.push([curNode.right, curDepth + 1])
+        }
+    }
+
+    return -1 // never reach here
+}
+
 function minDepth(root: TreeNode | null): number {
     // edge cases
     if (!root) {
         return 0
     }
 
-    const queue: [TreeNode, number][] = [[root, 1]]
-
-    // 1. bfs
-    while (queue.length) {
-        const [node, curDepth] = queue.shift()!
-
-        if (!node.left && !node.right) {
-            return curDepth
-        }
-
-        if (node.left) {
-            queue.push([node.left, curDepth + 1])
-        }
-
-        if (node.right) {
-            queue.push([node.right, curDepth + 1])
-        }
-    }
-
-    // never reach here
-    return -1
+    return bfs(root)
 }
 
 export { minDepth }

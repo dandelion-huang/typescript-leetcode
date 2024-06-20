@@ -1,15 +1,15 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Queue>
+// <Iteration, BFS, Queue>
 // Time: O(n)
 // Space: O(n)
 
 // 1. bfs
-function bfs(node: TreeNode, val: number, depth: number): void {
-    // 2. level-order traversal
+function bfs(node: TreeNode, val: number, depth: number): TreeNode {
     let queue: TreeNode[] = [node]
     let newQueue: TreeNode[] = []
 
+    // 2. level-order traversal
     // skip the root
     for (let i = 1; i < depth - 1; ++i) {
         newQueue = []
@@ -31,6 +31,8 @@ function bfs(node: TreeNode, val: number, depth: number): void {
         curLevelNode.left = new TreeNode(val, curLevelNode.left, null)
         curLevelNode.right = new TreeNode(val, null, curLevelNode.right)
     }
+
+    return node
 }
 
 function addOneRow(root: TreeNode | null, val: number, depth: number): TreeNode | null {
@@ -46,9 +48,7 @@ function addOneRow(root: TreeNode | null, val: number, depth: number): TreeNode 
         return new TreeNode(val, root, null)
     }
 
-    bfs(root, val, depth)
-
-    return root
+    return bfs(root, val, depth)
 }
 
 export { addOneRow }

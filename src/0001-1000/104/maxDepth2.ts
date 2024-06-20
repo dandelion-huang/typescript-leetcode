@@ -1,19 +1,14 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Queue, BFS>
+// <Iteration, BFS, Queue>
 // Time: O(n)
 // Space: O(n)
 
-function maxDepth(root: TreeNode | null): number {
-    // edge cases
-    if (!root) {
-        return 0
-    }
-
-    const queue: TreeNode[] = [root]
+// 1. bfs
+function bfs(node: TreeNode): number {
+    const queue: TreeNode[] = [node]
     let ans = 0
 
-    // 1. bfs
     while (queue.length) {
         const size = queue.length
 
@@ -33,6 +28,15 @@ function maxDepth(root: TreeNode | null): number {
     }
 
     return ans
+}
+
+function maxDepth(root: TreeNode | null): number {
+    // edge cases
+    if (!root) {
+        return 0
+    }
+
+    return bfs(root)
 }
 
 export { maxDepth }

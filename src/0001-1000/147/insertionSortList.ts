@@ -4,16 +4,10 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(n^2)
 // Space: O(1)
 
-function insertionSortList(head: ListNode | null): ListNode | null {
-    // edge case
-    if (!head) {
-        return head
-    }
-
-    const dummyHead = new ListNode(-Infinity, head)
-
-    let lastSorted = head
-    let cur = head.next
+function iterate(listNode: ListNode): ListNode | null {
+    const dummyHead = new ListNode(-Infinity, listNode)
+    let lastSorted = listNode
+    let cur = listNode.next
 
     while (cur) {
         if (cur.val >= lastSorted.val) {
@@ -32,6 +26,15 @@ function insertionSortList(head: ListNode | null): ListNode | null {
     }
 
     return dummyHead.next
+}
+
+function insertionSortList(head: ListNode | null): ListNode | null {
+    // edge cases
+    if (!head) {
+        return head
+    }
+
+    return iterate(head)
 }
 
 export { insertionSortList }

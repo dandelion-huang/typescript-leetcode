@@ -2,38 +2,47 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 import { type Helper } from './types'
 import { updateHelper } from './utils'
 
-// <Morris Traversal> (Reference: Leetcode 94)
+// <Iteration, Morris Traversal> (Reference: Leetcode 94)
 // Time: O(n)
 // Space: O(1)
 
-function findMode(root: TreeNode | null): number[] {
+function iterate(node: TreeNode | null): number[] {
     const helper: Helper = { count: 0, maxCount: 0, mode: 0 }
     const ans: number[] = []
     let predecessor: TreeNode | null = null
 
-    while (root) {
-        if (root.left) {
-            predecessor = root.left
+    while (node) {
+        if (node.left) {
+            predecessor = node.left
 
-            while (predecessor.right && predecessor.right !== root) {
+            while (predecessor.right && predecessor.right !== node) {
                 predecessor = predecessor.right
             }
 
             if (!predecessor.right) {
-                predecessor.right = root
-                root = root.left
+                predecessor.right = node
+                node = node.left
             } else {
-                updateHelper(root.val, helper, ans)
+                updateHelper(node.val, helper, ans)
                 predecessor.right = null
-                root = root.right
+                node = node.right
             }
         } else {
-            updateHelper(root.val, helper, ans)
-            root = root.right
+            updateHelper(node.val, helper, ans)
+            node = node.right
         }
     }
 
     return ans
+}
+
+function findMode(root: TreeNode | null): number[] {
+    // edge cases
+    if (!root) {
+        return []
+    }
+
+    return iterate(root)
 }
 
 export { findMode }

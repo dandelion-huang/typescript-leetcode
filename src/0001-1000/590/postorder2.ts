@@ -1,45 +1,54 @@
 import { Node } from 'classes/N-aryTreeNode'
 
-// <Stack, Map>
+// <Iteration, DFS, Stack, Map>
 // Time: O(n)
 // Space: O(n)
 
-function postorder(root: Node | null): number[] {
+// 1. dfs
+function iterate(node: Node | null): number[] {
     const ans: number[] = []
     const stack: Node[] = []
     const nextIndex = new Map<Node, number>()
     let index = 0
 
-    // 1. iteration
-    while (root || stack.length) {
+    while (node || stack.length) {
         // 2. postorder traversal
-        while (root) {
-            stack.push(root)
+        while (node) {
+            stack.push(node)
 
-            if (!root.children) {
+            if (!node.children) {
                 break
             }
 
-            nextIndex.set(root, 1)
-            root = root.children[0]
+            nextIndex.set(node, 1)
+            node = node.children[0]
         }
 
-        root = stack[stack.length - 1]
+        node = stack[stack.length - 1]
 
-        index = nextIndex.get(root) ?? 0
+        index = nextIndex.get(node) ?? 0
 
-        if (index < root.children.length) {
-            nextIndex.set(root, index + 1)
-            root = root.children[index]
+        if (index < node.children.length) {
+            nextIndex.set(node, index + 1)
+            node = node.children[index]
         } else {
             stack.pop()
-            ans.push(root.val)
-            nextIndex.delete(root) // optional
-            root = null
+            ans.push(node.val)
+            nextIndex.delete(node) // optional
+            node = null
         }
     }
 
     return ans
+}
+
+function postorder(root: Node | null): number[] {
+    // edge cases
+    if (!root) {
+        return []
+    }
+
+    return iterate(root)
 }
 
 export { postorder }

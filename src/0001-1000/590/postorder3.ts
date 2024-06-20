@@ -1,38 +1,41 @@
 import { Node } from 'classes/N-aryTreeNode'
 
-// <Stack, Set>
+// <Iteration, DFS, Stack, Set>
 // Time: O(n)
 // Space: O(n)
 
-function postorder(root: Node | null): number[] {
+// 1. dfs
+function iterate(node: Node): number[] {
     const ans: number[] = []
-
-    if (!root) {
-        return ans
-    }
-
-    const stack: Node[] = [root]
+    const stack: Node[] = [node]
     const visited = new Set<Node>()
 
-    // 1. iteration
     while (stack.length) {
         // 2. postorder traversal
-        const node = stack[stack.length - 1]
+        const curNode = stack[stack.length - 1]
 
-        if (!node.children.length || visited.has(node)) {
+        if (!curNode.children.length || visited.has(curNode)) {
             stack.pop()
-            ans.push(node.val)
+            ans.push(curNode.val)
             continue
         }
 
-        for (let i = node.children.length - 1; i >= 0; --i) {
-            stack.push(node.children[i])
+        for (let i = curNode.children.length - 1; i >= 0; --i) {
+            stack.push(curNode.children[i])
         }
 
-        visited.add(node)
+        visited.add(curNode)
     }
 
     return ans
+}
+
+function postorder(root: Node | null): number[] {
+    if (!root) {
+        return []
+    }
+
+    return iterate(root)
 }
 
 export { postorder }

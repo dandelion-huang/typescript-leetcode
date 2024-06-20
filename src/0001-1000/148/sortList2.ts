@@ -6,29 +6,16 @@ import { mergeTwoLists } from '0001-1000/21/mergeTwoLists2'
 // Space: O(1)
 
 // move pointer in length-segmented linked-list or to the tail
-function movePointer(node: ListNode | null, segmentLength: number): ListNode | null {
-    for (let i = 1; i < segmentLength && node?.next; ++i) {
-        node = node.next
+function movePointer(listNode: ListNode | null, segmentLength: number): ListNode | null {
+    for (let i = 1; i < segmentLength && listNode?.next; ++i) {
+        listNode = listNode.next
     }
 
-    return node
+    return listNode
 }
 
-function sortList(head: ListNode | null): ListNode | null {
-    // edge cases
-    if (!head?.next) {
-        return head
-    }
-
-    let length = 0
-    let node: ListNode | null = head
-
-    while (node) {
-        ++length
-        node = node.next
-    }
-
-    const dummyHead = new ListNode(-Infinity, head)
+function iterate(listNode: ListNode | null, length: number): ListNode | null {
+    const dummyHead = new ListNode(-Infinity, listNode)
 
     for (let subLength = 1; subLength < length; subLength <<= 1) {
         let prev: ListNode | null = dummyHead
@@ -61,6 +48,23 @@ function sortList(head: ListNode | null): ListNode | null {
     }
 
     return dummyHead.next
+}
+
+function sortList(head: ListNode | null): ListNode | null {
+    // edge cases
+    if (!head?.next) {
+        return head
+    }
+
+    let length = 0
+    let node: ListNode | null = head
+
+    while (node) {
+        ++length
+        node = node.next
+    }
+
+    return iterate(head, length)
 }
 
 export { sortList }

@@ -1,38 +1,46 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Stack>
+// <Iteration, DFS, Stack>
 // Time: O(n)
 // Space: O(n)
 
-function postorderTraversal(root: TreeNode | null): number[] {
+// 1. dfs
+function iterate(node: TreeNode | null): number[] {
     const ans: number[] = []
     const stack: TreeNode[] = []
-    // prev for examine the right subtree
-    let prev: TreeNode | null = null
+    let prev: TreeNode | null = null // prev for examine the right subtree
 
-    // 1. iteration
-    while (root || stack.length) {
-        while (root) {
-            stack.push(root)
-            root = root.left
+    while (node || stack.length) {
+        while (node) {
+            stack.push(node)
+            node = node.left
         }
 
-        root = stack[stack.length - 1]
+        node = stack[stack.length - 1]
 
         // 2. postorder traversal
-        if (!root.right || root.right === prev) {
+        if (!node.right || node.right === prev) {
             // if the right subtree is null
             // or the right subtree is the same as the previous node
             stack.pop()
-            ans.push(root.val)
-            prev = root
-            root = null
+            ans.push(node.val)
+            prev = node
+            node = null
         } else {
-            root = root.right
+            node = node.right
         }
     }
 
     return ans
+}
+
+function postorderTraversal(root: TreeNode | null): number[] {
+    // edge cases
+    if (!root) {
+        return []
+    }
+
+    return iterate(root)
 }
 
 export { postorderTraversal }

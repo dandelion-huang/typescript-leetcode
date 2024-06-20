@@ -9,12 +9,7 @@
 // Time: O(n)
 // Space: O(1)
 
-function majorityElement(nums: number[]): number {
-    // edge cases
-    if (!nums.length) {
-        return -1
-    }
-
+function iterate(nums: number[]): number {
     let count = 0
     let candidate: number | null = null
 
@@ -27,6 +22,15 @@ function majorityElement(nums: number[]): number {
     }
 
     return candidate!
+}
+
+function majorityElement(nums: number[]): number {
+    // edge cases
+    if (!nums.length) {
+        return -1
+    }
+
+    return iterate(nums)
 }
 
 export { majorityElement }

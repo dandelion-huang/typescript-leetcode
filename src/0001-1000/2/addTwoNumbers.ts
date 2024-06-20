@@ -4,7 +4,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(max(n, m))
 // Space: O(1)
 
-function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+function iterate(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     let head: ListNode | null = null
     let tail: ListNode | null = null
     let carry = 0
@@ -37,6 +37,15 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
     }
 
     return head
+}
+
+function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+    // edge cases
+    if (!l1 && !l2) {
+        return null
+    }
+
+    return iterate(l1, l2)
 }
 
 export { addTwoNumbers }

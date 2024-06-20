@@ -4,7 +4,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(max(n, m))
 // Space: O(n + m)
 
-function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+function iterate(l1: ListNode | null, l2: ListNode | null): ListNode | null {
     const stack1: number[] = []
     const stack2: number[] = []
 
@@ -31,6 +31,15 @@ function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | nul
     }
 
     return head
+}
+
+function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
+    // edge cases
+    if (!l1 && !l2) {
+        return null
+    }
+
+    return iterate(l1, l2)
 }
 
 export { addTwoNumbers }

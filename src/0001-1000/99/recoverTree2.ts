@@ -2,40 +2,46 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 import { swap } from 'utils/swapBinaryTreeNodes'
 import { updateHelper } from './utils'
 
-// <Morris Traversal> (Reference: Leetcode 94)
+// <Iteration, Morris Traversal> (Reference: Leetcode 94)
 // Time: O(n)
 // Space: O(1)
 
-/**
- *  Do not return anything, modify root in-place instead.
- */
-function recoverTree(root: TreeNode | null): void {
+function iterate(node: TreeNode | null): [TreeNode | null, TreeNode | null] {
     let predecessor: TreeNode | null = null
     let prev: TreeNode | null = null
     let p: TreeNode | null = null
     let q: TreeNode | null = null
 
-    while (root) {
-        if (root.left) {
-            predecessor = root.left
+    while (node) {
+        if (node.left) {
+            predecessor = node.left
 
-            while (predecessor.right && predecessor.right !== root) {
+            while (predecessor.right && predecessor.right !== node) {
                 predecessor = predecessor.right
             }
 
             if (!predecessor.right) {
-                predecessor.right = root
-                root = root.left
+                predecessor.right = node
+                node = node.left
             } else {
-                ;[prev, p, q] = updateHelper(root, prev, p, q)
+                ;[prev, p, q] = updateHelper(node, prev, p, q)
                 predecessor.right = null
-                root = root.right
+                node = node.right
             }
         } else {
-            ;[prev, p, q] = updateHelper(root, prev, p, q)
-            root = root.right
+            ;[prev, p, q] = updateHelper(node, prev, p, q)
+            node = node.right
         }
     }
+
+    return [p, q]
+}
+
+/**
+ *  Do not return anything, modify root in-place instead.
+ */
+function recoverTree(root: TreeNode | null): void {
+    const [p, q] = iterate(root)
 
     swap(p!, q!) // constraints: p and q will exist in the BST
 }

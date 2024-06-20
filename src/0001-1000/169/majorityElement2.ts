@@ -2,12 +2,7 @@
 // Time: O(n)
 // Space: O(n)
 
-function majorityElement(nums: number[]): number {
-    // edge cases
-    if (!nums.length) {
-        return -1
-    }
-
+function iterate(nums: number[]): number {
     const map = new Map<number, number>() // Map<num, count>
 
     for (const num of nums) {
@@ -18,6 +13,15 @@ function majorityElement(nums: number[]): number {
     }
 
     return -1 // never reach here
+}
+
+function majorityElement(nums: number[]): number {
+    // edge cases
+    if (!nums.length) {
+        return -1
+    }
+
+    return iterate(nums)
 }
 
 export { majorityElement }

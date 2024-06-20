@@ -4,19 +4,28 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(n)
 // Space: O(n)
 
-function hasCycle(head: ListNode | null): boolean {
+function iterate(listNode: ListNode | null): boolean {
     const visited = new Set<ListNode>()
 
-    while (head) {
-        if (visited.has(head)) {
+    while (listNode) {
+        if (visited.has(listNode)) {
             return true
         }
 
-        visited.add(head)
-        head = head.next
+        visited.add(listNode)
+        listNode = listNode.next
     }
 
     return false
+}
+
+function hasCycle(head: ListNode | null): boolean {
+    // edge cases
+    if (!head?.next) {
+        return false
+    }
+
+    return iterate(head)
 }
 
 export { hasCycle }

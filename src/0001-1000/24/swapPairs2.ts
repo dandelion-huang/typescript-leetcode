@@ -4,8 +4,8 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(n)
 // Space: O(1)
 
-function swapPairs(head: ListNode | null): ListNode | null {
-    const dummyHead = new ListNode(-1, head)
+function iterate(listNode: ListNode | null): ListNode | null {
+    const dummyHead = new ListNode(-1, listNode)
 
     let prev = dummyHead
 
@@ -19,6 +19,15 @@ function swapPairs(head: ListNode | null): ListNode | null {
     }
 
     return dummyHead.next
+}
+
+function swapPairs(head: ListNode | null): ListNode | null {
+    // edge cases
+    if (!head?.next) {
+        return head
+    }
+
+    return iterate(head)
 }
 
 export { swapPairs }

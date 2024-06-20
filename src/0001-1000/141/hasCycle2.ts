@@ -4,14 +4,9 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(n)
 // Space: O(1)
 
-function hasCycle(head: ListNode | null): boolean {
-    // edge cases
-    if (!head?.next) {
-        return false
-    }
-
-    let slow: ListNode | null = head
-    let fast: ListNode | null = head.next
+function iterate(listNode: ListNode): boolean {
+    let slow: ListNode | null = listNode
+    let fast: ListNode | null = listNode.next
 
     while (slow !== fast) {
         if (!fast?.next) {
@@ -23,6 +18,15 @@ function hasCycle(head: ListNode | null): boolean {
     }
 
     return true
+}
+
+function hasCycle(head: ListNode | null): boolean {
+    // edge cases
+    if (!head?.next) {
+        return false
+    }
+
+    return iterate(head)
 }
 
 export { hasCycle }

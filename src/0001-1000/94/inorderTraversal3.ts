@@ -1,55 +1,62 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Morris Traversal>
+// <Iteration, Morris Traversal>
 // Time: O(n)
 // Space: O(1)
 
-function inorderTraversal(root: TreeNode | null): number[] {
+// Morris Traversal (Inorder)
+// 1. if !node.left
+//    push node in the ans array
+//    and then traverse node.right
+// 2. if node.left
+//    find the rightmost node (marked as predecessor) on the left subtree
+// 2.a. if !predecessor.right
+//      predecessor.right = node
+//      and then traverse node.left
+// 2.b. if predecessor.right (now predecessor.right = node by 2.a)
+//      push node in the ans array, predecessor.right = null
+//      and then traverse node.right
+
+function iterate(node: TreeNode | null): number[] {
     const ans: number[] = []
-
-    // Morris Traversal (Inorder)
-    // 1. if !node.left
-    //    push node in the ans array
-    //    and then traverse node.right
-    // 2. if node.left
-    //    find the rightmost node (marked as predecessor) on the left subtree
-    // 2.a. if !predecessor.right
-    //      predecessor.right = node
-    //      and then traverse node.left
-    // 2.b. if predecessor.right (now predecessor.right = node by 2.a)
-    //      push node in the ans array, predecessor.right = null
-    //      and then traverse node.right
-
     let predecessor: TreeNode | null = null
 
-    // iteration
-    while (root) {
-        if (root.left) {
+    while (node) {
+        if (node.left) {
             // 2.
-            predecessor = root.left
+            predecessor = node.left
 
-            while (predecessor.right && predecessor.right !== root) {
+            while (predecessor.right && predecessor.right !== node) {
                 predecessor = predecessor.right
             }
 
             if (!predecessor.right) {
                 // 2.a
-                predecessor.right = root
-                root = root.left
+                predecessor.right = node
+                node = node.left
             } else {
                 // 2.b
-                ans.push(root.val)
+                ans.push(node.val)
                 predecessor.right = null
-                root = root.right
+                node = node.right
             }
         } else {
             // 1.
-            ans.push(root.val)
-            root = root.right
+            ans.push(node.val)
+            node = node.right
         }
     }
 
     return ans
+}
+
+function inorderTraversal(root: TreeNode | null): number[] {
+    // edge cases
+    if (!root) {
+        return []
+    }
+
+    return iterate(root)
 }
 
 export { inorderTraversal }

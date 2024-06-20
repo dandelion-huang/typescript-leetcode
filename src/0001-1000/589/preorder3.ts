@@ -1,32 +1,35 @@
 import { Node } from 'classes/N-aryTreeNode'
 
-// <Stack>
+// <Ieration, DFS, Stack>
 // Time: O(n)
 // Space: O(n)
 
-function preorder(root: Node | null): number[] {
+// 1. dfs
+function iterate(node: Node | null): number[] {
     const ans: number[] = []
+    const stack = [node]
 
-    // edge cases
-    if (!root) {
-        return ans
-    }
-
-    const stack = [root]
-
-    // 1. iteration
     while (stack.length) {
         // 2. preorder traversal
-        const node = stack.pop()!
+        const curNode = stack.pop()!
 
-        ans.push(node.val)
+        ans.push(curNode.val)
 
-        for (let i = node.children.length - 1; i >= 0; --i) {
-            stack.push(node.children[i])
+        for (let i = curNode.children.length - 1; i >= 0; --i) {
+            stack.push(curNode.children[i])
         }
     }
 
     return ans
+}
+
+function preorder(root: Node | null): number[] {
+    // edge cases
+    if (!root) {
+        return []
+    }
+
+    return iterate(root)
 }
 
 export { preorder }

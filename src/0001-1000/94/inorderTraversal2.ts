@@ -1,27 +1,31 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Iteration, BFS, Stack>
+// <Iteration, DFS, Stack>
 // Time: O(n)
 // Space: O(n)
 
-function inorderTraversal(root: TreeNode | null): number[] {
+// 1. dfs
+function iterate(node: TreeNode | null): number[] {
     const ans: number[] = []
     const stack: TreeNode[] = []
 
-    // 1. iteration
-    while (root || stack.length) {
-        while (root) {
-            stack.push(root)
-            root = root.left
+    while (node || stack.length) {
+        while (node) {
+            stack.push(node)
+            node = node.left
         }
 
-        root = stack.pop()!
+        node = stack.pop()!
         // 2. inorder traversal
-        ans.push(root.val)
-        root = root.right
+        ans.push(node.val)
+        node = node.right
     }
 
     return ans
+}
+
+function inorderTraversal(root: TreeNode | null): number[] {
+    return iterate(root)
 }
 
 export { inorderTraversal }

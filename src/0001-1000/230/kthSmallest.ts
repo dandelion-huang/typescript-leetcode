@@ -1,8 +1,31 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Iteration, BFS, Stack>
+// <Iteration, DFS, Stack>
 // Time: O(n + k)
 // Space: O(n)
+
+function iterate(node: TreeNode | null, k: number): number {
+    const stack: TreeNode[] = []
+
+    while (stack.length || node) {
+        while (node) {
+            stack.push(node)
+            node = node.left
+        }
+
+        // 2. inorder traversal
+        node = stack.pop()!
+        --k
+
+        if (k === 0) {
+            break
+        }
+
+        node = node.right
+    }
+
+    return node!.val
+}
 
 function kthSmallest(root: TreeNode | null, k: number): number {
     // edge cases
@@ -10,26 +33,7 @@ function kthSmallest(root: TreeNode | null, k: number): number {
         return -1
     }
 
-    const stack: TreeNode[] = []
-
-    while (stack.length || root) {
-        while (root) {
-            stack.push(root)
-            root = root.left
-        }
-
-        // 2. inorder traversal
-        root = stack.pop()!
-        --k
-
-        if (k === 0) {
-            break
-        }
-
-        root = root.right
-    }
-
-    return root!.val
+    return iterate(root, k)
 }
 
 export { kthSmallest }

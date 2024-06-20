@@ -4,32 +4,31 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(n)
 // Space: O(n)
 
+function recurse(node: ListNode | null): boolean {
+    let front: ListNode | null = node
+
+    if (node) {
+        if (!recurse(node.next)) {
+            return false
+        }
+
+        if (front!.val !== node.val) {
+            return false
+        }
+
+        front = front!.next
+    }
+
+    return true
+}
+
 function isPalindrome(head: ListNode | null): boolean {
     // edge cases
     if (!head?.next) {
         return true
     }
 
-    let front: ListNode | null = head
-
-    //
-    function recursion(node: ListNode | null): boolean {
-        if (node) {
-            if (!recursion(node.next)) {
-                return false
-            }
-
-            if (front!.val !== node.val) {
-                return false
-            }
-
-            front = front!.next
-        }
-
-        return true
-    }
-
-    return recursion(head)
+    return recurse(head)
 }
 
 export { isPalindrome }

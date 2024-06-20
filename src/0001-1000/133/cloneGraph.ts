@@ -4,6 +4,7 @@ import { Node } from 'classes/GraphNode'
 // Time: O(n)
 // Space: O(n)
 
+// 1. dfs
 function dfs(node: Node, visited: Map<Node, Node>): Node {
     if (visited.has(node)) {
         return visited.get(node)!

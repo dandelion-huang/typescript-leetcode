@@ -10,6 +10,7 @@ function pruneTree(root: TreeNode | null): TreeNode | null {
         return root
     }
 
+    // 1. dfs
     root.left = pruneTree(root.left)
     root.right = pruneTree(root.right)
 

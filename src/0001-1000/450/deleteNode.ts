@@ -10,6 +10,7 @@ function deleteNode(root: TreeNode | null, key: number): TreeNode | null {
         return root
     }
 
+    // 1. dfs
     if (root.val > key) {
         root.left = deleteNode(root.left, key)
         return root

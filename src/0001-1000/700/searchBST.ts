@@ -13,6 +13,7 @@ function searchBST(root: TreeNode | null, val: number): TreeNode | null {
         return root
     }
 
+    // 1. dfs
     return searchBST(val < root.val ? root.left : root.right, val)
 }
 

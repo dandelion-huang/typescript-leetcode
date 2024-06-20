@@ -4,6 +4,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
+// 1. dfs
 function getPath(node: TreeNode, target: TreeNode): TreeNode[] {
     const path: TreeNode[] = []
 

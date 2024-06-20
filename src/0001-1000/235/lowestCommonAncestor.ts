@@ -17,6 +17,7 @@ function lowestCommonAncestor(
         return root
     }
 
+    // 1. dfs
     if (p!.val < root.val && q!.val < root.val) {
         return lowestCommonAncestor(root.left, p, q)
     }

@@ -14,6 +14,7 @@ function lowestCommonAncestor(
         return root
     }
 
+    // 1. dfs
     const leftChild = lowestCommonAncestor(root.left, p, q)
     const rightChild = lowestCommonAncestor(root.right, p, q)
 

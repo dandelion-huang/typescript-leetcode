@@ -10,6 +10,7 @@ function trimBST(root: TreeNode | null, low: number, high: number): TreeNode | n
         return root
     }
 
+    // 1. dfs
     if (root.val < low) {
         return trimBST(root.right, low, high)
     }

@@ -37,6 +37,7 @@ class MyBst {
     public kthSmallest(k: number): number {
         let cur: TreeNode | null = this.root
 
+        // 1. dfs
         while (cur) {
             const leftChildNum = this.getChildNum(cur.left)
 

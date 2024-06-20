@@ -10,6 +10,7 @@ function removeLeafNodes(root: TreeNode | null, target: number): TreeNode | null
         return root
     }
 
+    // 1. dfs
     root.left = removeLeafNodes(root.left, target)
     root.right = removeLeafNodes(root.right, target)
 

@@ -1,6 +1,6 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
 
-// <Prefix Sum, DFS, Backtracking>
+// <Recursion, DFS, Backtracking, Prefix Sum>
 // Time: O(n)
 // Space: O(n)
 

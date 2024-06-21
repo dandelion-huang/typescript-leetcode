@@ -1,50 +1,72 @@
-// <DFS>
+import { dx, dy } from '0001-1000/200/constants'
+
+// <Recursion, DFS>
 // Time: O(nm)
 // Space: O(nm)
 
-const dx = [0, 1, 0, -1]
-const dy = [1, 0, -1, 0]
-
-// 1.dfs
-function dfs(grid: number[][], n: number, m: number, x: number, y: number): number {
-    if (x < 0 || x >= n || y < 0 || y >= m || !grid[x][y]) {
-        return 1
+class MyIsland {
+    private grid: number[][]
+    private n: number
+    private m: number
+    private perimeter: number
+    public constructor(grid: number[][]) {
+        this.grid = grid
+        this.n = grid.length
+        this.m = grid[0].length
+        this.perimeter = 0
     }
 
-    // visited
-    if (grid[x][y] === -1) {
-        return 0
+    // 1. dfs
+    private countSides(x: number, y: number): number {
+        if (x < 0 || x >= this.n || y < 0 || y >= this.m || !this.grid[x][y]) {
+            return 1
+        }
+
+        // visited
+        if (this.grid[x][y] === -1) {
+            return 0
+        }
+
+        // mark as visited
+        this.grid[x][y] = -1
+
+        let sides = 0
+
+        for (let i = 0; i < 4; ++i) {
+            const [px, py] = [x + dx[i], y + dy[i]]
+
+            sides += this.countSides(px, py)
+        }
+
+        return sides
     }
 
-    // mark as visited
-    grid[x][y] = -1
-
-    let sides = 0
-
-    for (let i = 0; i < 4; ++i) {
-        const [px, py] = [x + dx[i], y + dy[i]]
-
-        sides += dfs(grid, n, m, px, py)
-    }
-
-    return sides
-}
-
-function islandPerimeter(grid: number[][]): number {
-    const [n, m] = [grid.length, grid[0].length]
-
-    let ans = 0
-
-    // 2. traverse the grid
-    for (let i = 0; i < n; ++i) {
-        for (let j = 0; j < m; ++j) {
-            if (grid[i][j]) {
-                ans += dfs(grid, n, m, i, j)
+    public countPerimeter(): void {
+        for (let i = 0; i < this.n; ++i) {
+            for (let j = 0; j < this.m; ++j) {
+                if (this.grid[i][j]) {
+                    this.perimeter += this.countSides(i, j)
+                }
             }
         }
     }
 
-    return ans
+    public getPerimeter(): number {
+        return this.perimeter
+    }
+}
+
+function islandPerimeter(grid: number[][]): number {
+    // edge cases
+    if (!grid.length) {
+        return 0
+    }
+
+    const myIsland = new MyIsland(grid)
+
+    myIsland.countPerimeter()
+
+    return myIsland.getPerimeter()
 }
 
 export { islandPerimeter }

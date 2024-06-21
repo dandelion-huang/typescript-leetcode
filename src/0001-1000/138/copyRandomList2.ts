@@ -13,7 +13,7 @@ import { ListNode as _Node } from 'classes/SinglyLinkedListNodeWithRandomPointer
 function iterate(listNode: _Node): _Node {
     let curNode: _Node | null
 
-    for (curNode = listNode; curNode; curNode = curNode.next!.next) {
+    for (curNode = listNode; curNode; curNode = curNode.next.next) {
         const newNode: _Node = new _Node(curNode.val, curNode.next) // the random pointer is null
 
         curNode.next = newNode

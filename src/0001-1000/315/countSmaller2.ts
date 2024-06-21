@@ -2,71 +2,71 @@
 // Time: O(nlogn)
 // Space: O(n)
 
-// 1. merge sort
-function merge(
-    nums: number[],
-    indexes: number[],
-    temp: number[],
-    counts: number[],
-    left: number,
-    mid: number,
-    right: number,
-): void {
-    for (let i = left; i <= right; ++i) {
-        temp[i] = indexes[i]
+class MySortHelper {
+    private nums: number[]
+    private indexes: number[]
+    private temp: number[]
+    private counts: number[]
+    public constructor(nums: number[]) {
+        this.nums = nums
+        this.indexes = nums.map((_, index) => index)
+        this.temp = new Array(nums.length)
+        this.counts = new Array(nums.length).fill(0)
     }
 
-    let i = left
-    let j = mid + 1
-    let count = 0
+    // 1. merge sort
+    private merge(left: number, mid: number, right: number): void {
+        for (let i = left; i <= right; ++i) {
+            this.temp[i] = this.indexes[i]
+        }
 
-    for (let p = left; p <= right; ++p) {
-        if (i === mid + 1) {
-            indexes[p] = temp[j]
-            ++j
-            // } else if (j === right + 1) {
-            //     indexes[p] = temp[i]
-            //     counts[temp[i]] += count
-            //     ++i
-        } else if (nums[temp[i]] > nums[temp[j]]) {
-            indexes[p] = temp[j]
-            ++j
-            ++count
-        } else {
-            indexes[p] = temp[i]
-            counts[temp[i]] += count
-            ++i
+        let i = left
+        let j = mid + 1
+        let count = 0
+
+        for (let p = left; p <= right; ++p) {
+            if (i === mid + 1) {
+                this.indexes[p] = this.temp[j]
+                ++j
+                // } else if (j === right + 1) {
+                //     this.indexes[p] = this.temp[i]
+                //     this.counts[this.temp[i]] += count
+                //     ++i
+            } else if (this.nums[this.temp[i]] > this.nums[this.temp[j]]) {
+                this.indexes[p] = this.temp[j]
+                ++j
+                ++count
+            } else {
+                this.indexes[p] = this.temp[i]
+                this.counts[this.temp[i]] += count
+                ++i
+            }
         }
     }
-}
 
-function sort(
-    nums: number[],
-    indexes: number[],
-    temp: number[],
-    counts: number[],
-    left: number,
-    right: number,
-): void {
-    if (left >= right) {
-        return
+    public sort(left: number = 0, right: number = this.nums.length - 1): void {
+        if (left >= right) {
+            return
+        }
+
+        const mid = (left + right) >>> 1
+
+        this.sort(left, mid)
+        this.sort(mid + 1, right)
+        this.merge(left, mid, right)
     }
 
-    const mid = (left + right) >>> 1
-
-    sort(nums, indexes, temp, counts, left, mid)
-    sort(nums, indexes, temp, counts, mid + 1, right)
-    merge(nums, indexes, temp, counts, left, mid, right)
+    public getCounts(): number[] {
+        return this.counts
+    }
 }
 
 function countSmaller(nums: number[]): number[] {
-    const indexes = nums.map((_, index) => index)
-    const temp: number[] = new Array(nums.length)
-    const counts: number[] = new Array(nums.length).fill(0)
+    const mySortHelper = new MySortHelper(nums)
 
-    sort(nums, indexes, temp, counts, 0, nums.length - 1)
+    mySortHelper.sort()
 
-    return counts
+    return mySortHelper.getCounts()
 }
 
 export { countSmaller }

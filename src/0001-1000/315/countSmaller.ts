@@ -2,80 +2,80 @@
 // Time: O(nlogn)
 // Space: O(n)
 
-// 1. merge sort
-function merge(
-    nums: number[],
-    indexes: number[],
-    temp: number[],
-    counts: number[],
-    left: number,
-    mid: number,
-    right: number,
-): void {
-    let i = left
-    let j = mid + 1
-    let p = 0
-    let count = 0
+class MySortHelper {
+    private nums: number[]
+    private indexes: number[]
+    private temp: number[]
+    private counts: number[]
+    public constructor(nums: number[]) {
+        this.nums = nums
+        this.indexes = nums.map((_, index) => index)
+        this.temp = new Array(nums.length)
+        this.counts = new Array(nums.length).fill(0)
+    }
 
-    while (i <= mid && j <= right) {
-        if (nums[indexes[i]] <= nums[indexes[j]]) {
-            temp[p] = indexes[i]
-            counts[indexes[i]] += count
+    // 1. merge sort
+    private merge(left: number, mid: number, right: number): void {
+        let i = left
+        let j = mid + 1
+        let p = 0
+        let count = 0
+
+        while (i <= mid && j <= right) {
+            if (this.nums[this.indexes[i]] <= this.nums[this.indexes[j]]) {
+                this.temp[p] = this.indexes[i]
+                this.counts[this.indexes[i]] += count
+                ++p
+                ++i
+            } else {
+                this.temp[p] = this.indexes[j]
+                ++p
+                ++j
+                ++count
+            }
+        }
+
+        while (i <= mid) {
+            this.temp[p] = this.indexes[i]
+            this.counts[this.indexes[i]] += count
             ++p
             ++i
-        } else {
-            temp[p] = indexes[j]
+        }
+
+        while (j <= right) {
+            this.temp[p] = this.indexes[j]
             ++p
             ++j
-            ++count
+        }
+
+        for (let k = 0; k < p; k++) {
+            this.indexes[left + k] = this.temp[k]
         }
     }
 
-    while (i <= mid) {
-        temp[p] = indexes[i]
-        counts[indexes[i]] += count
-        ++p
-        ++i
+    public sort(left: number = 0, right: number = this.nums.length - 1): void {
+        if (left >= right) {
+            return
+        }
+
+        const mid = (left + right) >>> 1
+
+        this.sort(left, mid)
+        this.sort(mid + 1, right)
+        this.merge(left, mid, right)
     }
 
-    while (j <= right) {
-        temp[p] = indexes[j]
-        ++p
-        ++j
+    public getCounts(): number[] {
+        return this.counts
     }
-
-    for (let k = 0; k < p; k++) {
-        indexes[left + k] = temp[k]
-    }
-}
-
-function sort(
-    nums: number[],
-    indexes: number[],
-    temp: number[],
-    counts: number[],
-    left: number,
-    right: number,
-): void {
-    if (left >= right) {
-        return
-    }
-
-    const mid = (left + right) >>> 1
-
-    sort(nums, indexes, temp, counts, left, mid)
-    sort(nums, indexes, temp, counts, mid + 1, right)
-    merge(nums, indexes, temp, counts, left, mid, right)
 }
 
 function countSmaller(nums: number[]): number[] {
-    const indexes = nums.map((_, index) => index)
-    const temp: number[] = new Array(nums.length)
-    const counts: number[] = new Array(nums.length).fill(0)
+    const mySortHelper = new MySortHelper(nums)
 
-    sort(nums, indexes, temp, counts, 0, nums.length - 1)
+    mySortHelper.sort()
 
-    return counts
+    return mySortHelper.getCounts()
 }
 
 export { countSmaller }

@@ -1,0 +1,69 @@
+// *Time Limit Exceeded
+// <BFS, Queue, HashTable>
+// Time: O(n^2)
+// Space: O(n)
+
+class MyGraph {
+    private n: number
+    private graph: number[][]
+    private ans: number[]
+    public constructor(n: number, edges: number[][]) {
+        this.n = n
+        this.graph = Array.from({ length: n }, () => [])
+        this.ans = []
+
+        for (const [i, j] of edges) {
+            this.graph[i].push(j)
+            this.graph[j].push(i)
+        }
+    }
+
+    public bfs(): void {
+        for (let i = 0; i < this.n; ++i) {
+            const visited: boolean[] = new Array(this.n).fill(false)
+            let queue: number[] = [i]
+            let newQueue: number[]
+            let sum = 0
+            let depth = 1
+
+            while (queue.length) {
+                newQueue = []
+
+                for (const curNodeIndex of queue) {
+                    for (const neighborIndex of this.graph[curNodeIndex]) {
+                        if (!visited[neighborIndex]) {
+                            sum += depth
+                            newQueue.push(neighborIndex)
+                        }
+                    }
+
+                    visited[curNodeIndex] = true
+                }
+
+                ++depth
+                queue = newQueue
+            }
+
+            this.ans.push(sum)
+        }
+    }
+
+    public getAns(): number[] {
+        return this.ans
+    }
+}
+
+function sumOfDistancesInTree(n: number, edges: number[][]): number[] {
+    // edge cases
+    if (n === 0 || !edges.length) {
+        return [0]
+    }
+
+    const myGraph = new MyGraph(n, edges)
+
+    myGraph.bfs()
+
+    return myGraph.getAns()
+}
+
+export { sumOfDistancesInTree }

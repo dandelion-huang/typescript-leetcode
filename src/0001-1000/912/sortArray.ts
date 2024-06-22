@@ -5,8 +5,7 @@ import { partition } from 'algorithms/hoarePatitionArray'
 // all the elements smaller than the pivot will be on the left
 // all the elements greater than the pivot will be on the right
 
-// *Lomuto Partition Scheme can't passed the test cases here
-
+// *Lomuto Partition Scheme can't pass the test cases (Time Limit Exceeded)
 // <Recursion, DivideAndConquer, Quick Sort>
 // Time: O(nlogn)
 // Space: O(n)

@@ -9,8 +9,7 @@
         "plugin:prettier/recommended",
         "plugin:import/recommended",
         "plugin:@typescript-eslint/recommended",
-        "airbnb",
-        "airbnb-typescript/base",
+        "plugin:@typescript-eslint/stylistic",
     ],
     "plugins": ["prettier", "import", "@typescript-eslint"],
     "parserOptions": {
@@ -18,15 +17,16 @@
         "sourceType": "module",
         "project": "./tsconfig.json",
     },
+    "settings": {
+        "import/resolver": {
+            "typescript": {},
+        },
+    },
     "rules": {
-        "@typescript-eslint/ban-types": [
-            "error",
+        "@typescript-eslint/array-type": [
+            "warn",
             {
-                "types": {
-                    "Array": {
-                        "message": "Please use '[]' for array types for simplicity.",
-                    },
-                },
+                "default": "array",
             },
         ],
         "@typescript-eslint/indent": "off",

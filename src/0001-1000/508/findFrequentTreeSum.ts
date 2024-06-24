@@ -4,7 +4,9 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-type Helper = { maxCount: number }
+interface Helper {
+    maxCount: number
+}
 
 // 1. dfs
 function dfs(node: TreeNode | null, countMap: Map<number, number>, helper: Helper): number {

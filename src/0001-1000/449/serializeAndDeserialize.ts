@@ -14,11 +14,7 @@ import { serialize } from '0001-1000/297/serializeAndDeserialize'
 /*
  * Decodes your encoded data to tree.
  */
-function dfsDeserialize(
-    dataList: string[],
-    lower: number = -Infinity,
-    upper: number = Infinity,
-): TreeNode | null {
+function dfsDeserialize(dataList: string[], lower = -Infinity, upper = Infinity): TreeNode | null {
     // edge cases
     if (dataList[0] === '#') {
         dataList.shift()

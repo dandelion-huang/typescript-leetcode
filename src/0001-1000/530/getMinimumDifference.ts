@@ -4,7 +4,10 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-type Helper = { minDiff: number; prev: number }
+interface Helper {
+    minDiff: number
+    prev: number
+}
 
 // 1. dfs
 function dfs(node: TreeNode | null, helper: Helper): void {

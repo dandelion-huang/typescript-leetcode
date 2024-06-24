@@ -4,7 +4,9 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 // Time: O(n)
 // Space: O(n)
 
-type Helper = { front: ListNode | null }
+interface Helper {
+    front: ListNode | null
+}
 
 function recurse(node: ListNode | null, helper: Helper): boolean {
     if (node) {

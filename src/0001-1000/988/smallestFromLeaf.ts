@@ -4,7 +4,9 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-type Helper = { smallestStr: string }
+interface Helper {
+    smallestStr: string
+}
 
 function numToChar(num: number): string {
     if (num < 0 || num > 25) {
@@ -15,7 +17,7 @@ function numToChar(num: number): string {
 }
 
 // 1. dfs
-function dfs(node: TreeNode | null, helper: Helper, curStr: string = ''): void {
+function dfs(node: TreeNode | null, helper: Helper, curStr = ''): void {
     // edge cases
     if (!node) {
         return

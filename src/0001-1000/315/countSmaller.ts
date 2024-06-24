@@ -53,7 +53,7 @@ class MySortHelper {
         }
     }
 
-    public sort(left: number = 0, right: number = this.nums.length - 1): void {
+    public sort(left = 0, right: number = this.nums.length - 1): void {
         if (left >= right) {
             return
         }

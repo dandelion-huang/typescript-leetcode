@@ -10,7 +10,7 @@ function dfs(
     ans: number[][],
     path: number[],
     targetSum: number,
-    sum: number = 0,
+    sum = 0,
 ): void {
     if (!node) {
         return

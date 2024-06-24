@@ -7,7 +7,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 /*
  * Encodes a tree to a single string.
  */
-function dfsSerialize(node: TreeNode | null, str: string = ''): string {
+function dfsSerialize(node: TreeNode | null, str = ''): string {
     if (!node) {
         str += '#,' // # for null
     } else {

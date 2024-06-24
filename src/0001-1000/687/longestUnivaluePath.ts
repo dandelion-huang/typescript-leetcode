@@ -6,7 +6,9 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-type Helper = { longestPath: number }
+interface Helper {
+    longestPath: number
+}
 
 // 1. dfs
 function dfs(node: TreeNode | null, helper: Helper, prevVal?: number): number {

@@ -5,7 +5,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Space: O(n)
 
 // 1. dfs
-function dfs(node: TreeNode | null, prevSum: number = 0): number {
+function dfs(node: TreeNode | null, prevSum = 0): number {
     if (!node) {
         return 0
     }

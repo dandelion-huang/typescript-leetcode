@@ -4,10 +4,13 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-type Helper = { maxDepth: number; sum: number }
+interface Helper {
+    maxDepth: number
+    sum: number
+}
 
 // 1. dfs
-function dfs(node: TreeNode | null, helper: Helper, depth: number = 0): void {
+function dfs(node: TreeNode | null, helper: Helper, depth = 0): void {
     // edge cases
     if (!node) {
         return

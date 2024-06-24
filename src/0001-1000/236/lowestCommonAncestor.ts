@@ -4,7 +4,9 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Time: O(n)
 // Space: O(n)
 
-type Helper = { node: TreeNode | null }
+interface Helper {
+    node: TreeNode | null
+}
 
 // 1. dfs
 function dfs(

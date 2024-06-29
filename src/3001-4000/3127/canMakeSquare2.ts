@@ -4,7 +4,7 @@
 
 function prefixSum(grid: [string, string][]) {
     const n = grid.length
-    const preSum: number[][] = new Array(n + 1).fill(0).map(() => new Array(n + 1).fill(0))
+    const preSum: number[][] = Array.from({ length: n + 1 }, () => new Array(n + 1).fill(0))
 
     for (let i = 0; i < n; ++i) {
         for (let j = 0; j < n; ++j) {

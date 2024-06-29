@@ -25,7 +25,7 @@ function nextGreaterElement(nums1: number[], nums2: number[]): number[] {
         stack.push(num)
     }
 
-    const ans = new Array(n).fill(0).map((_, i) => map.get(nums1[i])!)
+    const ans = Array.from({ length: n }, (_, i) => map.get(nums1[i])!)
 
     return ans
 }

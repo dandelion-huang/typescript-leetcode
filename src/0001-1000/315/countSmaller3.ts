@@ -8,7 +8,7 @@ import { ascendingOrderDiscretizer } from 'utils/discretizer/ascendingOrderDiscr
 function countSmaller(nums: number[]): number[] {
     const discretizer = ascendingOrderDiscretizer(nums)
     const tree = new BinaryIndexedTree(discretizer.size, 0, (a, b) => a + b)
-    const ans = new Array(nums.length)
+    const ans: number[] = new Array(nums.length)
 
     for (let i = nums.length - 1; i >= 0; --i) {
         ans[i] = tree.query(discretizer.get(nums[i])! - 1)

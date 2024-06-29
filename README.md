@@ -69,6 +69,7 @@ Solving Leetcode problems with TypeScript.
 -   [508. Most Frequent Subtree Sum `Medium`](./src/0001-1000/508/findFrequentTreeSum.ts)
 -   [530. Minimum Absolute Difference in BST `Easy`](./src/0001-1000/530/getMinimumDifference.ts)
 -   [543. Diameter of Binary Tree `Easy`](./src/0001-1000/543/diameterOfBinaryTree.ts)
+-   [547. Number of Provinces `Medium`](./src/0001-1000/547/findCircleNum.ts)
 -   [572. Subtree of Another Tree `Easy`](./src/0001-1000/572/isSubtree.ts)
 -   [589. N-ary Tree Preorder Traversal `Easy`](./src/0001-1000/589/preorder.ts)
 -   [590. N-ary Tree Postorder Traversal `Easy`](./src/0001-1000/590/postorder.ts)

@@ -11,7 +11,7 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/stylistic",
     ],
-    "plugins": ["prettier", "import", "@typescript-eslint"],
+    "plugins": ["prettier", "import", "@typescript-eslint", "@stylistic/ts"],
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module",
@@ -23,6 +23,16 @@
         },
     },
     "rules": {
+        "@stylistic/ts/lines-between-class-members": [
+            "warn",
+            {
+                "enforce": [
+                    { "blankLine": "never", "prev": "field", "next": "field" },
+                    { "blankLine": "always", "prev": "field", "next": "method" },
+                ],
+            },
+            { "exceptAfterSingleLine": false },
+        ],
         "@typescript-eslint/array-type": [
             "warn",
             {
@@ -30,7 +40,6 @@
             },
         ],
         "@typescript-eslint/indent": "off",
-        "@typescript-eslint/lines-between-class-members": "off",
         "@typescript-eslint/no-extra-semi": "off",
         "@typescript-eslint/semi": "off",
         "import/order": [

@@ -7,6 +7,7 @@ class MySortHelper {
     private indexes: number[]
     private temp: number[]
     private counts: number[]
+
     public constructor(nums: number[]) {
         this.nums = nums
         this.indexes = nums.map((_, index) => index)

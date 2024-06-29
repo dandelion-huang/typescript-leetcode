@@ -8,6 +8,7 @@ import { swap } from 'utils/swapArrayElements'
 class RandomizedSet<T> {
     nums: T[]
     valToIndexMap: Map<T, number> // Map<val, index>
+
     private constructor() {
         this.nums = []
         this.valToIndexMap = new Map()

@@ -8,6 +8,7 @@ import { ListNode } from 'classes/SinglyLinkedListNode'
 class MyLinkedList {
     private size: number
     private dummyHead: ListNode
+
     private constructor() {
         this.size = 0
         this.dummyHead = new ListNode(-1) // dummy head (sentinel node)

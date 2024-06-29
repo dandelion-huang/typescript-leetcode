@@ -7,6 +7,7 @@ class MyGraph {
     private n: number
     private graph: number[][]
     private ans: number[]
+
     public constructor(n: number, edges: number[][]) {
         this.n = n
         this.graph = Array.from({ length: n }, () => [])

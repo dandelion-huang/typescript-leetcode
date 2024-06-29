@@ -5,6 +5,7 @@
 class StockSpanner {
     stack: [number, number][]
     index: number
+
     constructor() {
         this.stack = [[-1, Infinity]] // [index, price]
         this.index = -1 // for day: -1

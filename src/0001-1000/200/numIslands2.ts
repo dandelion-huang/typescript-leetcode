@@ -9,6 +9,7 @@ class MyMap {
     private n: number
     private m: number
     private numberOfIslands: number
+
     public constructor(grid: string[][]) {
         this.grid = grid
         this.n = grid.length

@@ -7,6 +7,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 class MyBst {
     private root: TreeNode
     private childNumMap: Map<TreeNode, number> // Map<node, childNodeNum>
+
     public constructor(root: TreeNode) {
         this.root = root
         this.childNumMap = new Map()

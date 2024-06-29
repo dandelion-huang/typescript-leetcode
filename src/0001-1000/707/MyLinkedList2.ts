@@ -9,6 +9,7 @@ class MyLinkedList {
     private size: number
     private dummyHead: DoublyListNode
     private dummyTail: DoublyListNode
+
     private constructor() {
         this.size = 0
         this.dummyHead = new DoublyListNode(-1) // dummy head (sentinel node)

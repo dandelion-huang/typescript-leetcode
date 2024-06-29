@@ -9,6 +9,7 @@ class MyIsland {
     private n: number
     private m: number
     private perimeter: number
+
     public constructor(grid: number[][]) {
         this.grid = grid
         this.n = grid.length

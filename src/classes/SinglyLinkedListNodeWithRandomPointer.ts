@@ -4,6 +4,7 @@ class ListNode extends SinglyLinkedListNode {
     declare val: number
     declare next: ListNode | null
     random: ListNode | null
+
     constructor(val?: number, next?: ListNode | null, random?: ListNode | null) {
         super()
         this.val = val ?? 0

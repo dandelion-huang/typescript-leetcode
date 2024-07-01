@@ -1,10 +1,10 @@
 import { dx, dy } from '0001-1000/200/constants'
 
-// <Iteration>
+// <Recursion, DFS>
 // Time: O(nm)
-// Space: O(1)
+// Space: O(nm)
 
-class MyIsland {
+class MyMap {
     private grid: number[][]
     private n: number
     private m: number
@@ -17,15 +17,26 @@ class MyIsland {
         this.perimeter = 0
     }
 
-    private countSides(x: number, y: number): number {
+    // 1. dfs
+    private dfs(x: number, y: number): number {
+        // out of boundary or sea
+        if (x < 0 || x >= this.n || y < 0 || y >= this.m || !this.grid[x][y]) {
+            return 1
+        }
+
+        // visited
+        if (this.grid[x][y] === -1) {
+            return 0
+        }
+
+        this.grid[x][y] = -1 // mark as visited
+
         let sides = 0
 
-        for (let k = 0; k < 4; ++k) {
-            const [px, py] = [x + dx[k], y + dy[k]]
+        for (let i = 0; i < 4; ++i) {
+            const [px, py] = [x + dx[i], y + dy[i]]
 
-            if (px < 0 || px >= this.n || py < 0 || py >= this.m || !this.grid[px][py]) {
-                ++sides
-            }
+            sides += this.dfs(px, py)
         }
 
         return sides
@@ -34,9 +45,9 @@ class MyIsland {
     public countPerimeter(): void {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.m; ++j) {
-                // examine if the current cell is an island
+                // land
                 if (this.grid[i][j]) {
-                    this.perimeter += this.countSides(i, j)
+                    this.perimeter += this.dfs(i, j)
                 }
             }
         }
@@ -53,11 +64,11 @@ function islandPerimeter(grid: number[][]): number {
         return 0
     }
 
-    const myIsland = new MyIsland(grid)
+    const myMap = new MyMap(grid)
 
-    myIsland.countPerimeter()
+    myMap.countPerimeter()
 
-    return myIsland.getPerimeter()
+    return myMap.getPerimeter()
 }
 
 export { islandPerimeter }

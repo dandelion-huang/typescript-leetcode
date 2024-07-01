@@ -1,6 +1,6 @@
 import { dx, dy } from '0001-1000/200/constants'
 
-// <Recursion, DFS>
+// <Iteration, BFS, Queue>
 // Time: O(nm)
 // Space: O(nm)
 
@@ -17,24 +17,24 @@ class MyMap {
         this.numberOfIslands = 0
     }
 
-    // 1. dfs
-    private dfs(x: number, y: number): void {
-        if (x < 0 || x >= this.n || y < 0 || y >= this.m || this.grid[x][y] !== '1') {
-            return
-        }
+    // 1. bfs
+    private bfs(x: number, y: number): void {
+        const queue: [number, number][] = [[x, y]]
 
-        // visited
-        if (this.grid[x][y] === '-1') {
-            return
-        }
+        this.grid[x][y] = '-1' // mark as visited
 
-        // mark as visited
-        this.grid[x][y] = '-1'
+        while (queue.length) {
+            const [curX, curY] = queue.shift()!
 
-        for (let i = 0; i < 4; ++i) {
-            const [px, py] = [x + dx[i], y + dy[i]]
+            for (let k = 0; k < 4; ++k) {
+                const [px, py] = [curX + dx[k], curY + dy[k]]
 
-            this.dfs(px, py)
+                // can also be wrote as: this.grid?.[px]?.[py] === '1'
+                if (px >= 0 && px < this.n && py >= 0 && py < this.m && this.grid[px][py] === '1') {
+                    queue.push([px, py])
+                    this.grid[px][py] = '-1' // mark as visited
+                }
+            }
         }
     }
 
@@ -43,7 +43,7 @@ class MyMap {
             for (let j = 0; j < this.m; ++j) {
                 if (this.grid[i][j] === '1') {
                     ++this.numberOfIslands
-                    this.dfs(i, j)
+                    this.bfs(i, j)
                 }
             }
         }

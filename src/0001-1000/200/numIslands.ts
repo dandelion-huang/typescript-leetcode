@@ -1,8 +1,8 @@
 import { dx, dy } from '0001-1000/200/constants'
 
-// <Iteration, BFS, Queue>
+// <Recursion, DFS>
 // Time: O(nm)
-// Space: O(min(n, m))
+// Space: O(nm)
 
 class MyMap {
     private grid: string[][]
@@ -17,34 +17,34 @@ class MyMap {
         this.numberOfIslands = 0
     }
 
-    // 1. bfs
-    private bfs(x: number, y: number): void {
-        const queue: [number, number][] = [[x, y]]
+    // 1. dfs
+    private dfs(x: number, y: number): void {
+        // out of boundary or sea
+        if (x < 0 || x >= this.n || y < 0 || y >= this.m || this.grid[x][y] === '0') {
+            return
+        }
 
-        this.grid[x][y] = '-1'
+        // visited
+        if (this.grid[x][y] === '-1') {
+            return
+        }
 
-        while (queue.length) {
-            const [curX, curY] = queue.shift()!
+        this.grid[x][y] = '-1' // mark as visited
 
-            for (let k = 0; k < 4; ++k) {
-                const [px, py] = [curX + dx[k], curY + dy[k]]
+        for (let i = 0; i < 4; ++i) {
+            const [px, py] = [x + dx[i], y + dy[i]]
 
-                // can also be wrote as: this.grid?.[px]?.[py] === '1'
-                if (px >= 0 && px < this.n && py >= 0 && py < this.m && this.grid[px][py] === '1') {
-                    queue.push([px, py])
-                    this.grid[px][py] = '-1'
-                }
-            }
+            this.dfs(px, py)
         }
     }
 
     public countIslands(): void {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.m; ++j) {
-                // examine if the current cell is an island
+                // land
                 if (this.grid[i][j] === '1') {
                     ++this.numberOfIslands
-                    this.bfs(i, j)
+                    this.dfs(i, j)
                 }
             }
         }

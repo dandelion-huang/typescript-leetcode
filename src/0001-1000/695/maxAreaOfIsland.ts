@@ -1,4 +1,4 @@
-import { dx, dy } from '0001-1000/200/constants'
+import { dx, dy } from 'constants/directions'
 
 // <Recursion, DFS>
 // Time: O(nm)

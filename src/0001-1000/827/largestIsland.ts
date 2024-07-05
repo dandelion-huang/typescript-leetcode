@@ -57,28 +57,34 @@ class MyMap {
         }
     }
 
+    private countPotentialArea(x: number, y: number): number {
+        const visited = new Set<number>([0])
+        let curPotentialArea = 1
+
+        for (let k = 0; k < 4; ++k) {
+            const [px, py] = [x + dx[k], y + dy[k]]
+
+            if (
+                px >= 0 &&
+                px < this.n &&
+                py >= 0 &&
+                py < this.n &&
+                !visited.has(this.grid[px][py])
+            ) {
+                visited.add(this.grid[px][py])
+                curPotentialArea += this.islandAreaMap.get(this.grid[px][py])!
+            }
+        }
+
+        return curPotentialArea
+    }
+
     public countPotentialLargestIslandArea(): void {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.n; ++j) {
                 // sea
                 if (this.grid[i][j] === 0) {
-                    const visited = new Set<number>([0])
-                    let curPotentialArea = 1
-
-                    for (let k = 0; k < 4; ++k) {
-                        const [px, py] = [i + dx[k], j + dy[k]]
-
-                        if (
-                            px >= 0 &&
-                            px < this.n &&
-                            py >= 0 &&
-                            py < this.n &&
-                            !visited.has(this.grid[px][py])
-                        ) {
-                            visited.add(this.grid[px][py])
-                            curPotentialArea += this.islandAreaMap.get(this.grid[px][py])!
-                        }
-                    }
+                    const curPotentialArea = this.countPotentialArea(i, j)
 
                     this.potentialLargestIslandArea = Math.max(
                         this.potentialLargestIslandArea,

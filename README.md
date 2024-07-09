@@ -49,6 +49,7 @@ Solving Leetcode problems with TypeScript.
 -   [169. Majority Element `Easy`](./src/0001-1000/169/majorityElement.ts)
 -   [200. Number of Islands `Medium`](./src/0001-1000/200/numIslands.ts)
 -   [206. Reverse Linked List `Easy`](./src/0001-1000/206/reverseList.ts)
+-   [207. Course Schedule `Medium`](./src/0001-1000/207/canFinish.ts)
 -   [230. Kth Smallest Element in a BST `Medium`](./src/0001-1000/230/kthSmallest.ts)
 -   [234. Palindrome Linked List `Easy`](./src/0001-1000/234/isPalindrome.ts)
 -   [235. Lowest Common Ancestor of a Binary Search Tree `Medium`](./src/0001-1000/235/lowestCommonAncestor.ts)

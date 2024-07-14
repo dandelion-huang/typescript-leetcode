@@ -1,6 +1,6 @@
 // To avoid multi counting, we assume:
-//      1. the number of subarrays which the minimum is at the beginning, called left[i]
-//      2. the number of subarrays which the minimum is at the end, called right[i]
+// 1. the number of subarrays which the minimum is at the beginning, called left[i]
+// 2. the number of subarrays which the minimum is at the end, called right[i]
 // then, the number of subarrays containing the minimum is left[i] * right[i]
 // so the answer is the sum of all the arr[i] * left[i] * right[i]
 

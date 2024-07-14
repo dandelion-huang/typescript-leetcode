@@ -1,8 +1,8 @@
 // <Iteration, BFS, Queue>
 // Time: O(n + m)
 // Space: O(n + m)
-//       n for the number of courses
-//       m for the number of prerequisites
+//        n for the number of courses
+//        m for the number of prerequisites
 
 class MyGraph {
     private n: number

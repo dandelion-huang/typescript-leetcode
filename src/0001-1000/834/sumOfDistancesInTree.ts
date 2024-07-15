@@ -6,12 +6,10 @@
 class MyGraph {
     private n: number
     private graph: number[][]
-    private ans: number[]
 
     public constructor(n: number, edges: number[][]) {
         this.n = n
         this.graph = Array.from({ length: n }, () => [])
-        this.ans = []
 
         for (const [i, j] of edges) {
             this.graph[i].push(j)
@@ -19,7 +17,9 @@ class MyGraph {
         }
     }
 
-    public bfs(): void {
+    public bfs(): number[] {
+        const sums: number[] = []
+
         for (let i = 0; i < this.n; ++i) {
             const visited: boolean[] = new Array(this.n).fill(false)
             let queue: number[] = [i]
@@ -45,12 +45,10 @@ class MyGraph {
                 queue = newQueue
             }
 
-            this.ans.push(sum)
+            sums.push(sum)
         }
-    }
 
-    public getAns(): number[] {
-        return this.ans
+        return sums
     }
 }
 
@@ -62,9 +60,7 @@ function sumOfDistancesInTree(n: number, edges: number[][]): number[] {
 
     const myGraph = new MyGraph(n, edges)
 
-    myGraph.bfs()
-
-    return myGraph.getAns()
+    return myGraph.bfs()
 }
 
 export { sumOfDistancesInTree }

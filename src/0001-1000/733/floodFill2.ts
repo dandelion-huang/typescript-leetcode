@@ -20,7 +20,7 @@ class MyMap {
     }
 
     // 1. bfs
-    public bfs(x: number, y: number): void {
+    public bfs(x: number, y: number): number[][] {
         const queue: [number, number][] = [[x, y]]
 
         this.image[x][y] = this.color // flood fill
@@ -43,6 +43,8 @@ class MyMap {
                 }
             }
         }
+
+        return this.getImage()
     }
 
     public getImage(): number[][] {
@@ -64,9 +66,7 @@ function floodFill(image: number[][], sr: number, sc: number, color: number): nu
 
     const myMap = new MyMap(image, sr, sc, color)
 
-    myMap.bfs(sr, sc)
-
-    return myMap.getImage()
+    return myMap.bfs(sr, sc)
 }
 
 export { floodFill }

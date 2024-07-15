@@ -8,13 +8,11 @@ class MyMap {
     private grid: string[][]
     private n: number
     private m: number
-    private numberOfIslands: number
 
     public constructor(grid: string[][]) {
         this.grid = grid
         this.n = grid.length
         this.m = grid[0].length
-        this.numberOfIslands = 0
     }
 
     // 1. bfs
@@ -38,19 +36,19 @@ class MyMap {
         }
     }
 
-    public countIslands(): void {
+    public iterate(): number {
+        let numberOfIslands = 0
+
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.m; ++j) {
                 if (this.grid[i][j] === '1') {
-                    ++this.numberOfIslands
+                    ++numberOfIslands
                     this.bfs(i, j)
                 }
             }
         }
-    }
 
-    public getNumberOfIslands(): number {
-        return this.numberOfIslands
+        return numberOfIslands
     }
 }
 
@@ -62,9 +60,7 @@ function numIslands(grid: string[][]): number {
 
     const myMap = new MyMap(grid)
 
-    myMap.countIslands()
-
-    return myMap.getNumberOfIslands()
+    return myMap.iterate()
 }
 
 export { numIslands }

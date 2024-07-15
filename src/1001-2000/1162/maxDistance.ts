@@ -8,16 +8,14 @@ class MyMap {
     private grid: number[][]
     private n: number
     private queue: [number, number][]
-    private maxDistance: number
 
     public constructor(grid: number[][]) {
         this.grid = grid
         this.n = grid.length
         this.queue = []
-        this.maxDistance = -1
     }
 
-    public addLands() {
+    private addLands() {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.n; ++j) {
                 // land
@@ -29,10 +27,14 @@ class MyMap {
     }
 
     // 1. bfs
-    public bfs() {
+    public bfs(): number {
+        let maxDistance = -1
+
+        this.addLands()
+
         // edge cases
         if (!this.queue.length || this.queue.length === this.n ** 2) {
-            return this.maxDistance
+            return maxDistance
         }
 
         while (this.queue.length) {
@@ -57,12 +59,10 @@ class MyMap {
                 }
             }
 
-            ++this.maxDistance
+            ++maxDistance
         }
-    }
 
-    public getMaxDistance(): number {
-        return this.maxDistance
+        return maxDistance
     }
 }
 
@@ -74,10 +74,7 @@ function maxDistance(grid: number[][]): number {
 
     const myMap = new MyMap(grid)
 
-    myMap.addLands()
-    myMap.bfs()
-
-    return myMap.getMaxDistance()
+    return myMap.bfs()
 }
 
 export { maxDistance }

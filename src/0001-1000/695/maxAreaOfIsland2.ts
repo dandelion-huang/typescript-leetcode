@@ -42,7 +42,7 @@ class MyMap {
         this.maxAreaOfIsland = Math.max(this.maxAreaOfIsland, areaOfCurIsland)
     }
 
-    public countMaxAreaOfIslands(): void {
+    public iterate(): number {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.m; ++j) {
                 if (this.grid[i][j] === 1) {
@@ -50,6 +50,8 @@ class MyMap {
                 }
             }
         }
+
+        return this.getMaxAreaOfIsland()
     }
 
     public getMaxAreaOfIsland(): number {
@@ -65,9 +67,7 @@ function maxAreaOfIsland(grid: number[][]): number {
 
     const myMap = new MyMap(grid)
 
-    myMap.countMaxAreaOfIslands()
-
-    return myMap.getMaxAreaOfIsland()
+    return myMap.iterate()
 }
 
 export { maxAreaOfIsland }

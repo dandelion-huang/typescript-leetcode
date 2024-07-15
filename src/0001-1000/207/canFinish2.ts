@@ -1,4 +1,4 @@
-// <Iteration, BFS, Queue>
+// <Iteration, BFS, Queue, Topological Sorting>
 // Time: O(n + m)
 // Space: O(n + m)
 //        n for the number of courses
@@ -17,7 +17,6 @@ class MyGraph {
         this.queue = []
         this.initGraph(prerequisites)
         this.initInDegree(prerequisites)
-        this.initQueue()
     }
 
     private initGraph(prerequisites: number[][]) {
@@ -43,6 +42,8 @@ class MyGraph {
     // 1. bfs
     public bfs(): boolean {
         let attendedCourses = 0
+
+        this.initQueue()
 
         while (this.queue.length) {
             const course = this.queue.shift()!

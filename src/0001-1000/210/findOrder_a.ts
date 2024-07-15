@@ -1,22 +1,25 @@
-// <Recursion, DFS, Topological Sorting>
+import { visitingStatus } from 'constants/vistingStatus'
+
+const { VISITED, VISITING, INITIAL } = visitingStatus
+
+// <Recursion, DFS>
 // Time: O(n + m)
-// Space: O(n + m)
+// Space: O(n)
 //        n for the number of courses
 //        m for the number of prerequisites
 
 class MyGraph {
     private n: number
     private graph: number[][]
-    private inDegree: number[]
+    private status: number[]
     private attendedCourses: number[]
 
     public constructor(numCourses: number, prerequisites: number[][]) {
         this.n = numCourses
         this.graph = Array.from({ length: this.n }, () => [])
-        this.inDegree = new Array(this.n).fill(0)
+        this.status = new Array(this.n).fill(INITIAL)
         this.attendedCourses = []
         this.initGraph(prerequisites)
-        this.initInDegree(prerequisites)
     }
 
     private initGraph(prerequisites: number[][]) {
@@ -25,25 +28,19 @@ class MyGraph {
         }
     }
 
-    private initInDegree(prerequisites: number[][]) {
-        for (const [to] of prerequisites) {
-            ++this.inDegree[to]
-        }
-    }
-
     // 1. dfs
     private isCyclic(i: number): boolean {
-        // visited and no cycle
-        if (this.inDegree[i] === -Infinity) {
+        // visited
+        if (this.status[i] === VISITED) {
             return false
         }
 
-        // visiting the node visited before
-        if (this.inDegree[i] === -1) {
+        // visiting
+        if (this.status[i] === VISITING) {
             return true
         }
 
-        --this.inDegree[i]
+        this.status[i] = VISITING // mark as visiting
 
         for (const neighbor of this.graph[i]) {
             if (this.isCyclic(neighbor)) {
@@ -51,8 +48,8 @@ class MyGraph {
             }
         }
 
-        this.inDegree[i] = -Infinity // mark as visited and no cycle
-        this.attendedCourses.unshift(i)
+        this.status[i] = VISITED // mark as visited
+        this.attendedCourses.unshift(i) // add to the attended courses
 
         return false
     }

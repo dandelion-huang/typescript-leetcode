@@ -17,6 +17,7 @@ Solving Leetcode problems with TypeScript.
 ## Problem List
 
 -   [2. Add Two Numbers `Medium`](./src/0001-1000/2/addTwoNumbers.ts)
+-   [17. Letter Combinations of a Phone Number `Medium`](./src/0001-1000/17/letterCombinations.ts)
 -   [21. Merge Two Sorted Lists `Easy`](./src/0001-1000/21/mergeTwoLists.ts)
 -   [23. Merge k Sorted Lists `Hard`](./src/0001-1000/23/mergeKLists.ts)
 -   [24. Swap Nodes in Pairs `Medium`](./src/0001-1000/24/swapPairs.ts)

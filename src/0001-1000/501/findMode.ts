@@ -7,7 +7,7 @@ import { updateHelper } from './utils'
 // Space: O(n)
 
 // 1. dfs
-function dfs(node: TreeNode | null, helper: Helper, ans: number[]): void {
+function dfs(node: TreeNode | null, helper: Helper, ans: number[]) {
     if (!node) {
         return
     }

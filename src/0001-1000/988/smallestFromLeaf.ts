@@ -17,7 +17,7 @@ function numToChar(num: number): string {
 }
 
 // 1. dfs
-function dfs(node: TreeNode | null, helper: Helper, curStr = ''): void {
+function dfs(node: TreeNode | null, helper: Helper, curStr = '') {
     // edge cases
     if (!node) {
         return

@@ -39,7 +39,7 @@ class MyGraph {
     }
 
     // 1. bfs
-    public bfs(): void {
+    public bfs() {
         this.initQueue()
 
         while (this.queue.length) {

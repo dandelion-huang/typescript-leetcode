@@ -11,7 +11,7 @@ import { partition } from 'algorithms/hoarePatitionArray'
 // Space: O(n)
 
 // 1. quick sort
-function quickSort(nums: number[], left: number, right: number): void {
+function quickSort(nums: number[], left: number, right: number) {
     if (left >= right) {
         return
     }

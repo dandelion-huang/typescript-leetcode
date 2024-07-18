@@ -18,7 +18,7 @@ class MyMap {
     }
 
     // 1. dfs
-    private dfs(x: number, y: number): void {
+    private dfs(x: number, y: number) {
         // out of boundary or sea
         if (x < 0 || x >= this.n || y < 0 || y >= this.m || this.grid[x][y] === '0') {
             return
@@ -38,7 +38,7 @@ class MyMap {
         }
     }
 
-    public countIslands(): void {
+    public countIslands() {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.m; ++j) {
                 // land

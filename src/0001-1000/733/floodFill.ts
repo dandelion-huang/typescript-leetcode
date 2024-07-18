@@ -20,7 +20,7 @@ class MyMap {
     }
 
     // 1. dfs
-    public dfs(x: number, y: number): void {
+    public dfs(x: number, y: number) {
         if (x < 0 || x >= this.n || y < 0 || y >= this.m || this.image[x][y] !== this.curColor) {
             return
         }

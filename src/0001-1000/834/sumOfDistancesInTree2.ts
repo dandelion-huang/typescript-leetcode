@@ -29,7 +29,7 @@ class MyGraph {
         }
     }
 
-    public dfs(u: number, f: number): void {
+    public dfs(u: number, f: number) {
         this.children[u] = 1
         this.dp[u] = 0
 
@@ -45,7 +45,7 @@ class MyGraph {
         }
     }
 
-    public dfs2(u: number, f: number): void {
+    public dfs2(u: number, f: number) {
         this.ans[u] = this.dp[u]
         for (const v of this.graph[u]) {
             // visited

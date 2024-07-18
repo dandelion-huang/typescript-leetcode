@@ -18,7 +18,7 @@ class MyMap {
     }
 
     // 1. bfs
-    private bfs(x: number, y: number): void {
+    private bfs(x: number, y: number) {
         const queue: [number, number][] = [[x, y]]
         let areaOfCurIsland = 0
 

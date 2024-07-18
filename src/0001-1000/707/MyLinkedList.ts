@@ -28,15 +28,15 @@ class MyLinkedList {
         return cur.val
     }
 
-    public addAtHead(val: number): void {
+    public addAtHead(val: number) {
         this.addAtIndex(0, val)
     }
 
-    public addAtTail(val: number): void {
+    public addAtTail(val: number) {
         this.addAtIndex(this.size, val)
     }
 
-    public addAtIndex(index: number, val: number): void {
+    public addAtIndex(index: number, val: number) {
         if (index > this.size) {
             return
         }
@@ -55,7 +55,7 @@ class MyLinkedList {
         ++this.size
     }
 
-    public deleteAtIndex(index: number): void {
+    public deleteAtIndex(index: number) {
         if (index < 0 || index >= this.size) {
             return
         }

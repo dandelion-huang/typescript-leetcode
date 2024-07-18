@@ -8,7 +8,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 type NodeTuple = [number, number, number]
 
 // 1. dfs
-function dfs(node: TreeNode | null, col: number, row: number, nodes: NodeTuple[]): void {
+function dfs(node: TreeNode | null, col: number, row: number, nodes: NodeTuple[]) {
     // edge cases
     if (!node) {
         return

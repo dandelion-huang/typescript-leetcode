@@ -29,7 +29,7 @@ class BinaryIndexedTree<T> {
         return res
     }
 
-    update(index: number, value: T): void {
+    update(index: number, value: T) {
         for (let i = index + 1; i < this.tree.length; i += BinaryIndexedTree.lowbit(i)) {
             this.tree[i] = this.operation(this.tree[i], value)
         }

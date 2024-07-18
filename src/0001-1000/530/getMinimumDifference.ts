@@ -10,7 +10,7 @@ interface Helper {
 }
 
 // 1. dfs
-function dfs(node: TreeNode | null, helper: Helper): void {
+function dfs(node: TreeNode | null, helper: Helper) {
     if (!node) {
         return
     }

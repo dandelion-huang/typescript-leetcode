@@ -42,7 +42,7 @@ class MyMap {
         return area
     }
 
-    public countMaxAreaOfIslands(): void {
+    public countMaxAreaOfIslands() {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.m; ++j) {
                 // land

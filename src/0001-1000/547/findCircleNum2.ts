@@ -3,7 +3,7 @@
 // Space: O(n)
 
 // 1. bfs
-function bfs(isConnected: number[][], visited: boolean[], n: number, index: number): void {
+function bfs(isConnected: number[][], visited: boolean[], n: number, index: number) {
     const queue = [index]
 
     while (queue.length) {

@@ -10,7 +10,7 @@ interface Helper {
 }
 
 // 1. dfs
-function dfs(node: TreeNode | null, helper: Helper, depth = 0): void {
+function dfs(node: TreeNode | null, helper: Helper, depth = 0) {
     // edge cases
     if (!node) {
         return

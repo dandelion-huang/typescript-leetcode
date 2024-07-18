@@ -16,7 +16,7 @@ function dfs(
     node: TreeNode | null,
     robbed: Map<TreeNode | null, number>,
     safe: Map<TreeNode | null, number>,
-): void {
+) {
     if (!node) {
         return
     }

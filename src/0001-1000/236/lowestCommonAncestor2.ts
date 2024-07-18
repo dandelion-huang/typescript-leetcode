@@ -5,7 +5,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Space: O(n)
 
 // 1. dfs
-function dfs(node: TreeNode | null, parent: Map<number, TreeNode>): void {
+function dfs(node: TreeNode | null, parent: Map<number, TreeNode>) {
     // edge cases
     if (!node) {
         return

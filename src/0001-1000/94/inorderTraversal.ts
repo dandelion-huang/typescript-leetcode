@@ -5,7 +5,7 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 // Space: O(n)
 
 // 1. dfs
-function dfs(node: TreeNode | null, arr: number[]): void {
+function dfs(node: TreeNode | null, arr: number[]) {
     if (!node) {
         return
     }

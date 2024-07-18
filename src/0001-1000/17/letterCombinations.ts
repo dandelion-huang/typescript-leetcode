@@ -7,12 +7,7 @@ import { Digit, phoneNumberLetters } from 'constants/phoneNumberLetters'
 //        m for the number corresponding to 4 letters (7, 9)
 
 // 1. backtracking
-function backtrack(
-    digits: string,
-    combinations: string[],
-    combination: string,
-    index: number,
-): void {
+function backtrack(digits: string, combinations: string[], combination: string, index: number) {
     if (index === digits.length) {
         combinations.push(combination)
         return

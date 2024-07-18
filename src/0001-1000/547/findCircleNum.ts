@@ -3,7 +3,7 @@
 // Space: O(n)
 
 // 1. dfs
-function dfs(isConnected: number[][], visited: boolean[], n: number, i: number): void {
+function dfs(isConnected: number[][], visited: boolean[], n: number, i: number) {
     for (let j = 0; j < n; ++j) {
         if (isConnected[i][j] === 1 && !visited[j]) {
             visited[j] = true

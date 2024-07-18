@@ -42,7 +42,7 @@ class MyMap {
         return sides
     }
 
-    public countPerimeter(): void {
+    public countPerimeter() {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.m; ++j) {
                 // land

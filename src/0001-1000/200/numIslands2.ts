@@ -16,7 +16,7 @@ class MyMap {
     }
 
     // 1. bfs
-    private bfs(x: number, y: number): void {
+    private bfs(x: number, y: number) {
         const queue: [number, number][] = [[x, y]]
 
         this.grid[x][y] = '-1' // mark as visited

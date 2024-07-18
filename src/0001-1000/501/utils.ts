@@ -1,6 +1,6 @@
 import { type Helper } from './types'
 
-function updateHelper(value: number, helper: Helper, ans: number[]): void {
+function updateHelper(value: number, helper: Helper, ans: number[]) {
     if (value === helper.mode) {
         ++helper.count
     } else {

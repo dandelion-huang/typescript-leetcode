@@ -9,7 +9,7 @@ interface Helper {
 }
 
 // 1. dfs
-function dfs(rooms: number[][], visited: boolean[], helper: Helper, room: number): void {
+function dfs(rooms: number[][], visited: boolean[], helper: Helper, room: number) {
     visited[room] = true
     ++helper.openedRooms
 

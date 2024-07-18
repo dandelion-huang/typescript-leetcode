@@ -3,7 +3,7 @@
 // Space: O(n)
 
 // 1. merge sort
-function merge(nums: number[], temp: number[], left: number, mid: number, right: number): void {
+function merge(nums: number[], temp: number[], left: number, mid: number, right: number) {
     for (let i = left; i <= right; ++i) {
         temp[i] = nums[i]
     }
@@ -34,7 +34,7 @@ function merge(nums: number[], temp: number[], left: number, mid: number, right:
     }
 }
 
-function sort(nums: number[], temp: number[], left: number, right: number): void {
+function sort(nums: number[], temp: number[], left: number, right: number) {
     if (left >= right) {
         return
     }

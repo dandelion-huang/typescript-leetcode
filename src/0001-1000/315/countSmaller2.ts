@@ -16,7 +16,7 @@ class MySortHelper {
     }
 
     // 1. merge sort
-    private merge(left: number, mid: number, right: number): void {
+    private merge(left: number, mid: number, right: number) {
         for (let i = left; i <= right; ++i) {
             this.temp[i] = this.indexes[i]
         }
@@ -45,7 +45,7 @@ class MySortHelper {
         }
     }
 
-    public sort(left = 0, right: number = this.nums.length - 1): void {
+    public sort(left = 0, right: number = this.nums.length - 1) {
         if (left >= right) {
             return
         }

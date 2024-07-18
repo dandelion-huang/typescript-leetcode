@@ -41,7 +41,7 @@ class MyMap {
         return area
     }
 
-    public countExistingIslandArea(): void {
+    public countExistingIslandArea() {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.n; ++j) {
                 // land
@@ -79,7 +79,7 @@ class MyMap {
         return curPotentialArea
     }
 
-    public countPotentialLargestIslandArea(): void {
+    public countPotentialLargestIslandArea() {
         for (let i = 0; i < this.n; ++i) {
             for (let j = 0; j < this.n; ++j) {
                 // sea

@@ -16,7 +16,7 @@ class MySortHelper {
     }
 
     // 1. merge sort
-    private merge(left: number, mid: number, right: number): void {
+    private merge(left: number, mid: number, right: number) {
         let i = left
         let j = mid + 1
         let p = 0
@@ -54,7 +54,7 @@ class MySortHelper {
         }
     }
 
-    public sort(left = 0, right: number = this.nums.length - 1): void {
+    public sort(left = 0, right: number = this.nums.length - 1) {
         if (left >= right) {
             return
         }

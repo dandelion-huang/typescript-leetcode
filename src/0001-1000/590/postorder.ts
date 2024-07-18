@@ -5,7 +5,7 @@ import { Node } from 'classes/N-aryTreeNode'
 // Space: O(n)
 
 // 1. dfs
-function dfs(node: Node | null, ans: number[]): void {
+function dfs(node: Node | null, ans: number[]) {
     if (!node) {
         return
     }

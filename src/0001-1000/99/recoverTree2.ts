@@ -40,7 +40,7 @@ function iterate(node: TreeNode | null): [TreeNode | null, TreeNode | null] {
 /**
  *  Do not return anything, modify root in-place instead.
  */
-function recoverTree(root: TreeNode | null): void {
+function recoverTree(root: TreeNode | null) {
     const [p, q] = iterate(root)
 
     swap(p!, q!) // constraints: p and q will exist in the BST

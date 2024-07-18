@@ -21,6 +21,7 @@ Solving Leetcode problems with TypeScript.
 -   [21. Merge Two Sorted Lists `Easy`](./src/0001-1000/21/mergeTwoLists.ts)
 -   [23. Merge k Sorted Lists `Hard`](./src/0001-1000/23/mergeKLists.ts)
 -   [24. Swap Nodes in Pairs `Medium`](./src/0001-1000/24/swapPairs.ts)
+-   [39. Combination Sum `Medium`](./src/0001-1000/39/combinationSum.ts)
 -   [70. Climbing Stairs `Easy`](./src/0001-1000/70/climbStairs.ts)
 -   [94. Binary Tree Inorder Traversal `Easy`](./src/0001-1000/94/inorderTraversal.ts)
 -   [98. Validate Binary Search Tree `Medium`](./src/0001-1000/98/isValidBST.ts)

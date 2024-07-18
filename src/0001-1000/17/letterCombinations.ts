@@ -22,7 +22,7 @@ function backtrack(
     const letters = phoneNumberLetters[digit]
 
     for (const char of letters) {
-        combination = combination.concat(char)
+        combination += char
         backtrack(digits, combinations, combination, index + 1)
         combination = combination.slice(0, -1)
     }

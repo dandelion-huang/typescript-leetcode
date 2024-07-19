@@ -12,25 +12,23 @@ function backtrack(
     combination: number[],
     index: number,
 ) {
-    if (index === candidates.length) {
-        return
-    }
-
     if (target === 0) {
-        combinations.push(combination)
+        combinations.push(combination.slice())
 
         return
     }
 
-    const candidate = candidates[index]
+    for (let i = index; i < candidates.length; ++i) {
+        const candidate = candidates[i]
 
-    // recurse the candidate
-    if (target >= candidate) {
-        backtrack(candidates, target - candidate, combinations, [...combination, candidate], index)
+        if (target < candidate) {
+            break
+        }
+
+        combination.push(candidate)
+        backtrack(candidates, target - candidate, combinations, combination, i)
+        combination.pop()
     }
-
-    // skip the candidate
-    backtrack(candidates, target, combinations, combination, index + 1)
 }
 
 function combinationSum(candidates: number[], target: number): number[][] {
@@ -41,6 +39,7 @@ function combinationSum(candidates: number[], target: number): number[][] {
 
     const combinations: number[][] = []
 
+    candidates.sort((a, b) => a - b)
     backtrack(candidates, target, combinations, [], 0)
 
     return combinations

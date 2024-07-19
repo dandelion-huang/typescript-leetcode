@@ -18,6 +18,7 @@ function backtrack(
 
     if (target === 0) {
         combinations.push(combination)
+
         return
     }
 

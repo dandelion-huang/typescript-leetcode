@@ -6,9 +6,7 @@ class ListNode extends SinglyLinkedListNode {
     random: ListNode | null
 
     constructor(val?: number, next?: ListNode | null, random?: ListNode | null) {
-        super()
-        this.val = val ?? 0
-        this.next = next ?? null
+        super(val, next)
         this.random = random ?? null
     }
 }

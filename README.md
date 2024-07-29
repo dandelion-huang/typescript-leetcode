@@ -106,6 +106,7 @@ Solving Leetcode problems with TypeScript.
 -   [988. Smallest String Starting From Leaf `Medium`](./src/0001-1000/988/smallestFromLeaf.ts)
 -   [1019. Next Greater Node In Linked List `Medium`](./src/1001-2000/1019/nextLargerNodes.ts)
 -   [1162. As Far from Land as Possible `Medium`](./src/1001-2000/1162/maxDistance.ts)
+-   [1202. Smallest String With Swaps `Medium`](./src/1001-2000/1202/smallestStringWithSwaps.ts)
 -   [1302. Deepest Leaves Sum `Medium`](./src/1001-2000/1302/deepestLeavesSum.ts)
 -   [1325. Delete Leaves With a Given Value `Medium`](./src/1001-2000/1325/removeLeafNodes.ts)
 -   [1614. Maximum Nesting Depth of the Parentheses](./src/1001-2000/1614/maxDepth.ts)

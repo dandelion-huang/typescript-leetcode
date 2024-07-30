@@ -12,11 +12,9 @@ class UnionFindWithSize extends UnionFind {
     }
 
     public find(x: number): number {
-        if (this.parents[x] === x) {
-            return x
+        if (this.parents[x] !== x) {
+            this.parents[x] = this.find(this.parents[x]) // path compression
         }
-
-        this.parents[x] = this.find(this.parents[x]) // path compression
 
         return this.parents[x]
     }

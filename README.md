@@ -63,6 +63,7 @@ Solving Leetcode problems with TypeScript.
 -   [315. Count of Smaller Numbers After Self `Hard`](./src/0001-1000/315/countSmaller.ts)
 -   [337. House Robber III `Medium`](./src/0001-1000/337/rob.ts)
 -   [380. Insert Delete GetRandom O(1) `Medium`](./src/0001-1000/380/RandomizedSet.ts)
+-   [399. Evaluate Division `Medium`](./src/0001-1000/399/calcEquation.ts)
 -   [429. N-ary Tree Level Order Traversal `Medium`](./src/0001-1000/429/levelOrder.ts)
 -   [449. Serialize and Deserialize BST `Medium`](./src/0001-1000/449/serializeAndDeserialize.ts)
 -   [437. Path Sum III `Medium`](./src/0001-1000/437/pathSum.ts)

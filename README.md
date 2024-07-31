@@ -94,6 +94,7 @@ Solving Leetcode problems with TypeScript.
 -   [814. Binary Tree Pruning `Medium`](./src/0001-1000/814/pruneTree.ts)
 -   [827. Making A Large Island `Hard`](./src/0001-1000/827/largestIsland.ts)
 -   [834. Sum of Distances in Tree `Hard`](./src/0001-1000/834/sumOfDistancesInTree.ts)
+-   [839. Similar String Groups `Hard`](./src/0001-1000/839/numSimilarGroups.ts)
 -   [841. Keys and Rooms `Medium`](./src/0001-1000/841/canVisitAllRooms.ts)
 -   [853. Car Fleet `Medium`](./src/0001-1000/853/carFleet.ts)
 -   [872. Leaf-Similar Trees `Easy`](./src/0001-1000/872/leafSimilar.ts)

@@ -1,5 +1,5 @@
 import { UnionFind } from 'classes/UnionFind'
-import { swap } from 'utils/swap'
+import { swap } from 'utils/swap/swap'
 
 // <Recursion>
 

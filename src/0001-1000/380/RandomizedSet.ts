@@ -1,4 +1,4 @@
-import { swap } from 'utils/swapArrayElements'
+import { swap } from 'utils/swap/swapArrayElements'
 
 // <Design, Map, Randomized>
 //       initialize / insert / remove / getRandom

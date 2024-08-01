@@ -1,5 +1,5 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
-import { swap } from 'utils/swapBinaryTreeNodes'
+import { swap } from 'utils/swap/swapBinaryTreeNodes'
 import { updateHelper } from './utils'
 
 // <Iteration, Morris Traversal> (Reference: Leetcode 94)

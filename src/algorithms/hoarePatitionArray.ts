@@ -1,4 +1,4 @@
-import { swap } from 'utils/swapArrayElements'
+import { swap } from 'utils/swap/swapArrayElements'
 
 // In Hoare Partition Scheme
 // the pivot is chosen as the mid

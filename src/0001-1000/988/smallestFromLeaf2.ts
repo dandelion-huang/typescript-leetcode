@@ -1,16 +1,9 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
+import { numToLowercaseChar } from 'utils/char/numToLowercaseChar'
 
 // <Iteration, BFS, Queue>
 // Time: O(n)
 // Space: O(n)
-
-function numToChar(num: number): string {
-    if (num < 0 || num > 25) {
-        throw new Error('invalid number')
-    }
-
-    return String.fromCharCode(97 + num) // Unicode of 'a': 97
-}
 
 // 1. bfs
 function bfs(node: TreeNode): string {
@@ -19,7 +12,7 @@ function bfs(node: TreeNode): string {
 
     while (queue.length) {
         const [curNode, curStr] = queue.shift()!
-        const newCurStr = numToChar(curNode.val) + curStr
+        const newCurStr = numToLowercaseChar(curNode.val) + curStr
 
         if (!curNode.left && !curNode.right) {
             if (smallestStr === '' || smallestStr > newCurStr) {

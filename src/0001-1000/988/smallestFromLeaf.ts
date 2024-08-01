@@ -1,4 +1,5 @@
 import { TreeNode } from 'classes/BinaryTreeNode'
+import { numToLowercaseChar } from 'utils/char/numToLowercaseChar'
 
 // <Recursion, DFS>
 // Time: O(n)
@@ -6,14 +7,6 @@ import { TreeNode } from 'classes/BinaryTreeNode'
 
 interface Helper {
     smallestStr: string
-}
-
-function numToChar(num: number): string {
-    if (num < 0 || num > 25) {
-        throw new Error('invalid number')
-    }
-
-    return String.fromCharCode(97 + num) // Unicode of 'a': 97
 }
 
 // 1. dfs
@@ -24,7 +17,7 @@ function dfs(node: TreeNode | null, helper: Helper, curStr = '') {
     }
 
     // 2. pre-order traversal
-    curStr = numToChar(node.val) + curStr
+    curStr = numToLowercaseChar(node.val) + curStr
 
     if (!node.left && !node.right) {
         if (helper.smallestStr === '' || helper.smallestStr > curStr) {

@@ -1,7 +1,7 @@
 import { UnionFindWithRank } from 'classes/UnionFindWithRank'
 
 // <Union Find, Math>
-// Time: O(nα(n) * sqrt(m)), α() is the inverse Ackermann function
+// Time: O(n * sqrt(m) * α(m)), α() is the inverse Ackermann function
 // Space: O(m)
 //        n for the number of numbers
 //        m for the maximum number

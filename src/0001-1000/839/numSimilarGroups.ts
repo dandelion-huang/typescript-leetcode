@@ -1,7 +1,7 @@
 import { UnionFindWithRank } from 'classes/UnionFindWithRank'
 
 // <Union Find>
-// Time: O(n^2 * α(m) + nlogn), α() is the inverse Ackermann function
+// Time: O(n^2 * (m + α(n))), α() is the inverse Ackermann function
 // Space: O(n)
 //        n for the number of strings
 //        m for the length of the strings

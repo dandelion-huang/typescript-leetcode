@@ -107,6 +107,7 @@ Solving Leetcode problems with TypeScript.
 -   [979. Distribute Coins in Binary Tree `Medium`](./src/0001-1000/979/distributeCoins.ts)
 -   [987. Vertical Order Traversal of a Binary Tree `Hard`](./src/0001-1000/987/verticalTraversal.ts)
 -   [988. Smallest String Starting From Leaf `Medium`](./src/0001-1000/988/smallestFromLeaf.ts)
+-   [990. Satisfiability of Equality Equations `Medium`](./src/0001-1000/990/equationsPossible.ts)
 -   [1019. Next Greater Node In Linked List `Medium`](./src/1001-2000/1019/nextLargerNodes.ts)
 -   [1162. As Far from Land as Possible `Medium`](./src/1001-2000/1162/maxDistance.ts)
 -   [1202. Smallest String With Swaps `Medium`](./src/1001-2000/1202/smallestStringWithSwaps.ts)

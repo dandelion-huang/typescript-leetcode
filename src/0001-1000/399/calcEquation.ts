@@ -1,6 +1,6 @@
 // ref: classes/UnionFind
 
-// <Union Find>
+// <Union Find, HashTable>
 // Time: O((n + m)α(v)), α() is the inverse Ackermann function
 // Space: O(v)
 //        n for the number of equations (equations.length === values.length)

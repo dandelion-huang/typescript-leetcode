@@ -101,6 +101,7 @@ Solving Leetcode problems with TypeScript.
 -   [901. Online Stock Span `Medium`](./src/0001-1000/901/StockSpanner.ts)
 -   [907. Sum of Subarray Minimums `Medium`](./src/0001-1000/907/sumSubarrayMins.ts)
 -   [912. Sort An Array `Medium`](./src/0001-1000/912/sortArray.ts)
+-   [952. Largest Component Size by Common Factor `Hard`](./src/0001-1000/952/largestComponentSize.ts)
 -   [965. Univalued Binary Tree `Easy`](./src/0001-1000/965/isUnivalTree.ts)
 -   [968. Binary Tree Cameras `Hard`](./src/0001-1000/968/minCameraCover.ts)
 -   [979. Distribute Coins in Binary Tree `Medium`](./src/0001-1000/979/distributeCoins.ts)

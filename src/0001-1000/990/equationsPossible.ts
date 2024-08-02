@@ -3,7 +3,7 @@
 import { lowercaseCharToArrayIndex } from 'utils/char/lowercaseCharToArrayIndex'
 
 // <Union Find>
-// Time: O((n)α(m)), α() is the inverse Ackermann function
+// Time: O(nα(m)), α() is the inverse Ackermann function
 // Space: O(1)
 //        n for the number of equations
 //        m for the number of variables

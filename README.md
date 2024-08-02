@@ -88,6 +88,7 @@ Solving Leetcode problems with TypeScript.
 -   [701. Insert into a Binary Search Tree `Medium`](./src/0001-1000/701/insertIntoBST.ts)
 -   [707. Design Linked List `Medium`](./src/0001-1000/707/MyLinkedList.ts)
 -   [713. Subarray Product Less Than K `Medium`](./src/0001-1000/713/numSubarrayProductLessThanK.ts)
+-   [721. Accounts Merge `Medium`](./src/0001-1000/721/accountsMerge.ts)
 -   [725. Split Linked List in Parts `Medium`](./src/0001-1000/725/splitListToParts.ts)
 -   [733. Flood Fill `Easy`](./src/0001-1000/733/floodFill.ts)
 -   [802. Find Eventual Safe States `Medium`](./src/0001-1000/802/eventualSafeNodes.ts)

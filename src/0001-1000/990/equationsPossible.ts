@@ -1,3 +1,5 @@
+// ref: classes/UnionFind
+
 import { lowercaseCharToArrayIndex } from 'utils/char/lowercaseCharToArrayIndex'
 
 // <Union Find>

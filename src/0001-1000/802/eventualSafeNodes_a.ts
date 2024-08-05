@@ -2,7 +2,7 @@ import { visitingStatus } from 'constants/vistingStatus'
 
 const { VISITED, VISITING, INITIAL } = visitingStatus
 
-// <Recursion, DFS>
+// <Recursion, DFS, Graph Coloring>
 // Time: O(n + m)
 // Space: O(n)
 //        n for the number of nodes

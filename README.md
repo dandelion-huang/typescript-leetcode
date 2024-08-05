@@ -91,6 +91,7 @@ Solving Leetcode problems with TypeScript.
 -   [721. Accounts Merge `Medium`](./src/0001-1000/721/accountsMerge.ts)
 -   [725. Split Linked List in Parts `Medium`](./src/0001-1000/725/splitListToParts.ts)
 -   [733. Flood Fill `Easy`](./src/0001-1000/733/floodFill.ts)
+-   [785. Is Graph Bipartite? `Medium`](./src/0001-1000/785/isBipartite.ts)
 -   [802. Find Eventual Safe States `Medium`](./src/0001-1000/802/eventualSafeNodes.ts)
 -   [814. Binary Tree Pruning `Medium`](./src/0001-1000/814/pruneTree.ts)
 -   [827. Making A Large Island `Hard`](./src/0001-1000/827/largestIsland.ts)

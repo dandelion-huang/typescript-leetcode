@@ -1,3 +1,5 @@
+import { compareFn } from 'utils/compareFn/alphabeticallyCompareFn'
+
 // <Recursion, DFS, HashTable>
 // Time: O(nlogn)
 // Space: O(n)
@@ -57,7 +59,7 @@ function accountsMerge(accounts: string[][]): string[][] {
         if (!visited[i]) {
             emailSet.clear()
             dfs(accounts, emailSet, emailToIndexes, visited, i)
-            mergedAccounts.push([accounts[i][0], ...Array.from(emailSet).sort()])
+            mergedAccounts.push([accounts[i][0], ...Array.from(emailSet).sort(compareFn)])
         }
     }
 

@@ -1,4 +1,5 @@
 import { UnionFindWithRank } from 'classes/UnionFindWithRank'
+import { compareFn } from 'utils/compareFn/alphabeticallyCompareFn'
 
 // <Union Find, HashTable>
 // Time: O(nlogn * α(n)), α() is the inverse Ackermann function
@@ -44,7 +45,7 @@ function accountsMerge(accounts: string[][]): string[][] {
     const mergedAccounts: string[][] = []
 
     for (const [index, emails] of indexToEmails) {
-        mergedAccounts.push([accounts[index][0], ...Array.from(emails).sort()])
+        mergedAccounts.push([accounts[index][0], ...Array.from(emails).sort(compareFn)])
     }
 
     return mergedAccounts
